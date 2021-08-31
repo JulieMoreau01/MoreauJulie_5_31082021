@@ -2,9 +2,134 @@ html {
   font-family: "DM Sans", sans-serif;
   font-size: 100%;
   line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
 }
 html body {
   font-size: 0.75em;
+  margin: 0px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 0px) {
+  html body {
+    padding: 0px 20px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  html body {
+    padding: 0px 100px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  html body {
+    max-width: 1440px;
+  }
+}
+html body header {
+  padding: 40px 0px 0px 0px;
+}
+html body main {
+  padding: 40px 0px 0px 0px;
+}
+
+header {
+  display: flex;
+}
+@media screen and (min-width: 0px) {
+  header {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 1024px) {
+  header {
+    width: 75%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
+header figure {
+  margin: 0px;
+  padding: 0px;
+  height: auto;
+  width: max-content;
+}
+@media screen and (min-width: 0px) {
+  header figure img {
+    width: 150px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  header figure img {
+    width: 200px;
+  }
+}
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+header nav ul {
+  display: flex;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0px;
+  margin-bottom: 0px;
+}
+@media screen and (min-width: 1024px) {
+  header nav ul {
+    margin-top: 0px;
+  }
+}
+@media screen and (min-width: 0px) {
+  header nav ul {
+    justify-content: center;
+  }
+}
+header nav ul li {
+  margin: 0px 5px 6px 0px;
+  display: flex;
+}
+header nav ul li a {
+  border: 0.5px solid #C4C4C4;
+  border-radius: 11px;
+  color: #901C1C;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 3px;
+  text-decoration: none;
+}
+header nav ul li a:hover, header nav ul li a:focus {
+  color: white;
+  background-color: #901C1C;
+}
+
+.index h1 {
+  font-weight: 400;
+  color: #901C1C;
+  margin: 0px;
+  padding: 0px;
+  text-align: right;
+  width: max-content;
+  position: absolute;
+  top: 45px;
+}
+@media screen and (min-width: 0px) {
+  .index h1 {
+    font-size: 1.2em;
+    right: 20px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .index h1 {
+    font-size: 2em;
+    right: 100px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

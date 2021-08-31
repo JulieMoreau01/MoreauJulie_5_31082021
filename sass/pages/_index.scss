@@ -1,0 +1,20 @@
+.index {
+    h1 {
+        font-weight: 400;
+        color: $color-primary;
+        margin: 0px;
+        padding: 0px;
+        text-align: right;
+        width: max-content;
+        position: absolute;
+        top: 45px;
+        @include media(phone) {
+            font-size: 1.2em;
+            right: 20px;
+        }
+        @include media(desktop) {
+            font-size: 2em;
+            right: 100px;
+        }
+    }
+}

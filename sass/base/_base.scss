@@ -2,7 +2,23 @@ html {
     font-family: 'DM Sans', sans-serif;
     font-size: 100%;
     line-height: 1.5;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
     body {
         font-size: 0.75em;
+        margin: 0px;
+        @include media(phone) {padding: 0px 20px;}
+        @include media(desktop) {padding: 0px 100px;}
+        width: 100%;
+        @include media(desktop) {max-width: 1440px;}
+        display: flex;
+        flex-direction: column;
+        header {
+            padding: 40px 0px 0px 0px;
+        }
+        main {
+            padding: 40px 0px 0px 0px;
+        }
     }
 }

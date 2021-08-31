@@ -1,0 +1,48 @@
+header {
+    display: flex;
+    @include media(phone) {width: 100%; flex-direction: column;}
+    @include media(desktop) {width: 75%; flex-direction: row; flex-wrap: nowrap;}
+    figure {
+        margin: 0px;
+        padding: 0px;
+        height: auto;
+        width: max-content;
+        img {
+            @include media(phone) {width: 150px;}
+            @include media(desktop) {width: 200px;}
+        }
+    }
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        ul {
+            display: flex;
+            margin-top: 30px;
+            @include media(desktop) {margin-top: 0px;}
+            @include media(phone) {justify-content: center;}
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0px;
+            margin-bottom: 0px;
+            li {
+                margin: 0px 5px 6px 0px;
+                display: flex;
+                a {
+                    border: 0.5px solid #C4C4C4;
+                    border-radius: 11px;
+                    color: $color-primary;
+                    font-size: 1em;
+                    font-weight: 500;
+                    padding: 3px;
+                    text-decoration: none;
+                    &:hover, &:focus {
+                        color: white;
+                        background-color: $color-primary;
+                    }
+                }
+            }
+        }   
+    }
+}
