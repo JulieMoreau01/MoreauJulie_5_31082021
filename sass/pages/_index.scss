@@ -1,7 +1,11 @@
 main#index {
+    position: relative;
     display: flex;
+    @include media(phone) {flex-direction: column;}
+    @include media(desktop) {flex-direction: row;}
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start; 
+    align-content: center;
     h1 {
         font-weight: 400;
         color: $color-primary;
@@ -10,22 +14,31 @@ main#index {
         text-align: right;
         width: max-content;
         position: absolute;
-        top: 45px;
+        right: 0px;
         @include media(phone) {
             font-size: 1.2em;
-            right: 20px;
+            top: -122px;
         }
         @include media(desktop) {
             font-size: 2em;
-            right: 100px;
+            top: -48px;
         }
     }
     section {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 31%;
+        margin-bottom: 30px;
+        flex-grow: 1;
+        min-width: 33%;
+        a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+        }
         figure {
+            margin: 0px;
             img {
                 width: 200px;
                 height: 200px;
@@ -33,26 +46,46 @@ main#index {
                 border-radius: 50%;
                 box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
             }
+            figcaption.photographer_name {
+                font-size: 3em;
+                color: $color-secondary;
+                font-weight: 400;
+                margin: 0px 0px 10px 0px;
+                text-align: center;
+            }
         }
-        .photographer_name {
-            font-size: 3em;
-            color: $color-secondary;
-            font-weight: 400;
-            margin: 0px 0px 20px 0px;
+        p {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0px;
+            span.photographer_country {
+                display: block;
+                font-size: 1em;
+                color: $color-primary;
+                font-weight: 400;
+                margin: 0px 0px 10px 0px;
+            }
+            span.photographer_tagline {
+                display: block;
+                margin: 0px 0px 10px 0px;
+                color: black;
+            }
+            span.photographer_price {
+                display: block;
+                color: $color-dark-gray;
+                font-size: 0.8em;
+                margin: 0px 0px 0px 0px;
+            }
         }
-        .photographer_country {
-            font-size: 1em;
-            color: $color-primary;
-            font-weight: 400;
-            margin: 0px 0px 20px 0px;
-        }
-        .photographer_tagline {
-            margin: 0px 0px 10px 0px;
-        }
-        .photographer_price {
-            color: $color-dark-gray;
-            font-size: 0.8em;
-            margin: 0px 0px 0px 0px;
+        ul {
+            list-style: none;
+            display: flex;
+            margin: 10px 0px 0px 0px;
+            padding: 0px;
+            li {
+                margin-right: 5px;
+            }
         }
     }
 }

@@ -25,11 +25,26 @@ html body {
 }
 @media screen and (min-width: 1024px) {
   html body {
-    max-width: 1440px;
+    max-width: 1240px;
   }
 }
+html body .pass-content {
+  text-align: center;
+}
+html body .pass-content a {
+  color: black;
+  font-weight: 700;
+  background-color: #DB8876;
+  border-radius: 5px;
+  padding: 8px;
+  text-decoration: none;
+  opacity: 0;
+}
+html body .pass-content a:focus {
+  opacity: 1;
+}
 html body header {
-  padding: 40px 0px 0px 0px;
+  padding: 10px 0px 0px 0px;
 }
 html body main {
   padding: 40px 0px 0px 0px;
@@ -95,24 +110,23 @@ header nav ul li {
   margin: 0px 5px 6px 0px;
   display: flex;
 }
-header nav ul li a {
-  border: 0.5px solid #C4C4C4;
-  border-radius: 11px;
-  color: #901C1C;
-  font-size: 1em;
-  font-weight: 500;
-  padding: 3px;
-  text-decoration: none;
-}
-header nav ul li a:hover, header nav ul li a:focus {
-  color: white;
-  background-color: #901C1C;
-}
 
 main#index {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-content: center;
+}
+@media screen and (min-width: 0px) {
+  main#index {
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main#index {
+    flex-direction: row;
+  }
 }
 main#index h1 {
   font-weight: 400;
@@ -122,25 +136,36 @@ main#index h1 {
   text-align: right;
   width: max-content;
   position: absolute;
-  top: 45px;
+  right: 0px;
 }
 @media screen and (min-width: 0px) {
   main#index h1 {
     font-size: 1.2em;
-    right: 20px;
+    top: -122px;
   }
 }
 @media screen and (min-width: 1024px) {
   main#index h1 {
     font-size: 2em;
-    right: 100px;
+    top: -48px;
   }
 }
 main#index section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 31%;
+  margin-bottom: 30px;
+  flex-grow: 1;
+  min-width: 33%;
+}
+main#index section a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+main#index section figure {
+  margin: 0px;
 }
 main#index section figure img {
   width: 200px;
@@ -149,25 +174,63 @@ main#index section figure img {
   border-radius: 50%;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
 }
-main#index section .photographer_name {
+main#index section figure figcaption.photographer_name {
   font-size: 3em;
   color: #D3573C;
   font-weight: 400;
-  margin: 0px 0px 20px 0px;
+  margin: 0px 0px 10px 0px;
+  text-align: center;
 }
-main#index section .photographer_country {
+main#index section p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px;
+}
+main#index section p span.photographer_country {
+  display: block;
   font-size: 1em;
   color: #901C1C;
   font-weight: 400;
-  margin: 0px 0px 20px 0px;
-}
-main#index section .photographer_tagline {
   margin: 0px 0px 10px 0px;
 }
-main#index section .photographer_price {
+main#index section p span.photographer_tagline {
+  display: block;
+  margin: 0px 0px 10px 0px;
+  color: black;
+}
+main#index section p span.photographer_price {
+  display: block;
   color: #757575;
   font-size: 0.8em;
   margin: 0px 0px 0px 0px;
+}
+main#index section ul {
+  list-style: none;
+  display: flex;
+  margin: 10px 0px 0px 0px;
+  padding: 0px;
+}
+main#index section ul li {
+  margin-right: 5px;
+}
+
+a.tag {
+  border: 0.5px solid #C4C4C4;
+  border-radius: 11px;
+  color: #901C1C;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 3px;
+  text-decoration: none;
+}
+a.tag:hover, a.tag:focus {
+  color: white;
+  background-color: #901C1C;
+}
+
+.hidden {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
