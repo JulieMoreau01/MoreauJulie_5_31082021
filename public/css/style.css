@@ -111,7 +111,7 @@ header nav ul li {
   display: flex;
 }
 
-main#index {
+main#index.index {
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -119,16 +119,16 @@ main#index {
   align-content: center;
 }
 @media screen and (min-width: 0px) {
-  main#index {
+  main#index.index {
     flex-direction: column;
   }
 }
 @media screen and (min-width: 1024px) {
-  main#index {
+  main#index.index {
     flex-direction: row;
   }
 }
-main#index h1 {
+main#index.index h1 {
   font-weight: 400;
   color: #901C1C;
   margin: 0px;
@@ -139,18 +139,18 @@ main#index h1 {
   right: 0px;
 }
 @media screen and (min-width: 0px) {
-  main#index h1 {
+  main#index.index h1 {
     font-size: 1.2em;
     top: -122px;
   }
 }
 @media screen and (min-width: 1024px) {
-  main#index h1 {
+  main#index.index h1 {
     font-size: 2em;
     top: -48px;
   }
 }
-main#index section {
+main#index.index section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -158,61 +158,118 @@ main#index section {
   flex-grow: 1;
   min-width: 33%;
 }
-main#index section a {
+main#index.index section a {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-decoration: none;
 }
-main#index section figure {
+main#index.index section figure {
   margin: 0px;
 }
-main#index section figure img {
+main#index.index section figure img {
   width: 200px;
   height: 200px;
   object-fit: cover;
   border-radius: 50%;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
 }
-main#index section figure figcaption.photographer_name {
+main#index.index section figure figcaption.photographer_name {
   font-size: 3em;
   color: #D3573C;
   font-weight: 400;
   margin: 0px 0px 10px 0px;
   text-align: center;
 }
-main#index section p {
+main#index.index section p {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0px;
 }
-main#index section p span.photographer_country {
+main#index.index section p span.photographer_country {
   display: block;
   font-size: 1em;
   color: #901C1C;
   font-weight: 400;
   margin: 0px 0px 10px 0px;
 }
-main#index section p span.photographer_tagline {
+main#index.index section p span.photographer_tagline {
   display: block;
   margin: 0px 0px 10px 0px;
   color: black;
 }
-main#index section p span.photographer_price {
+main#index.index section p span.photographer_price {
   display: block;
   color: #757575;
   font-size: 0.8em;
   margin: 0px 0px 0px 0px;
 }
-main#index section ul {
+main#index.index section ul {
   list-style: none;
   display: flex;
   margin: 10px 0px 0px 0px;
   padding: 0px;
 }
-main#index section ul li {
+main#index.index section ul li {
   margin-right: 5px;
+}
+
+main#index.photographe section {
+  background-color: #FAFAFA;
+  padding: 50px;
+  position: relative;
+}
+main#index.photographe section p.name {
+  font-weight: 400;
+  color: #D3573C;
+  margin: 0;
+  display: flex;
+}
+@media screen and (min-width: 0px) {
+  main#index.photographe section p.name {
+    font-size: 1.2em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main#index.photographe section p.name {
+    font-size: 4em;
+  }
+}
+main#index.photographe section p.name a {
+  font-size: 0.4em !important;
+  color: white;
+  background-color: #901C1C;
+  height: 69px;
+  padding: 0px 11px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+}
+main#index.photographe section p.country {
+  font-weight: 400;
+  color: #901C1C;
+}
+main#index.photographe section p.tagline {
+  color: #525252;
+  font-size: 0.8em;
+}
+main#index.photographe section ul {
+  list-style: none;
+  display: flex;
+  margin: 10px 0px 0px 0px;
+  padding: 0px;
+}
+main#index.photographe section ul li {
+  margin-right: 5px;
+}
+main#index.photographe section figure {
+  position: absolute;
+  top: 50px;
+  right: 50px;
 }
 
 a.tag {
@@ -227,6 +284,24 @@ a.tag {
 a.tag:hover, a.tag:focus {
   color: white;
   background-color: #901C1C;
+}
+
+section figure {
+  margin: 0px;
+}
+section figure img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+}
+section figure figcaption.photographer_name {
+  font-size: 3em;
+  color: #D3573C;
+  font-weight: 400;
+  margin: 0px 0px 10px 0px;
+  text-align: center;
 }
 
 .hidden {

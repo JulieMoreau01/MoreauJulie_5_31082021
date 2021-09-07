@@ -1,4 +1,4 @@
-main#index {
+main#index.index {
     position: relative;
     display: flex;
     @include media(phone) {flex-direction: column;}
