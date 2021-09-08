@@ -1,13 +1,13 @@
 html {
   font-family: "DM Sans", sans-serif;
   font-size: 100%;
+  font-weight: 400;
   line-height: 1.5;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
 }
 html body {
-  font-size: 0.75em;
   margin: 0px;
   width: 100%;
   display: flex;
@@ -128,6 +128,13 @@ main#index.index {
     flex-direction: row;
   }
 }
+main#index.index section figure figcaption.index_name {
+  font-size: 2.25rem;
+  color: #D3573C;
+  font-weight: 400;
+  margin: 0px 0px 10px 0px;
+  text-align: center;
+}
 main#index.index h1 {
   font-weight: 400;
   color: #901C1C;
@@ -140,13 +147,13 @@ main#index.index h1 {
 }
 @media screen and (min-width: 0px) {
   main#index.index h1 {
-    font-size: 1.2em;
+    font-size: 0.875rem;
     top: -122px;
   }
 }
 @media screen and (min-width: 1024px) {
   main#index.index h1 {
-    font-size: 2em;
+    font-size: 2.25rem;
     top: -48px;
   }
 }
@@ -164,45 +171,28 @@ main#index.index section a {
   align-items: center;
   text-decoration: none;
 }
-main#index.index section figure {
-  margin: 0px;
-}
-main#index.index section figure img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
-}
-main#index.index section figure figcaption.photographer_name {
-  font-size: 3em;
-  color: #D3573C;
-  font-weight: 400;
-  margin: 0px 0px 10px 0px;
-  text-align: center;
-}
 main#index.index section p {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0px;
 }
-main#index.index section p span.photographer_country {
+main#index.index section p span.index_country {
   display: block;
-  font-size: 1em;
+  font-size: 0.8125rem;
   color: #901C1C;
-  font-weight: 400;
   margin: 0px 0px 10px 0px;
 }
-main#index.index section p span.photographer_tagline {
+main#index.index section p span.index_tagline {
   display: block;
+  font-size: 0.625rem;
   margin: 0px 0px 10px 0px;
   color: black;
 }
-main#index.index section p span.photographer_price {
+main#index.index section p span.index_price {
   display: block;
   color: #757575;
-  font-size: 0.8em;
+  font-size: 0.5625rem;
   margin: 0px 0px 0px 0px;
 }
 main#index.index section ul {
@@ -215,68 +205,136 @@ main#index.index section ul li {
   margin-right: 5px;
 }
 
-main#index.photographe section {
+main.photographer section#fiche {
   background-color: #FAFAFA;
   padding: 50px;
   position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
-main#index.photographe section p.name {
+main.photographer section#fiche p.name {
   font-weight: 400;
   color: #D3573C;
   margin: 0;
   display: flex;
+  align-items: center;
 }
 @media screen and (min-width: 0px) {
-  main#index.photographe section p.name {
-    font-size: 1.2em;
+  main.photographer section#fiche p.name {
+    font-size: 2.25rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  main#index.photographe section p.name {
-    font-size: 4em;
+  main.photographer section#fiche p.name {
+    font-size: 4rem;
   }
 }
-main#index.photographe section p.name a {
-  font-size: 0.4em !important;
+main.photographer section#fiche a.btn {
+  font-weight: 700;
   color: white;
   background-color: #901C1C;
-  height: 69px;
+  width: max-content;
   padding: 0px 11px;
   border-radius: 5px;
   text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 20px;
 }
-main#index.photographe section p.country {
-  font-weight: 400;
+@media screen and (min-width: 0px) {
+  main.photographer section#fiche a.btn {
+    font-size: 1.125rem;
+    position: fixed;
+    bottom: 28px;
+    margin: 0px auto;
+    height: 35px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main.photographer section#fiche a.btn {
+    font-size: 1.25rem;
+    position: relative;
+    bottom: unset;
+    margin-left: 50px;
+    height: 69px;
+  }
+}
+main.photographer section#fiche p.country {
+  width: 100%;
   color: #901C1C;
+  margin: 0px;
 }
-main#index.photographe section p.tagline {
+@media screen and (min-width: 0px) {
+  main.photographer section#fiche p.country {
+    font-size: 0.8125rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main.photographer section#fiche p.country {
+    font-size: 1.5rem;
+  }
+}
+main.photographer section#fiche p.tagline {
+  width: 100%;
   color: #525252;
-  font-size: 0.8em;
 }
-main#index.photographe section ul {
+@media screen and (min-width: 0px) {
+  main.photographer section#fiche p.tagline {
+    font-size: 0.8125rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main.photographer section#fiche p.tagline {
+    font-size: 1.125rem;
+  }
+}
+main.photographer section#fiche ul {
+  width: 100%;
   list-style: none;
   display: flex;
   margin: 10px 0px 0px 0px;
   padding: 0px;
 }
-main#index.photographe section ul li {
+main.photographer section#fiche ul li {
   margin-right: 5px;
 }
-main#index.photographe section figure {
+main.photographer section#fiche figure {
   position: absolute;
   top: 50px;
   right: 50px;
+}
+@media screen and (min-width: 0px) {
+  main.photographer section#fiche figure img {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main.photographer section#fiche figure img {
+    width: 200px;
+    height: 200px;
+  }
+}
+main.photographer section#gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+main.photographer section#gallery figure {
+  margin: 0px 0px 30px 0px;
+}
+main.photographer section#gallery figure img {
+  width: 350px;
+  height: 300px;
+  object-fit: cover;
 }
 
 a.tag {
   border: 0.5px solid #C4C4C4;
   border-radius: 11px;
   color: #901C1C;
-  font-size: 1em;
+  font-size: 0.75rem;
   font-weight: 500;
   padding: 3px;
   text-decoration: none;
@@ -286,22 +344,15 @@ a.tag:hover, a.tag:focus {
   background-color: #901C1C;
 }
 
-section figure {
+section#fiche figure, section.index figure {
   margin: 0px;
 }
-section figure img {
+section#fiche figure img, section.index figure img {
   width: 200px;
   height: 200px;
   object-fit: cover;
   border-radius: 50%;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
-}
-section figure figcaption.photographer_name {
-  font-size: 3em;
-  color: #D3573C;
-  font-weight: 400;
-  margin: 0px 0px 10px 0px;
-  text-align: center;
 }
 
 .hidden {

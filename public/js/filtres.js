@@ -1,18 +1,25 @@
-
 /**
  * FILTRES TAG
  */
 
-const portrait = document.getElementById('portrait')
-const art = document.getElementById('art')
-const fashion = document.getElementById('fashion')
-const architecture = document.getElementById('architecture')
-const travel = document.getElementById('travel')
-const sport = document.getElementById('sport')
-const animals = document.getElementById('animals')
-const events = document.getElementById('events')
+const portrait = document.getElementsByClassName('tag portrait')
+const art = document.getElementsByClassName('tag art')
+const fashion = document.getElementsByClassName('tag fashion')
+const architecture = document.getElementsByClassName('tag architecture')
+const travel = document.getElementsByClassName('tag travel')
+const sport = document.getElementsByClassName('.tag.sport')
+const animals = document.getElementsByClassName('.tag.animals')
+const events = document.getElementsByClassName('.tag.events')
 
 console.log(portrait)
+console.log(typeof portrait)
+console.log(portrait.length)
+console.log(portrait.item(0))
+console.log(portrait.item(1))
+console.log(portrait.item(2))
+console.log(portrait.item(3))
+
+//portrait.forEach(el => console.log(el))
 
 const allTags = [portrait, art, fashion, architecture, travel, sport, animals, events]
 

@@ -6,6 +6,15 @@ main#index.index {
     flex-wrap: wrap;
     justify-content: flex-start; 
     align-content: center;
+    section figure {
+      figcaption.index_name {
+        @include font-size(36);
+          color: $color-secondary;
+          font-weight: 400;
+          margin: 0px 0px 10px 0px;
+          text-align: center;
+      }
+    }
     h1 {
         font-weight: 400;
         color: $color-primary;
@@ -16,11 +25,11 @@ main#index.index {
         position: absolute;
         right: 0px;
         @include media(phone) {
-            font-size: 1.2em;
+          @include font-size(14);
             top: -122px;
         }
         @include media(desktop) {
-            font-size: 2em;
+          @include font-size(36);
             top: -48px;
         }
     }
@@ -37,44 +46,28 @@ main#index.index {
             align-items: center;
             text-decoration: none;
         }
-        figure {
-            margin: 0px;
-            img {
-                width: 200px;
-                height: 200px;
-                object-fit: cover;
-                border-radius: 50%;
-                box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
-            }
-            figcaption.photographer_name {
-                font-size: 3em;
-                color: $color-secondary;
-                font-weight: 400;
-                margin: 0px 0px 10px 0px;
-                text-align: center;
-            }
-        }
+        
         p {
             display: flex;
             flex-direction: column;
             align-items: center;
             margin: 0px;
-            span.photographer_country {
+            span.index_country {
                 display: block;
-                font-size: 1em;
+                @include font-size(13);
                 color: $color-primary;
-                font-weight: 400;
                 margin: 0px 0px 10px 0px;
             }
-            span.photographer_tagline {
+            span.index_tagline {
                 display: block;
+                @include font-size(10);
                 margin: 0px 0px 10px 0px;
                 color: black;
             }
-            span.photographer_price {
+            span.index_price {
                 display: block;
                 color: $color-dark-gray;
-                font-size: 0.8em;
+                @include font-size(9);
                 margin: 0px 0px 0px 0px;
             }
         }

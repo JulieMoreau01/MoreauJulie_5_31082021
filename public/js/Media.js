@@ -1,34 +1,66 @@
-class mediaFactory {
-  constructor(data) {
-    if (data.type === "image") {
-      return new Image(data)
-    } else if (data.type === "video") {
-      return new Video(data)
+console.log('01')
+
+class MediaFactory {
+  constructor (item) {
+    if (item.type === 'image') {
+      return new Image(item)
+    } else if (item.type === 'video') {
+      return new Video(item)
     }
   }
 }
 
 class Image {
-  constructor(data) {
+  constructor (data) {
     this.id = data.id
-    "id": 8328953,
-    "photographerId": 82,
-    "title": "Wooden Horse Sculpture",
-    "video": "Art_Wooden_Horse_Sculpture.mp4",
-    "tags": ["art"],
-    "likes": 24,
-    "date": "2011-12-08",
-    "price": 100,
-    "type": "video"
-
+    this.photographerId = data.photographerId
+    this.title = data.title
+    this.image = data.image
+    this.tags = data.tags
+    this.likes = data.likes
+    this.date = data.date
+    this.price = data.price
+    this.type = data.type
+    this.name = 'Rhode'
   }
-  creatHtml() {
+
+  creatSelect () {
     return `
-    <img class="" src="public/images/${this.video}" id="">
+    <label for="photo-tri">Trier par</label>
+    <select name="photo" id="photo-tri">
+        <option value="popularité">Popularité</option>
+        <option value="date">Date</option>
+        <option value="Titre">Titre</option>
+    </select>
+    `
+  }
+
+  creatHtmlGallery () {
+    return `
+    <figure><img class="" src="public/images/${this.name}/${this.image}" id="${this.id}"></figure>
     `
   }
 }
-
 class Video {
+  constructor (data) {
+    this.id = data.id
+    this.photographerId = data.photographerId
+    this.title = data.title
+    this.video = data.video
+    this.tags = data.tags
+    this.likes = data.likes
+    this.date = data.date
+    this.price = data.price
+    this.type = data.type
+    this.name = 'Rhode'
+  }
 
+  creatHtmlGallery () {
+    return `
+    <video controls width="350">
+    <source src="public/images/${this.name}/${this.video}" type="video/mp4">
+    Sorry, your browser doesn't support embedded videos.
+</video>
+    `
+  }
 }

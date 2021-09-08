@@ -1,8 +1,9 @@
+// ETIQUETTE TAG FILTRE
 a.tag {
   border: 0.5px solid #C4C4C4;
   border-radius: 11px;
   color: $color-primary;
-  font-size: 1em;
+  @include font-size(12);
   font-weight: 500;
   padding: 3px;
   text-decoration: none;
@@ -12,23 +13,20 @@ a.tag {
   }
 }
 
-section figure {
-  margin: 0px;
-  img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 50%;
-      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
-  }
-  figcaption.photographer_name {
-      font-size: 3em;
-      color: $color-secondary;
-      font-weight: 400;
-      margin: 0px 0px 10px 0px;
-      text-align: center;
+// IMAGE RONDE PHOTOGRAPHE PAGE INDEX ET FICHE PHOTOGRAPHE
+section#fiche, section.index {
+  figure {
+    margin: 0px;
+    img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 50%;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+    }
   }
 }
+
 
 .hidden {
   display: none;
