@@ -3,11 +3,29 @@
  * @returns Ok or Error
  */
 async function getData () {
-  const url = 'https://juliemoreau01.github.io/MoreauJulie_5_31082021/public/js/FishEyeData.json'
+  const url = './public/json/FishEyeData.json'
   try {
     const res = await fetch(url)
     return await res.json()
   } catch (error) {
     console.log(error)
   }
+}
+
+/**
+ * GET TABLE PHOTOGRAPHER
+ */
+async function getDataPhotographer () {
+  const dataJson = await getData()
+  const dataPhotographers = dataJson.photographers
+  return await dataPhotographers
+}
+
+/**
+ * GET TABLE MEDIA
+ */
+async function getDataMedia () {
+  const dataJson = await getData()
+  const dataMedia = dataJson.media
+  return await dataMedia
 }

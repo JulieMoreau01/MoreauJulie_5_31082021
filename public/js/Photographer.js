@@ -33,14 +33,14 @@ class Photographer {
 
   creatHtmlPhotographer () {
     return `
-    <p class="name">${this.name}</p>
-    <p><a href="" class="btn">Contactez-moi</a></p>
-    <p class="country">${this.city}, ${this.country}</p>
-    <p class="tagline">${this.tagline}</p>
-    <ul>${this.liTags}</ul>
+    <p class="name" tabindex="2">${this.name}</p>
+    <p tabindex="5"><a href="" class="btn" tabindex="3">Contactez-moi</a></p>
+    <p class="country"  tabindex="3">${this.city}, ${this.country}</p>
+    <p class="tagline"  tabindex="3">${this.tagline}</p>
+    <ul tabindex="4">${this.liTags}</ul>
     <figure>
-    <a href="photographer.html?id=${this.id}" alt="${this.name}" tabindex="5">
-    <img src="public/images/photographers_id_photos/${this.portrait}" alt="${this.name}" />
+    <a href="photographer.html?id=${this.id}" alt="${this.name}" tabindex="6">
+    <img src="public/images/photographers_id_photos/${this.portrait}" alt="${this.name}" tabindex="6" />
     </a>
     </figure>
     `

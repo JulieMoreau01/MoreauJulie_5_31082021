@@ -1,11 +1,17 @@
 main.photographer {
   section#fiche {
-    background-color: $color-light-gray;
-    padding: 50px;
     position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    @include media(phone) {
+      background-color: white;
+      padding: 0px;
+    }
+    @include media(desktop) {
+      background-color: $color-light-gray;
+      padding: 50px;
+    }
     p.name {
       font-weight: 400;
       color: $color-secondary;
@@ -44,6 +50,9 @@ main.photographer {
         margin-left: 50px;
         height: 69px;
       }
+      &:hover, &:focus {
+        background-color: $color-secondary;
+      }
     }
     p.country {
       width: 100%;
@@ -74,6 +83,14 @@ main.photographer {
       padding: 0px;
       li {
           margin-right: 5px;
+          a {
+            @include media(phone) {
+              @include font-size(13);
+            }
+            @include media(desktop) {
+              @include font-size(18);
+            }
+          }
       }
     }
     figure {
@@ -98,13 +115,33 @@ main.photographer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-top: 30px;
     figure {
       margin: 0px 0px 30px 0px;
       img {
         width: 350px;
         height: 300px;
         object-fit: cover;
+        border-radius: 5px;
       }
+      figcaption {
+        display: flex;
+        justify-content: space-between;
+        span.title {
+          @include font-size(24);
+          color: $color-primary;
+        }
+        span.like {
+          color: $color-primary;
+          @include font-size(24);
+        }
+      }
+    }
+    video {
+      margin: 0px 0px 30px 0px;
+      width: 350px;
+      height: 300px;
+      object-fit: cover;
     }
   }
 }

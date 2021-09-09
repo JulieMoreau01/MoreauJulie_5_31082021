@@ -2,8 +2,7 @@
  * Template HTML Page Index
  */
 async function renderPhotographers () {
-  const dataJson = await getData()
-  const dataPhotographers = dataJson.photographers
+  const dataPhotographers = await getDataPhotographer()
   dataPhotographers.forEach(dataPhotographers => {
     const photograpeTemplate = new Photographer(dataPhotographers)
     const indexPhotographer = photograpeTemplate.creatHtmlIndex()
@@ -14,6 +13,7 @@ async function renderPhotographers () {
 
 const init = async () => {
   getData()
+  getDataPhotographer()
   renderPhotographers()
 }
 

@@ -206,12 +206,22 @@ main#index.index section ul li {
 }
 
 main.photographer section#fiche {
-  background-color: #FAFAFA;
-  padding: 50px;
   position: relative;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+@media screen and (min-width: 0px) {
+  main.photographer section#fiche {
+    background-color: white;
+    padding: 0px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main.photographer section#fiche {
+    background-color: #FAFAFA;
+    padding: 50px;
+  }
 }
 main.photographer section#fiche p.name {
   font-weight: 400;
@@ -260,6 +270,9 @@ main.photographer section#fiche a.btn {
     height: 69px;
   }
 }
+main.photographer section#fiche a.btn:hover, main.photographer section#fiche a.btn:focus {
+  background-color: #D3573C;
+}
 main.photographer section#fiche p.country {
   width: 100%;
   color: #901C1C;
@@ -299,6 +312,16 @@ main.photographer section#fiche ul {
 main.photographer section#fiche ul li {
   margin-right: 5px;
 }
+@media screen and (min-width: 0px) {
+  main.photographer section#fiche ul li a {
+    font-size: 0.8125rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main.photographer section#fiche ul li a {
+    font-size: 1.125rem;
+  }
+}
 main.photographer section#fiche figure {
   position: absolute;
   top: 50px;
@@ -320,11 +343,31 @@ main.photographer section#gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-top: 30px;
 }
 main.photographer section#gallery figure {
   margin: 0px 0px 30px 0px;
 }
 main.photographer section#gallery figure img {
+  width: 350px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+main.photographer section#gallery figure figcaption {
+  display: flex;
+  justify-content: space-between;
+}
+main.photographer section#gallery figure figcaption span.title {
+  font-size: 1.5rem;
+  color: #901C1C;
+}
+main.photographer section#gallery figure figcaption span.like {
+  color: #901C1C;
+  font-size: 1.5rem;
+}
+main.photographer section#gallery video {
+  margin: 0px 0px 30px 0px;
   width: 350px;
   height: 300px;
   object-fit: cover;
