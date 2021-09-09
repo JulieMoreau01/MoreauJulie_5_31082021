@@ -11,10 +11,11 @@ async function renderPhotographers () {
   })
 }
 
-const init = async () => {
+const initIndex = async () => {
   getData()
   getDataPhotographer()
+  getDataMedia()
   renderPhotographers()
 }
 
-init()
+initIndex()

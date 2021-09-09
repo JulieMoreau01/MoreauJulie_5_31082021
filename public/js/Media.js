@@ -1,5 +1,3 @@
-console.log('01')
-
 class MediaFactory {
   constructor (item) {
     if (item.type === 'image') {
@@ -24,6 +22,8 @@ class Image {
     this.name = 'Rhode'
   }
 
+
+
   creatSelect () {
     return `
     <label for="photo-tri">Trier par</label>
@@ -39,7 +39,7 @@ class Image {
     return `
     <figure>
     <img class="" src="public/images/${this.name}/${this.image}" id="${this.id}" title="${this.title}">
-    <figcaption><span class="title">${this.title}</span><span class="like">${this.likes} <i class="fas fa-heart"></i></span></figcaption>
+    <figcaption><span class="title">${this.title}</span><span class="like"><span class="counter">${this.likes}</span> <i class="fas fa-heart"></i></span></figcaption>
     </figure>
     `
   }

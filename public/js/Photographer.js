@@ -8,7 +8,7 @@ class Photographer {
     this.tagline = data.tagline
     this.price = data.price
     this.portrait = data.portrait
-    this.liTags = data.tags.map(tag => `<li><a href="#" id="lapin" class="tag ${tag}" tab-index="5">#${tag}</a></li>`).join(' ')
+    this.liTags = data.tags.map(tag => `<li><a href="#" class="tag ${tag}" tab-index="5">#${tag}</a></li>`).join(' ')
     this.classTag = data.tags.join(' ')
   }
 
@@ -33,10 +33,10 @@ class Photographer {
 
   creatHtmlPhotographer () {
     return `
-    <p class="name" tabindex="2">${this.name}</p>
+    <p class="name" id="thename" tabindex="2">${this.name}</p>
     <p tabindex="5"><a href="" class="btn" tabindex="3">Contactez-moi</a></p>
-    <p class="country"  tabindex="3">${this.city}, ${this.country}</p>
-    <p class="tagline"  tabindex="3">${this.tagline}</p>
+    <p class="country" tabindex="3">${this.city}, ${this.country}</p>
+    <p class="tagline" tabindex="3">${this.tagline}</p>
     <ul tabindex="4">${this.liTags}</ul>
     <figure>
     <a href="photographer.html?id=${this.id}" alt="${this.name}" tabindex="6">
@@ -44,5 +44,9 @@ class Photographer {
     </a>
     </figure>
     `
+  }
+
+  nameOfPhotographer () {
+    return this.name
   }
 }

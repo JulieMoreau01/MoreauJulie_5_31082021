@@ -13,18 +13,18 @@ async function renderPhotographersPage () {
   })
 
   // Appelle de l'objet de la table photographer dans la balise <main> de la page photographer
-  const objetId = dataPhotographers[objetIdNb]
-  const photograpeTemplate = new Photographer(objetId)
+  const data = dataPhotographers[objetIdNb]
+  const photograpeTemplate = new Photographer(data)
   const fichePhotographer = photograpeTemplate.creatHtmlPhotographer()
   const container = document.getElementById('fiche')
   container.innerHTML += fichePhotographer
 
   // Appelle de l'objet de la table media dans la balise <main> de la page photographer
 
-  dataMedia.forEach(item => {
-    const stringId = (item.photographerId).toString()
+  dataMedia.forEach(data => {
+    const stringId = (data.photographerId).toString()
     if (idUrlPage === stringId) {
-      const mediaTemplate = new MediaFactory(item)
+      const mediaTemplate = new MediaFactory(data)
       const mediaPhotographer = mediaTemplate.creatHtmlGallery()
       const container = document.getElementById('gallery')
       container.innerHTML += mediaPhotographer

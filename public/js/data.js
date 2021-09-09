@@ -3,7 +3,7 @@
  * @returns Ok or Error
  */
 async function getData () {
-  const url = './public/json/FishEyeData.json'
+  const url = 'https://juliemoreau01.github.io/MoreauJulie_5_31082021/public/json/FishEyeData.json'
   try {
     const res = await fetch(url)
     return await res.json()
