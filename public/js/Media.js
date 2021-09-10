@@ -19,10 +19,8 @@ class Image {
     this.date = data.date
     this.price = data.price
     this.type = data.type
-    this.name = 'Rhode'
+    this.name = 'rhode'
   }
-
-
 
   creatSelect () {
     return `

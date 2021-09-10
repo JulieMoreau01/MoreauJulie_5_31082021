@@ -1,19 +1,16 @@
-//let nombreClics = 0
+async function likeCounterFunction () {
+  const heartIcon = document.querySelectorAll('i')
 
-// function comptage () {
-//   // console.log('comptage')
-//   // nombreClics++
-//   // console.log(nombreClics)
-//   // document.getElementById('counter').textContent = nombreClics
-// }
-
-// const heartIcon = document.querySelectorAll('i')
-// //console.log(heartIcon)
-
-// //const counter = document.querySelectorAll('span.counter')
-// //console.log(counter)
-
-// heartIcon.forEach(element => {
-//   //console.log('forEach')
-//   element.addEventListener('click', comptage())
-// })
+  heartIcon.forEach(element => {
+    console.log(element)
+    element.addEventListener('click', function () {
+      parent = element.parentElement
+      firstCHild = parent.children
+      counter = firstCHild[0]
+      counterValue = counter.textContent
+      nbCounterValue = parseInt(counterValue, 10)
+      counterNewValue = (nbCounterValue + 1)
+      counter.textContent = counterNewValue
+    })
+  })
+}

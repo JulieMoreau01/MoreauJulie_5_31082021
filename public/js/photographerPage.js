@@ -1,3 +1,5 @@
+//let fichePhotographerName = 'thename'
+
 async function renderPhotographersPage () {
   // Recuperation de l'Id dans l'URL
   const urlPage = window.location.search
@@ -19,6 +21,9 @@ async function renderPhotographersPage () {
   const container = document.getElementById('fiche')
   container.innerHTML += fichePhotographer
 
+  //const fichePhotographerName = photograpeTemplate.nameOfPhotographer()
+  //alert(fichePhotographerName)
+
   // Appelle de l'objet de la table media dans la balise <main> de la page photographer
 
   dataMedia.forEach(data => {
@@ -30,12 +35,10 @@ async function renderPhotographersPage () {
       container.innerHTML += mediaPhotographer
     }
   })
+  likeCounterFunction()
 }
 
 const init = async () => {
-  getData()
-  getDataPhotographer()
-  getDataMedia()
   renderPhotographersPage()
 }
 
