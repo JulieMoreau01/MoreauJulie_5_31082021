@@ -22,17 +22,6 @@ class Image {
     this.name = 'rhode'
   }
 
-  creatSelect () {
-    return `
-    <label for="photo-tri">Trier par</label>
-    <select name="photo" id="photo-tri">
-        <option value="popularité">Popularité</option>
-        <option value="date">Date</option>
-        <option value="Titre">Titre</option>
-    </select>
-    `
-  }
-
   creatHtmlGallery () {
     return `
     <figure>

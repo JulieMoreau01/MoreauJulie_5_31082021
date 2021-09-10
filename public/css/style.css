@@ -372,6 +372,97 @@ main.photographer section#gallery video {
   height: 300px;
   object-fit: cover;
 }
+main.photographer section#select {
+  margin-top: 30px;
+}
+main.photographer section#select label {
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+main.photographer section#select .container {
+  margin: 0px;
+  width: 100%;
+  display: flex;
+  border-radius: 5px;
+}
+main.photographer section#select .dropdown {
+  width: max-content;
+  user-select: none;
+  position: relative;
+  border-radius: 5px;
+  margin-left: 15px;
+}
+main.photographer section#select .dropdown .dropdown-btn {
+  padding: 0px 35px 0px 0px;
+  background: #901C1C;
+  text-align: left;
+  color: white;
+  border-bottom: 1px solid transparent;
+  border-radius: 5px;
+  font-weight: 400;
+  cursor: pointer;
+  border-radius: 5px;
+}
+main.photographer section#select .dropdown .dropdown-btn > p {
+  display: inline-block;
+  position: relative;
+  margin-left: 15px;
+  text-align: left;
+  user-select: none;
+  pointer-events: none;
+  border-radius: 5px;
+}
+main.photographer section#select .dropdown .dropdown-btn i {
+  color: white;
+  line-height: 1.5;
+  pointer-events: none;
+  margin-left: 15px;
+}
+main.photographer section#select .dropdown .dropdown-btn.active {
+  border-bottom-left-radius: unset;
+  border-bottom-right-radius: unset;
+  border-bottom: 1px solid white;
+  border-radius: 5px;
+}
+main.photographer section#select .dropdown .dropdown-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #901C1C;
+  border-radius: 5px;
+  color: white;
+  width: 100%;
+  overflow: hidden;
+  display: none;
+}
+main.photographer section#select .dropdown .dropdown-content .dropdown-item {
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+}
+main.photographer section#select .dropdown .dropdown-content .dropdown-item:not(:last-child) {
+  border-bottom: 1px solid white;
+}
+main.photographer section#select .dropdown .dropdown-content .dropdown-item:hover {
+  background: #DB8876;
+  color: black;
+}
+main.photographer section#select .dropdown .dropdown-content.active {
+  display: block;
+}
+main.photographer section#price {
+  background-color: #DB8876;
+  position: fixed;
+  bottom: 0px;
+  right: 30px;
+  padding: 20px;
+  border-radius: 5px 5px 0px 0px;
+}
+main.photographer section#price p {
+  color: black;
+  margin: 0px;
+}
 
 a.tag {
   border: 0.5px solid #C4C4C4;

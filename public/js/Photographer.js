@@ -12,6 +12,37 @@ class Photographer {
     this.classTag = data.tags.join(' ')
   }
 
+  creatSelect () {
+    return `
+    <div class="container">
+    <p>Trier par</p>
+      <div class="dropdown">
+        <div class="dropdown-btn">
+          <p>Popularité</p>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="dropdown-content">
+          <div class="dropdown-item" data-value="Popularité">
+            Popularité
+          </div>
+          <div class="dropdown-item" data-value="Date">
+            Date
+          </div>
+          <div class="dropdown-item" data-value="Titre">
+            Titre
+          </div>
+        </div>
+      </div>
+    </div>
+    `
+  }
+
+  creatPrice () {
+    return `
+    <p><span>87878787</span><i class="fas fa-heart"></i> ${this.price} / jour</p>
+    `
+  }
+
   creatHtmlIndex () {
     return `
     <section class="index ${this.classTag}">

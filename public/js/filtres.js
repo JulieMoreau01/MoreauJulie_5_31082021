@@ -2,7 +2,6 @@
  * FILTRES TAG
  */
 async function filtre () {
-  alert('6.good')
   const main = document.getElementById('index')
   const sectionPhotographe = main.children
   const tags = document.getElementsByClassName('tag')

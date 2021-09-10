@@ -1,12 +1,10 @@
-//let fichePhotographerName = 'thename'
-
 async function renderPhotographersPage () {
+  const dataPhotographers = await getDataPhotographer()
+  const dataMedia = await getDataMedia()
+
   // Recuperation de l'Id dans l'URL
   const urlPage = window.location.search
   const idUrlPage = urlPage.replace('?id=', '')
-
-  const dataPhotographers = await getDataPhotographer()
-  const dataMedia = await getDataMedia()
 
   // Recuperation de l'objet qui contient l'ID de l'url dans photographer
   const objetIdNb = dataPhotographers.findIndex(function (item, i) {
@@ -14,28 +12,37 @@ async function renderPhotographersPage () {
     return stringId === idUrlPage
   })
 
-  // Appelle de l'objet de la table photographer dans la balise <main> de la page photographer
+  // Template Fiche Photographer
   const data = dataPhotographers[objetIdNb]
   const photograpeTemplate = new Photographer(data)
   const fichePhotographer = photograpeTemplate.creatHtmlPhotographer()
-  const container = document.getElementById('fiche')
-  container.innerHTML += fichePhotographer
+  const containerFiche = document.getElementById('fiche')
+  containerFiche.innerHTML += fichePhotographer
 
-  //const fichePhotographerName = photograpeTemplate.nameOfPhotographer()
-  //alert(fichePhotographerName)
+  // Template Select
+  const selectPhotographer = photograpeTemplate.creatSelect()
+  const containerSelect = document.getElementById('select')
+  containerSelect.innerHTML += selectPhotographer
 
-  // Appelle de l'objet de la table media dans la balise <main> de la page photographer
-
+  // Template Gallery Photographer
   dataMedia.forEach(data => {
     const stringId = (data.photographerId).toString()
     if (idUrlPage === stringId) {
       const mediaTemplate = new MediaFactory(data)
       const mediaPhotographer = mediaTemplate.creatHtmlGallery()
-      const container = document.getElementById('gallery')
-      container.innerHTML += mediaPhotographer
+      const containerGallery = document.getElementById('gallery')
+      containerGallery.innerHTML += mediaPhotographer
     }
   })
+
+  // Template Price
+  const pricePhotographer = photograpeTemplate.creatPrice()
+  const containerPrice = document.getElementById('price')
+  containerPrice.innerHTML += pricePhotographer
+
+  // Fonction Like & Price
   likeCounterFunction()
+  select()
 }
 
 const init = async () => {
