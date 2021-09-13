@@ -19,7 +19,19 @@ class Image {
     this.date = data.date
     this.price = data.price
     this.type = data.type
-    this.name = 'rhode'
+    if (this.photographerId === 243) {
+      this.name = 'Mimi'
+    } else if (this.photographerId === 930) {
+      this.name = 'Ellie-Rose'
+    } else if (this.photographerId === 82) {
+      this.name = 'Tracy'
+    } else if (this.photographerId === 527) {
+      this.name = 'Nabeel'
+    } else if (this.photographerId === 195) {
+      this.name = 'Marcel'
+    } else if (this.photographerId === 925) {
+      this.name = 'Rhode'
+    }
   }
 
   creatHtmlGallery () {
@@ -42,7 +54,19 @@ class Video {
     this.date = data.date
     this.price = data.price
     this.type = data.type
-    this.name = 'Rhode'
+    if (this.photographerId === 243) {
+      this.name = 'Mimi'
+    } else if (this.photographerId === 930) {
+      this.name = 'Ellie-Rose'
+    } else if (this.photographerId === 82) {
+      this.name = 'Tracy'
+    } else if (this.photographerId === 527) {
+      this.name = 'Nabeel'
+    } else if (this.photographerId === 195) {
+      this.name = 'Marcel'
+    } else if (this.photographerId === 925) {
+      this.name = 'Rhode'
+    }
   }
 
   creatHtmlGallery () {

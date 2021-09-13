@@ -25,33 +25,42 @@ main.photographer {
         @include font-size(64);
       }
     }
-    a.btn {
-      font-weight: 700;
-      color: white;
-      background-color: $color-primary;
-      width: max-content;
-      padding: 0px 11px;
-      border-radius: 5px;
-      text-decoration: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    p.contact {
       @include media(phone) {
+        display: flex;
+        justify-content: center;
         @include font-size(18);
         position: fixed;
         bottom: 28px;
         margin: 0px auto;
         height: 35px;
+        width: 100%;
       }
       @include media(desktop) {
+        display: inline-block;
+        justify-content: unset;
         @include font-size(20);
         position: relative;
         bottom: unset;
         margin-left: 50px;
         height: 69px;
+        width: max-content;
       }
-      &:hover, &:focus {
-        background-color: $color-secondary;
+      a.btn {
+        font-weight: 700;
+        color: white;
+        background-color: $color-primary;
+        width: max-content;
+        padding: 0px 11px;
+        border-radius: 5px;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        &:hover, &:focus {
+          background-color: $color-secondary;
+        }
       }
     }
     p.country {
@@ -95,15 +104,17 @@ main.photographer {
     }
     figure {
       position: absolute;
-      top: 50px;
-      right: 50px;
       @include media(phone) {
+        top: 0px;
+        right: 20px;
         img {
           width: 100px;
           height: 100px;
         }
       }
       @include media(desktop) {
+        top: 50px;
+        right: 50px;
         img {
           width: 200px;
           height: 200px;
@@ -111,42 +122,78 @@ main.photographer {
       }
     }
   }
+
   section#gallery {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     margin-top: 30px;
+    @include media(phone) {
+      align-items: center;
+      flex-direction: column;     
+    }
+    @include media(desktop) {
+      justify-content: space-between;
+      flex-direction: row;  
+    }
     figure {
       margin: 0px 0px 30px 0px;
+      @include media(phone) {
+        width: 100%;
+        max-width: 500px;
+      }
+      @include media(desktop) {
+        width: 350px; 
+      }
       img {
-        width: 350px;
-        height: 300px;
-        object-fit: cover;
         border-radius: 5px;
+        object-fit: cover;  
+        @include media(phone) {
+          width: 100%;
+          max-width: 500px;
+          height: 190px;
+        }
+        @include media(desktop) {
+          width: 350px;
+          height: 300px;   
+        }
       }
       figcaption {
         display: flex;
         justify-content: space-between;
-        span.title {
-          @include font-size(24);
+        span.title, span.like {
+          @include media(phone) {
+            @include font-size(14);
+          }
+          @include media(desktop) {
+            @include font-size(24);
+          }
           color: $color-primary;
-        }
-        span.like {
-          color: $color-primary;
-          @include font-size(24);
         }
       }
     }
     video {
       margin: 0px 0px 30px 0px;
-      width: 350px;
-      height: 300px;
       object-fit: cover;
+      @include media(phone) {
+        width: 100%;
+        max-width: 500px;
+        height: 190px;
+      }
+      @include media(desktop) {
+        width: 350px;
+        height: 300px;   
+      }
     }
   }
 
   section#select {
     margin-top: 30px;
+    @include media(phone) {
+      display: none;
+    }
+    @include media(desktop) {
+      display: block;
+    }
     label {
       font-weight: 700;
       @include font-size(18);
@@ -238,6 +285,12 @@ main.photographer {
     right: 30px;
     padding: 20px;
     border-radius: 5px 5px 0px 0px;
+    @include media(phone) {
+      display: none;
+    }
+    @include media(desktop) {
+      display: block;
+    }
     p {
       color: black;
       margin: 0px;

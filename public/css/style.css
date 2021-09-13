@@ -240,7 +240,31 @@ main.photographer section#fiche p.name {
     font-size: 4rem;
   }
 }
-main.photographer section#fiche a.btn {
+@media screen and (min-width: 0px) {
+  main.photographer section#fiche p.contact {
+    display: flex;
+    justify-content: center;
+    font-size: 1.125rem;
+    position: fixed;
+    bottom: 28px;
+    margin: 0px auto;
+    height: 35px;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main.photographer section#fiche p.contact {
+    display: inline-block;
+    justify-content: unset;
+    font-size: 1.25rem;
+    position: relative;
+    bottom: unset;
+    margin-left: 50px;
+    height: 69px;
+    width: max-content;
+  }
+}
+main.photographer section#fiche p.contact a.btn {
   font-weight: 700;
   color: white;
   background-color: #901C1C;
@@ -251,26 +275,9 @@ main.photographer section#fiche a.btn {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
-@media screen and (min-width: 0px) {
-  main.photographer section#fiche a.btn {
-    font-size: 1.125rem;
-    position: fixed;
-    bottom: 28px;
-    margin: 0px auto;
-    height: 35px;
-  }
-}
-@media screen and (min-width: 1024px) {
-  main.photographer section#fiche a.btn {
-    font-size: 1.25rem;
-    position: relative;
-    bottom: unset;
-    margin-left: 50px;
-    height: 69px;
-  }
-}
-main.photographer section#fiche a.btn:hover, main.photographer section#fiche a.btn:focus {
+main.photographer section#fiche p.contact a.btn:hover, main.photographer section#fiche p.contact a.btn:focus {
   background-color: #D3573C;
 }
 main.photographer section#fiche p.country {
@@ -324,16 +331,22 @@ main.photographer section#fiche ul li {
 }
 main.photographer section#fiche figure {
   position: absolute;
-  top: 50px;
-  right: 50px;
 }
 @media screen and (min-width: 0px) {
+  main.photographer section#fiche figure {
+    top: 0px;
+    right: 20px;
+  }
   main.photographer section#fiche figure img {
     width: 100px;
     height: 100px;
   }
 }
 @media screen and (min-width: 1024px) {
+  main.photographer section#fiche figure {
+    top: 50px;
+    right: 50px;
+  }
   main.photographer section#fiche figure img {
     width: 200px;
     height: 200px;
@@ -342,38 +355,97 @@ main.photographer section#fiche figure {
 main.photographer section#gallery {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   margin-top: 30px;
+}
+@media screen and (min-width: 0px) {
+  main.photographer section#gallery {
+    align-items: center;
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main.photographer section#gallery {
+    justify-content: space-between;
+    flex-direction: row;
+  }
 }
 main.photographer section#gallery figure {
   margin: 0px 0px 30px 0px;
 }
+@media screen and (min-width: 0px) {
+  main.photographer section#gallery figure {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main.photographer section#gallery figure {
+    width: 350px;
+  }
+}
 main.photographer section#gallery figure img {
-  width: 350px;
-  height: 300px;
-  object-fit: cover;
   border-radius: 5px;
+  object-fit: cover;
+}
+@media screen and (min-width: 0px) {
+  main.photographer section#gallery figure img {
+    width: 100%;
+    max-width: 500px;
+    height: 190px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main.photographer section#gallery figure img {
+    width: 350px;
+    height: 300px;
+  }
 }
 main.photographer section#gallery figure figcaption {
   display: flex;
   justify-content: space-between;
 }
-main.photographer section#gallery figure figcaption span.title {
-  font-size: 1.5rem;
+main.photographer section#gallery figure figcaption span.title, main.photographer section#gallery figure figcaption span.like {
   color: #901C1C;
 }
-main.photographer section#gallery figure figcaption span.like {
-  color: #901C1C;
-  font-size: 1.5rem;
+@media screen and (min-width: 0px) {
+  main.photographer section#gallery figure figcaption span.title, main.photographer section#gallery figure figcaption span.like {
+    font-size: 0.875rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main.photographer section#gallery figure figcaption span.title, main.photographer section#gallery figure figcaption span.like {
+    font-size: 1.5rem;
+  }
 }
 main.photographer section#gallery video {
   margin: 0px 0px 30px 0px;
-  width: 350px;
-  height: 300px;
   object-fit: cover;
+}
+@media screen and (min-width: 0px) {
+  main.photographer section#gallery video {
+    width: 100%;
+    max-width: 500px;
+    height: 190px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main.photographer section#gallery video {
+    width: 350px;
+    height: 300px;
+  }
 }
 main.photographer section#select {
   margin-top: 30px;
+}
+@media screen and (min-width: 0px) {
+  main.photographer section#select {
+    display: none;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main.photographer section#select {
+    display: block;
+  }
 }
 main.photographer section#select label {
   font-weight: 700;
@@ -458,6 +530,16 @@ main.photographer section#price {
   right: 30px;
   padding: 20px;
   border-radius: 5px 5px 0px 0px;
+}
+@media screen and (min-width: 0px) {
+  main.photographer section#price {
+    display: none;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main.photographer section#price {
+    display: block;
+  }
 }
 main.photographer section#price p {
   color: black;
