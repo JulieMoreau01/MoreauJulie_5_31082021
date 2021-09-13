@@ -32,6 +32,13 @@ async function renderPhotographersPage () {
       const mediaPhotographer = mediaTemplate.creatHtmlGallery()
       const containerGallery = document.getElementById('gallery')
       containerGallery.innerHTML += mediaPhotographer
+      // Tri par popularite date ou Titre
+      const itemDropdownActive = document.querySelectorAll('.dropdown-item')
+      itemDropdownActive.forEach(element => {
+        element.addEventListener('click', function () {
+          console.log('je clique')
+        })
+      })
     }
   })
 

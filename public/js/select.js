@@ -6,20 +6,20 @@ async function select () {
   const dropdownItem = document.querySelectorAll('.dropdown-item')
   const arrow = document.querySelector('.fas')
 
-  document.addEventListener('click', function (e) {
-    if (e.target === dropdownBtn) {
-      // return
-      console.log(e.target)
-    } else {
-      if (dropdownContent.classList.contains('active')) {
-        dropdownContent.classList.remove('active')
-        dropdownBtn.classList.remove('active')
-        dropdownBtn.classList.remove('active')
-        arrow.classList.remove('fa-chevron-up')
-        console.log(e.target)
-      }
-    }
-  })
+  // document.addEventListener('click', function (e) {
+  //   if (e.target === dropdownBtn) {
+  //     // return
+  //     console.log(e.target)
+  //   } else {
+  //     if (dropdownContent.classList.contains('active')) {
+  //       dropdownContent.classList.remove('active')
+  //       dropdownBtn.classList.remove('active')
+  //       dropdownBtn.classList.remove('active')
+  //       arrow.classList.remove('fa-chevron-up')
+  //       console.log(e.target)
+  //     }
+  //   }
+  // })
 
   dropdown.addEventListener('click', function () {
     this.classList.toggle('active')
@@ -28,8 +28,19 @@ async function select () {
     arrow.classList.toggle('fa-chevron-up')
   })
 
+  dropdown.addEventListener('keydown', function () {
+    this.classList.toggle('active')
+    dropdownContent.classList.toggle('active')
+    dropdownBtn.classList.toggle('active')
+    arrow.classList.toggle('fa-chevron-up')
+  })
+
   for (let i = 0; i < dropdownItem.length; i++) {
     dropdownItem[i].addEventListener('click', function () {
+      dropdownBtn.getElementsByTagName('p')[0].textContent = this.textContent
+      // console.log(this.dataset.value);
+    })
+    dropdownItem[i].addEventListener('keydown', function () {
       dropdownBtn.getElementsByTagName('p')[0].textContent = this.textContent
       // console.log(this.dataset.value);
     })

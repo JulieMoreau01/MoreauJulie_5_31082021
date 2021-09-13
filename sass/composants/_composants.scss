@@ -1,17 +1,18 @@
 // ETIQUETTE TAG FILTRE
-a.tag {
+.tag {
   border: 0.5px solid #C4C4C4;
-  border-radius: 11px;
+  border-radius: 11px; 
   color: $color-primary;
   @include font-size(12);
   font-weight: 500;
   padding: 3px;
   text-decoration: none;
+  cursor: pointer;
   &:hover, &:focus {
       color: white;
       background-color: $color-primary;
   }
-}
+} 
 
 // IMAGE RONDE PHOTOGRAPHE PAGE INDEX ET FICHE PHOTOGRAPHE
 section#fiche, section.index {

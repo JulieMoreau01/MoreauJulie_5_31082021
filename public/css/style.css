@@ -50,6 +50,10 @@ html body main {
   padding: 40px 0px 0px 0px;
 }
 
+:focus {
+  border: 3px solid green;
+}
+
 header {
   display: flex;
 }
@@ -497,6 +501,9 @@ main.photographer section#select .dropdown .dropdown-btn.active {
   border-radius: 5px;
 }
 main.photographer section#select .dropdown .dropdown-content {
+  margin: 0;
+  padding: 0;
+  list-style: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -544,9 +551,18 @@ main.photographer section#price {
 main.photographer section#price p {
   color: black;
   margin: 0px;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+main.photographer section#price p #total_like {
+  display: inline-block;
+  margin-right: 5px;
+}
+main.photographer section#price p i {
+  margin-right: 70px;
 }
 
-a.tag {
+.tag {
   border: 0.5px solid #C4C4C4;
   border-radius: 11px;
   color: #901C1C;
@@ -554,8 +570,9 @@ a.tag {
   font-weight: 500;
   padding: 3px;
   text-decoration: none;
+  cursor: pointer;
 }
-a.tag:hover, a.tag:focus {
+.tag:hover, .tag:focus {
   color: white;
   background-color: #901C1C;
 }

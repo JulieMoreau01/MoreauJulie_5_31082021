@@ -36,9 +36,9 @@ class Image {
 
   creatHtmlGallery () {
     return `
-    <figure>
-    <img class="" src="public/images/${this.name}/${this.image}" id="${this.id}" title="${this.title}">
-    <figcaption><span class="title">${this.title}</span><span class="like"><span class="counter">${this.likes}</span> <i class="fas fa-heart"></i></span></figcaption>
+    <figure tabindex="10">
+    <img src="public/images/${this.name}/${this.image}" id="${this.id}" title="${this.title}" tabindex="10">
+    <figcaption><span class="title" tabindex="12">${this.title}</span><span class="like"><span class="counter" tabindex="13">${this.likes}</span> <i class="fas fa-heart"></i></span></figcaption>
     </figure>
     `
   }
@@ -71,7 +71,7 @@ class Video {
 
   creatHtmlGallery () {
     return `
-    <video controls width="350">
+    <video controls width="350" tabindex="10">
     <source src="public/images/${this.name}/${this.video}" type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
     </video>

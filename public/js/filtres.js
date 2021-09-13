@@ -16,5 +16,15 @@ async function filtre () {
         }
       }
     })
+    tags[item].addEventListener('keydown', function () {
+      tagName = tags[item].getAttribute('class').replace('tag ', '')
+      for (let i = 1; i < sectionPhotographe.length; i++) {
+        if (sectionPhotographe[i].classList.contains(tagName) === true) {
+          sectionPhotographe[i].style.display = 'flex'
+        } else {
+          sectionPhotographe[i].style.display = 'none'
+        }
+      }
+    })
   }
 }

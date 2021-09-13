@@ -37,3 +37,7 @@ html {
         }
     }
 }
+
+:focus {
+  border: 3px solid green;
+}

@@ -243,6 +243,9 @@ main.photographer {
         border-radius: 5px;
       }
       .dropdown-content {
+        margin: 0;
+        padding: 0;
+        list-style: none;
         position: absolute;
         top: 0;
         left: 0;
@@ -294,7 +297,15 @@ main.photographer {
     p {
       color: black;
       margin: 0px;
+      @include font-size(24);
+      font-weight: 500;
+      #total_like {
+        display: inline-block;
+        margin-right: 5px;
+      }
+      i {
+        margin-right: 70px;
+      }
     }
   }
-
 }

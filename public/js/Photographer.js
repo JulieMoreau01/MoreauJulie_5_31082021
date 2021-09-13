@@ -8,30 +8,30 @@ class Photographer {
     this.tagline = data.tagline
     this.price = data.price
     this.portrait = data.portrait
-    this.liTags = data.tags.map(tag => `<li><a href="#" class="tag ${tag}" tab-index="5">#${tag}</a></li>`).join(' ')
+    this.liTags = data.tags.map(tag => `<li tabindex="5"><a href="#" class="tag ${tag}" tab-index="5">#${tag}</a></li>`).join(' ')
     this.classTag = data.tags.join(' ')
   }
 
   creatSelect () {
     return `
-    <div class="container">
+    <div class="container" tabindex="8">  
     <p>Trier par</p>
-      <div class="dropdown">
-        <div class="dropdown-btn">
+      <nav class="dropdown" tabindex="8">
+        <div class="dropdown-btn" tabindex="8">
           <p>Popularité</p>
           <i class="fas fa-chevron-down"></i>
         </div>
-        <div class="dropdown-content">
-          <div class="dropdown-item" data-value="Popularité">
+        <ul class="dropdown-content" tabindex="8">
+          <li class="dropdown-item" data-value="Popularité" tabindex="9">
             Popularité
-          </div>
-          <div class="dropdown-item" data-value="Date">
+          </li>
+          <li class="dropdown-item" data-value="Date" tabindex="9">
             Date
-          </div>
-          <div class="dropdown-item" data-value="Titre">
+          </li>
+          <li class="dropdown-item" data-value="Titre" tabindex="9">
             Titre
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
     </div>
     `
@@ -39,25 +39,25 @@ class Photographer {
 
   creatPrice () {
     return `
-    <p><span>87878787</span><i class="fas fa-heart"></i> ${this.price} / jour</p>
+    <p><span id="total_like"></span><i class="fas fa-heart"></i> ${this.price}€ / jour</p>
     `
   }
 
   creatHtmlIndex () {
     return `
-    <section class="index ${this.classTag}">
-    <figure>
+    <section class="index ${this.classTag}" tabindex="5">
+    <figure tabindex="5">
     <a href="photographer.html?id=${this.id}" alt="${this.name}" tabindex="5">
-    <img src="public/images/photographers_id_photos/${this.portrait}" alt="${this.name}" />
-    <figcaption class="index_name">${this.name}</figcaption>
+    <img src="public/images/photographers_id_photos/${this.portrait}" alt="${this.name}" tabindex="5" />
+    <figcaption class="index_name" tabindex="5">${this.name}</figcaption>
     </a>
     </figure>
     <p>
     <a href="photographer.html?id=${this.id}" alt="${this.name}" tabindex="5" >
-    <span class="index_country">${this.city}, ${this.country}</span>
-    <span class="index_tagline">${this.tagline}</span>
-    <span class="index_price">${this.price} €/jour</span></a></p>
-    <ul>${this.liTags}</ul>
+    <span class="index_country" tabindex="5">${this.city}, ${this.country}</span>
+    <span class="index_tagline" tabindex="5">${this.tagline}</span>
+    <span class="index_price" tabindex="5">${this.price} €/jour</span></a></p>
+    <ul tabindex="5">${this.liTags}</ul>
     </section>
     `
   }
