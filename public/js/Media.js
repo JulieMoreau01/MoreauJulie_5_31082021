@@ -7,7 +7,6 @@ class MediaFactory {
     }
   }
 }
-
 class Image {
   constructor (data) {
     this.id = data.id
