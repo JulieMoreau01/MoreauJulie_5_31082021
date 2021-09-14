@@ -5,9 +5,8 @@ async function renderPhotographers () {
   const dataPhotographers = await getDataPhotographer()
   dataPhotographers.forEach(dataPhotographers => {
     const photograpeTemplate = new Photographer(dataPhotographers)
-    const indexPhotographer = photograpeTemplate.creatHtmlIndex()
     const container = document.getElementById('index')
-    container.innerHTML += indexPhotographer
+    container.innerHTML += photograpeTemplate.creatHtmlIndex()
   })
   filtre()
 }

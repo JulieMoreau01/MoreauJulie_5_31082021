@@ -50,8 +50,17 @@ html body main {
   padding: 40px 0px 0px 0px;
 }
 
-:focus {
-  border: 3px solid green;
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  /* added line */
+  border: 0;
 }
 
 header {
@@ -408,7 +417,16 @@ main.photographer section#gallery figure figcaption {
   display: flex;
   justify-content: space-between;
 }
+main.photographer section#gallery figure figcaption span.title {
+  width: 80%;
+}
+main.photographer section#gallery figure figcaption span.like {
+  width: max-content;
+}
 main.photographer section#gallery figure figcaption span.title, main.photographer section#gallery figure figcaption span.like {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   color: #901C1C;
 }
 @media screen and (min-width: 0px) {
@@ -421,25 +439,66 @@ main.photographer section#gallery figure figcaption span.title, main.photographe
     font-size: 1.5rem;
   }
 }
-main.photographer section#gallery video {
+main.photographer section#gallery figure figcaption .newcolor {
+  color: #DB8876 !important;
+}
+main.photographer section#gallery div.video {
   margin: 0px 0px 30px 0px;
+}
+@media screen and (min-width: 0px) {
+  main.photographer section#gallery div.video {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main.photographer section#gallery div.video {
+    width: 350px;
+  }
+}
+main.photographer section#gallery div.video video {
+  margin: 0px 0px 0px 0px;
   object-fit: cover;
 }
 @media screen and (min-width: 0px) {
-  main.photographer section#gallery video {
+  main.photographer section#gallery div.video video {
     width: 100%;
     max-width: 500px;
     height: 190px;
   }
 }
 @media screen and (min-width: 1024px) {
-  main.photographer section#gallery video {
+  main.photographer section#gallery div.video video {
     width: 350px;
     height: 300px;
   }
 }
-main.photographer section#select {
-  margin-top: 30px;
+main.photographer section#gallery div.video p.video {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+main.photographer section#gallery div.video p.video span.title {
+  width: 80%;
+}
+main.photographer section#gallery div.video p.video span.like {
+  width: max-content;
+}
+main.photographer section#gallery div.video p.video span.title, main.photographer section#gallery div.video p.video span.like {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #901C1C;
+}
+@media screen and (min-width: 0px) {
+  main.photographer section#gallery div.video p.video span.title, main.photographer section#gallery div.video p.video span.like {
+    font-size: 0.875rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main.photographer section#gallery div.video p.video span.title, main.photographer section#gallery div.video p.video span.like {
+    font-size: 1.5rem;
+  }
 }
 @media screen and (min-width: 0px) {
   main.photographer section#select {
@@ -451,84 +510,108 @@ main.photographer section#select {
     display: block;
   }
 }
-main.photographer section#select label {
+main.photographer section#select .dropdown {
+  list-style: none;
+  position: relative;
+  background: #901C1C;
+  width: 250px;
+  height: 69px;
+  cursor: pointer;
+  margin: 30px 0 0 90px;
+  padding: 0 0 0;
+  border-radius: 5px;
+}
+main.photographer section#select .dropdown-label {
+  position: absolute;
+  top: 18px;
+  left: -90px;
+  background: #fff;
+  color: black;
   font-weight: 700;
   font-size: 1.125rem;
 }
-main.photographer section#select .container {
-  margin: 0px;
+main.photographer section#select .dropdown__arrow {
+  position: absolute;
+  z-index: 1;
+  right: 10px;
+  top: 19px;
+  transition: transform 0.2s linear;
+}
+main.photographer section#select .dropdown__arrow.expanded {
+  transform: rotate(-180deg);
+}
+main.photographer section#select .dropdown__list {
   width: 100%;
-  display: flex;
-  border-radius: 5px;
+  position: absolute;
+  left: 0;
+  top: -66px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  transition: opacity 0.1s cubic-bezier(0, 0, 0.38, 0.9), max-height 0.5s cubic-bezier(0, 0, 0.38, 0.9);
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
 }
-main.photographer section#select .dropdown {
-  width: max-content;
-  user-select: none;
+main.photographer section#select .dropdown__list-container {
   position: relative;
-  border-radius: 5px;
-  margin-left: 15px;
 }
-main.photographer section#select .dropdown .dropdown-btn {
-  padding: 0px 35px 0px 0px;
-  background: #901C1C;
-  text-align: left;
-  color: white;
-  border-bottom: 1px solid transparent;
-  border-radius: 5px;
-  font-weight: 400;
-  cursor: pointer;
-  border-radius: 5px;
-}
-main.photographer section#select .dropdown .dropdown-btn > p {
-  display: inline-block;
-  position: relative;
-  margin-left: 15px;
-  text-align: left;
-  user-select: none;
-  pointer-events: none;
-  border-radius: 5px;
-}
-main.photographer section#select .dropdown .dropdown-btn i {
-  color: white;
-  line-height: 1.5;
-  pointer-events: none;
-  margin-left: 15px;
-}
-main.photographer section#select .dropdown .dropdown-btn.active {
-  border-bottom-left-radius: unset;
-  border-bottom-right-radius: unset;
-  border-bottom: 1px solid white;
-  border-radius: 5px;
-}
-main.photographer section#select .dropdown .dropdown-content {
+main.photographer section#select .dropdown ul {
+  list-style: none;
   margin: 0;
   padding: 0;
-  list-style: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: #901C1C;
+  background-color: #901C1C;
   border-radius: 5px;
+}
+main.photographer section#select .dropdown__list-item {
+  padding: 15px 0px 15px 15px;
+  transition: background-color 0.1s linear, color 0.1s linear;
   color: white;
-  width: 100%;
+  list-style-position: inside;
+  white-space: nowrap;
   overflow: hidden;
-  display: none;
+  text-overflow: ellipsis;
+  font-weight: 700;
+  position: relative;
+  font-size: 1.125rem;
 }
-main.photographer section#select .dropdown .dropdown-content .dropdown-item {
-  padding: 15px;
-  cursor: pointer;
-  transition: all 0.2s;
-  text-align: left;
+main.photographer section#select .dropdown__list-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  right: 5%;
+  background-color: white;
+  height: 1px;
+  width: 90%;
 }
-main.photographer section#select .dropdown .dropdown-content .dropdown-item:not(:last-child) {
-  border-bottom: 1px solid white;
-}
-main.photographer section#select .dropdown .dropdown-content .dropdown-item:hover {
-  background: #DB8876;
+main.photographer section#select .dropdown__list-item:hover, main.photographer section#select .dropdown__list-item:focus {
+  background-color: #DB8876;
   color: black;
 }
-main.photographer section#select .dropdown .dropdown-content.active {
-  display: block;
+main.photographer section#select .dropdown__list-item:last-child::after {
+  display: none;
+}
+main.photographer section#select #dropdown__selected {
+  color: white;
+  padding: 0px 15px;
+  list-style-position: inside;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  height: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+main.photographer section#select #dropdown__selected:focus {
+  outline: 1px solid #00C2FF;
+}
+main.photographer section#select .open {
+  opacity: 1;
+  overflow: auto;
+  max-height: 15rem;
 }
 main.photographer section#price {
   background-color: #DB8876;

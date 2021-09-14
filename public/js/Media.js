@@ -38,7 +38,13 @@ class Image {
     return `
     <figure tabindex="10">
     <img src="public/images/${this.name}/${this.image}" id="${this.id}" title="${this.title}" tabindex="10">
-    <figcaption><span class="title" tabindex="12">${this.title}</span><span class="like"><span class="counter" tabindex="13">${this.likes}</span> <i class="fas fa-heart"></i></span></figcaption>
+    <figcaption tabindex="10">
+    <span class="title" tabindex="10">${this.title}</span>
+    <span class="like" tabindex="10">
+    <span class="counter" tabindex="10" aria-label="${this.likes} like sur cette photo">${this.likes}</span> 
+    <i class="fas fa-heart" tabindex="10" aria-label="ajouter un like" aria-expanded="false"></i>
+    </span>
+    </figcaption>
     </figure>
     `
   }
@@ -71,10 +77,15 @@ class Video {
 
   creatHtmlGallery () {
     return `
-    <video controls width="350" tabindex="10">
+    <div class="video"><video controls width="350" tabindex="10">
     <source src="public/images/${this.name}/${this.video}" type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
     </video>
+    <p class="video">
+    <span class="title" tabindex="12">${this.title}</span>
+    <span class="like"><span class="counter" tabindex="13">${this.likes}</span> <i class="fas fa-heart" aria-label="ajouter un like" aria-expanded="false"></i></span>
+    </p>
+    </div>
     `
   }
 }

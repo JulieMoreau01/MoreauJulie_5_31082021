@@ -15,23 +15,20 @@ async function renderPhotographersPage () {
   // Template Fiche Photographer
   const data = dataPhotographers[objetIdNb]
   const photograpeTemplate = new Photographer(data)
-  const fichePhotographer = photograpeTemplate.creatHtmlPhotographer()
   const containerFiche = document.getElementById('fiche')
-  containerFiche.innerHTML += fichePhotographer
+  containerFiche.innerHTML += photograpeTemplate.creatHtmlPhotographer()
 
   // Template Select
-  const selectPhotographer = photograpeTemplate.creatSelect()
   const containerSelect = document.getElementById('select')
-  containerSelect.innerHTML += selectPhotographer
+  containerSelect.innerHTML += photograpeTemplate.creatSelect()
 
   // Template Gallery Photographer
   dataMedia.forEach(data => {
     const stringId = (data.photographerId).toString()
     if (idUrlPage === stringId) {
       const mediaTemplate = new MediaFactory(data)
-      const mediaPhotographer = mediaTemplate.creatHtmlGallery()
       const containerGallery = document.getElementById('gallery')
-      containerGallery.innerHTML += mediaPhotographer
+      containerGallery.innerHTML += mediaTemplate.creatHtmlGallery()
       // Tri par popularite date ou Titre
       const itemDropdownActive = document.querySelectorAll('.dropdown-item')
       itemDropdownActive.forEach(element => {
@@ -43,9 +40,8 @@ async function renderPhotographersPage () {
   })
 
   // Template Price
-  const pricePhotographer = photograpeTemplate.creatPrice()
   const containerPrice = document.getElementById('price')
-  containerPrice.innerHTML += pricePhotographer
+  containerPrice.innerHTML += photograpeTemplate.creatPrice()
 
   // Fonction Like & Price
   likeCounterFunction()

@@ -14,26 +14,28 @@ class Photographer {
 
   creatSelect () {
     return `
-    <div class="container" tabindex="8">  
-    <p>Trier par</p>
-      <nav class="dropdown" tabindex="8">
-        <div class="dropdown-btn" tabindex="8">
-          <p>Popularité</p>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <ul class="dropdown-content" tabindex="8">
-          <li class="dropdown-item" data-value="Popularité" tabindex="9">
-            Popularité
-          </li>
-          <li class="dropdown-item" data-value="Date" tabindex="9">
-            Date
-          </li>
-          <li class="dropdown-item" data-value="Titre" tabindex="9">
-            Titre
-          </li>
-        </ul>
-      </div>
-    </div>
+    <ul class="dropdown" tabindex="8">
+        <li id="dropdown-label" class="dropdown-label" tabindex="8">
+          Trier par
+        </li>
+        <li role="button" aria-labelledby="dropdown-label" id="dropdown__selected" tabindex="8">
+          Popularité <i class="fas fa-chevron-down dropdown__arrow" viewBox="0 0 10 5" fill-rule="evenodd"></i>
+        </li>
+        
+        <li aria-expanded="false" role="list" class="dropdown__list-container">
+          <ul class="dropdown__list">
+            <li class="dropdown__list-item" tabindex="8" id="option-1" role="button" aria-labelledby="dropdown-label" id="dropdown__selected" tabindex="8">
+              Popularité
+            </li>
+            <li class="dropdown__list-item" tabindex="8" id="option-1">
+              Date
+            </li>
+            <li class="dropdown__list-item" tabindex="8" id="option-2">
+              Titre
+            </li>
+          </ul>
+        </li>
+      </ul>
     `
   }
 

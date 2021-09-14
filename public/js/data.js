@@ -1,9 +1,9 @@
 /**
- * GET JSON DATA
- * @returns Ok or Error
+ * GET DATA
+ * @returns url or error
  */
 async function getData () {
-  const url = 'https://juliemoreau01.github.io/MoreauJulie_5_31082021/public/json/FishEyeData.json'
+  const url = './public/json/FishEyeData.json'
   try {
     const res = await fetch(url)
     return await res.json()
@@ -16,16 +16,14 @@ async function getData () {
  * GET TABLE PHOTOGRAPHER
  */
 async function getDataPhotographer () {
-  const dataJson = await getData()
-  const dataPhotographers = dataJson.photographers
-  return await dataPhotographers
+  const { photographers } = await getData()
+  return await photographers
 }
 
 /**
  * GET TABLE MEDIA
  */
 async function getDataMedia () {
-  const dataJson = await getData()
-  const dataMedia = dataJson.media
-  return await dataMedia
+  const { media } = await getData()
+  return await media
 }
