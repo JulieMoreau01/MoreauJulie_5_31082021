@@ -78,7 +78,7 @@ class Video {
     return `
     <div class="video"><video controls width="350" tabindex="10">
     <source src="public/images/${this.name}/${this.video}" type="video/mp4">
-    Sorry, your browser doesn't support embedded videos.
+    So sorry, your browser doesn't support embedded videos.
     </video>
     <p class="video">
     <span class="title" tabindex="12">${this.title}</span>
