@@ -500,6 +500,9 @@ main.photographer section#gallery div.video p.video span.title, main.photographe
     font-size: 1.5rem;
   }
 }
+main.photographer section#gallery div.video p.video span.title .newcolor, main.photographer section#gallery div.video p.video span.like .newcolor {
+  color: #DB8876 !important;
+}
 @media screen and (min-width: 0px) {
   main.photographer section#select {
     display: none;

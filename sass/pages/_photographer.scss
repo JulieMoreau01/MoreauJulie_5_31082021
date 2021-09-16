@@ -218,6 +218,9 @@ main.photographer {
             @include font-size(24);
           }
           color: $color-primary;
+          .newcolor {
+            color: $color-third !important;
+          }
         }
       }
     }
