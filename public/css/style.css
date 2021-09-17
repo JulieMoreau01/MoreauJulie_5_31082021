@@ -383,6 +383,8 @@ main.photographer section#gallery {
   }
 }
 main.photographer section#gallery figure {
+  display: flex;
+  flex-direction: column;
   margin: 0px 0px 30px 0px;
 }
 @media screen and (min-width: 0px) {
@@ -399,6 +401,8 @@ main.photographer section#gallery figure {
 main.photographer section#gallery figure img {
   border-radius: 5px;
   object-fit: cover;
+  object-position: top;
+  cursor: pointer;
 }
 @media screen and (min-width: 0px) {
   main.photographer section#gallery figure img {
@@ -416,6 +420,9 @@ main.photographer section#gallery figure img {
 main.photographer section#gallery figure video {
   margin: 0px 0px 0px 0px;
   object-fit: cover;
+  object-position: top;
+  cursor: pointer;
+  border-radius: 5px;
 }
 @media screen and (min-width: 0px) {
   main.photographer section#gallery figure video {
@@ -426,11 +433,19 @@ main.photographer section#gallery figure video {
 }
 @media screen and (min-width: 1024px) {
   main.photographer section#gallery figure video {
-    width: 350px;
+    max-width: 500px;
     height: 300px;
   }
 }
+main.photographer section#gallery figure canvas {
+  width: 100%;
+  height: 300px;
+  order: 1;
+  display: flex;
+}
 main.photographer section#gallery figure figcaption {
+  display: flex;
+  order: 2;
   display: flex;
   justify-content: space-between;
 }

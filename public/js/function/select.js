@@ -1,4 +1,3 @@
-
 async function select () {
   const SPACEBAR_KEY_CODE = [0, 32]
   const ENTER_KEY_CODE = 13

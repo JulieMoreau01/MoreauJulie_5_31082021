@@ -3,10 +3,15 @@ function lightbox () {
   const containerLightbox = document.getElementById('lightbox')
   containerLightbox.style.display = 'none'
 
-  const imgGallery = document.querySelectorAll('section#gallery figure img')
   const figureGallery = document.querySelectorAll('section#lightbox figure')
+  const imgGallery = document.querySelectorAll('section#gallery figure img')
+  const videoGallery = document.querySelectorAll('section#gallery figure video')
 
-  imgGallery.forEach(img => {
+  const mediaGallery = []
+  mediaGallery.push.apply(mediaGallery, imgGallery)
+  mediaGallery.push.apply(mediaGallery, videoGallery)
+
+  mediaGallery.forEach(img => {
     img.addEventListener('click', function () {
       containerLightbox.style.display = 'flex'
       closeLightbox()
@@ -23,11 +28,6 @@ function lightbox () {
       })
     })
   })
-
-  // function lightboxTemplate (item) {
-  //   const lightboxTemplate = new MediaFactory(item)
-  //   containerLightbox.innerHTML += lightboxTemplate.creatHtmlImgLightbox()
-  // }
 
   function closeLightbox () {
     const newBtnClose = document.createElement('button')

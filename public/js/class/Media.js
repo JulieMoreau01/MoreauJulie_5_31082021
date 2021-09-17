@@ -85,7 +85,7 @@ class Video {
 
   creatHtmlGallery () {
     return `
-    <figure><video controls width="350" tabindex="10">
+    <figure id="video"><video controls width="350" tabindex="10">
     <source src="public/images/${this.name}/${this.video}" type="video/mp4">
     So sorry, your browser doesn't support embedded videos.
     </video>
