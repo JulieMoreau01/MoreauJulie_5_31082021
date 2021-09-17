@@ -38,7 +38,7 @@ async function renderPhotographersPageGallery () {
   dataMedia.forEach(data => {
     const stringId = (data.photographerId).toString()
     if (idUrlPage === stringId) {
-      //const tab = new Array(data)
+      // const tab = new Array(data)
       arrayTri.push(data)
     }
   })
@@ -47,6 +47,7 @@ async function renderPhotographersPageGallery () {
 
   function gallery () {
     containerGallery.innerHTML = ''
+    console.log(arrayTri)
     arrayTri.forEach(item => {
       const mediaTemplate = new MediaFactory(item)
       containerGallery.innerHTML += mediaTemplate.creatHtmlGallery()
@@ -102,7 +103,7 @@ async function renderPhotographersPageGallery () {
 
   // Par default
   triPopularite()
-  gallery()
+  //gallery()
 
   // Function Like & Select
   likeCounterFunction()
