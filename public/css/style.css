@@ -647,6 +647,36 @@ main.photographer section#price p #total_like {
 main.photographer section#price p i {
   margin-right: 70px;
 }
+main.photographer section#lightbox {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: white;
+  width: 100%;
+  height: 100vh;
+}
+main.photographer section#lightbox .close-lightbox {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  font-size: 3.125rem;
+  color: #901C1C;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+main.photographer section#lightbox figure {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main.photographer section#lightbox figure img {
+  width: 70%;
+  height: 90%;
+  object-fit: cover;
+}
 
 .tag {
   border: 0.5px solid #C4C4C4;

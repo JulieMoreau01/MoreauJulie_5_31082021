@@ -1,32 +1,3 @@
-class Select {
-  creatHtmlSelect () {
-    return `
-    <ul class="dropdown" tabindex="8">
-        <li id="dropdown-label" class="dropdown-label" tabindex="8">
-          Trier par
-        </li>
-        <li role="button" aria-labelledby="dropdown-label" id="dropdown__selected" tabindex="8">
-          Popularité <i class="fas fa-chevron-down dropdown__arrow" viewBox="0 0 10 5" fill-rule="evenodd"></i>
-        </li>
-        
-        <li aria-expanded="false" role="list" class="dropdown__list-container">
-          <ul class="dropdown__list">
-            <li class="dropdown__list-item" tabindex="8" id="option-1" role="button" aria-labelledby="dropdown-label" id="dropdown__selected" tabindex="8">
-              Popularité
-            </li>
-            <li class="dropdown__list-item" tabindex="8" id="option-1">
-              Date
-            </li>
-            <li class="dropdown__list-item" tabindex="8" id="option-2">
-              Titre
-            </li>
-          </ul>
-        </li>
-      </ul>
-    `
-  }
-}
-
 class MediaFactory {
   constructor (item) {
     if (item.type === 'image') {
@@ -76,6 +47,14 @@ class Image {
     </figure>
     `
   }
+
+  creatHtmlImgLightbox () {
+    return `
+    <figure>
+    <img src="public/images/${this.name}/${this.image}" title="${this.title}" />
+    </figure>
+    `
+  }
 }
 class Video {
   constructor (data) {
@@ -103,39 +82,6 @@ class Video {
     }
   }
 
-  creatHtmlNew () {
-    return `
-    Je suis perdu
-    `
-  }
-
-  creatHtmlSelect () {
-    return `
-    <ul class="dropdown" tabindex="8">
-        <li id="dropdown-label" class="dropdown-label" tabindex="8">
-          Trier par
-        </li>
-        <li role="button" aria-labelledby="dropdown-label" id="dropdown__selected" tabindex="8">
-          Popularité <i class="fas fa-chevron-down dropdown__arrow" viewBox="0 0 10 5" fill-rule="evenodd"></i>
-        </li>
-        
-        <li aria-expanded="false" role="list" class="dropdown__list-container">
-          <ul class="dropdown__list">
-            <li class="dropdown__list-item" tabindex="8" id="option-1" role="button" aria-labelledby="dropdown-label" id="dropdown__selected" tabindex="8">
-              Popularité
-            </li>
-            <li class="dropdown__list-item" tabindex="8" id="option-1">
-              Date
-            </li>
-            <li class="dropdown__list-item" tabindex="8" id="option-2">
-              Titre
-            </li>
-          </ul>
-        </li>
-      </ul>
-    `
-  }
-
   creatHtmlGallery () {
     return `
     <div class="video"><video controls width="350" tabindex="10">
@@ -147,6 +93,14 @@ class Video {
     <span class="like"><span class="counter" tabindex="13">${this.likes}</span> <i class="fas fa-heart" aria-label="ajouter un like" aria-expanded="false"></i></span>
     </p>
     </div>
+    `
+  }
+
+  creatHtmlImgLightbox () {
+    return `
+    <figure>
+    <img src="public/images/${this.name}/${this.image}" title="${this.title}" />
+    </figure>
     `
   }
 }

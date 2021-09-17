@@ -30,40 +30,34 @@ async function renderPhotographersPageFiche () {
 // Template Gallery Photographer & Select
 async function renderPhotographersPageGallery () {
   const dataMedia = await getDataMedia()
-  const selectTemplate = htmlSelect()
   const containerSelect = document.getElementById('select')
-  containerSelect.innerHTML += selectTemplate
+  containerSelect.innerHTML += htmlSelect()
 
-  const array = []
+  const arrayTri = []
 
   dataMedia.forEach(data => {
     const stringId = (data.photographerId).toString()
     if (idUrlPage === stringId) {
-      const titleInfo = data
-      const tab = new Array(titleInfo)
-      array.push(titleInfo)
+      //const tab = new Array(data)
+      arrayTri.push(data)
     }
   })
 
+  const containerGallery = document.getElementById('gallery')
+
   function gallery () {
-    console.log(array)
-    array.forEach(item => {
-      const containerGallery = document.getElementById('gallery')
+    containerGallery.innerHTML = ''
+    arrayTri.forEach(item => {
       const mediaTemplate = new MediaFactory(item)
       containerGallery.innerHTML += mediaTemplate.creatHtmlGallery()
-    })
-  }
-
-  function galleryOut () {
-    console.log(array)
-    array.forEach(item => {
-      const containerGallery = document.getElementById('gallery')
-      containerGallery.innerHTML = ''
+      const containerLightbox = document.getElementById('lightbox')
+      const lightboxTemplate = new MediaFactory(item)
+      containerLightbox.innerHTML += lightboxTemplate.creatHtmlImgLightbox()
     })
   }
 
   function triTitle () {
-    array.sort(function compare (a, b) {
+    arrayTri.sort(function compare (a, b) {
       if (a.title < b.title) {
         return -1
       } if (a.title > b.title) {
@@ -71,23 +65,20 @@ async function renderPhotographersPageGallery () {
       }
       return 0
     })
-    galleryOut()
     gallery()
   }
 
   function triPopularite () {
-    array.sort(function (a, b) {
+    arrayTri.sort(function (a, b) {
       return b.likes - a.likes
     })
-    galleryOut()
     gallery()
   }
 
   function triDate () {
-    array.sort(function (a, b) {
+    arrayTri.sort(function (a, b) {
       return new Date(b.date) - new Date(a.date)
     })
-    galleryOut()
     gallery()
   }
 
@@ -116,6 +107,7 @@ async function renderPhotographersPageGallery () {
   // Function Like & Select
   likeCounterFunction()
   select()
+  lightbox()
 }
 
 const init = async () => {
