@@ -12,33 +12,6 @@ class Photographer {
     this.classTag = data.tags.join(' ')
   }
 
-  creatSelect () {
-    return `
-    <ul class="dropdown" tabindex="8">
-        <li id="dropdown-label" class="dropdown-label" tabindex="8">
-          Trier par
-        </li>
-        <li role="button" aria-labelledby="dropdown-label" id="dropdown__selected" tabindex="8">
-          Popularité <i class="fas fa-chevron-down dropdown__arrow" viewBox="0 0 10 5" fill-rule="evenodd"></i>
-        </li>
-        
-        <li aria-expanded="false" role="list" class="dropdown__list-container">
-          <ul class="dropdown__list">
-            <li class="dropdown__list-item" tabindex="8" id="option-1" role="button" aria-labelledby="dropdown-label" id="dropdown__selected" tabindex="8">
-              Popularité
-            </li>
-            <li class="dropdown__list-item" tabindex="8" id="option-1">
-              Date
-            </li>
-            <li class="dropdown__list-item" tabindex="8" id="option-2">
-              Titre
-            </li>
-          </ul>
-        </li>
-      </ul>
-    `
-  }
-
   creatPrice () {
     return `
     <p><span id="total_like"></span><i class="fas fa-heart"></i> ${this.price}€ / jour</p>

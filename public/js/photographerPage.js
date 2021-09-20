@@ -1,7 +1,17 @@
-
-// Recuperation de l'Id dans l'URL
+/**
+ * VARIABLE
+ */
 const urlPage = window.location.search
 const idUrlPage = urlPage.replace('?id=', '')
+const containerFiche = document.getElementById('fiche')
+const containerPrice = document.getElementById('price')
+const containerSelect = document.getElementById('select')
+const containerGallery = document.getElementById('gallery')
+const containerLightbox = document.getElementById('lightbox')
+
+/**
+ * RECUPERATION DE l'ID DANS l'URL
+ */
 
 async function idUrl () {
   const dataPhotographers = await getDataPhotographer()
@@ -15,47 +25,51 @@ async function idUrl () {
   return await data
 }
 
-// Template Fiche Photographer & Price
-async function renderPhotographersPageFiche () {
+/**
+ * TEMPLATE FICHE PHOTOGRAPHER & PRICE
+ */
+async function templateFiche () {
   const data = await idUrl()
 
   const photograpeTemplate = new Photographer(data)
-  const containerFiche = document.getElementById('fiche')
   containerFiche.innerHTML += photograpeTemplate.creatHtmlPhotographer()
 
-  const containerPrice = document.getElementById('price')
   containerPrice.innerHTML += photograpeTemplate.creatPrice()
 }
 
-// Template Gallery Photographer & Select
-async function renderPhotographersPageGallery () {
-  const dataMedia = await getDataMedia()
-  const containerSelect = document.getElementById('select')
+/**
+ * TEMPLATE SELECT
+ */
+async function templateSelect () {
   containerSelect.innerHTML += htmlSelect()
+  select()
+}
 
+/**
+ * TEMPLATE GALLERY
+ */
+async function templateGallery () {
+  const dataMedia = await getDataMedia()
   const arrayTri = []
 
   dataMedia.forEach(data => {
     const stringId = (data.photographerId).toString()
     if (idUrlPage === stringId) {
-      // const tab = new Array(data)
       arrayTri.push(data)
     }
   })
-
-  const containerGallery = document.getElementById('gallery')
 
   function gallery () {
     containerGallery.innerHTML = ''
     arrayTri.forEach(item => {
       const mediaTemplate = new MediaFactory(item)
       containerGallery.innerHTML += mediaTemplate.creatHtmlGallery()
-      const containerLightbox = document.getElementById('lightbox')
-      const lightboxTemplate = new MediaFactory(item)
-      containerLightbox.innerHTML += lightboxTemplate.creatHtmlImgLightbox()
     })
+    templateLightbox()
+    video()
+    likeCounterFunction()
   }
-  
+
   // Tri par default popularite
   triPopularite()
 
@@ -93,18 +107,34 @@ async function renderPhotographersPageGallery () {
     })
     gallery()
   })
+}
 
-  // Function Like & Select
-  select()
-  likeCounterFunction()
+/**
+ * TEMPLATE LIGHTBOX
+ */
+async function templateLightbox () {
+  const dataMedia = await getDataMedia()
+  const arrayTri = []
+  containerLightbox.innerHTML = ''
+
+  dataMedia.forEach(data => {
+    const stringId = (data.photographerId).toString()
+    if (idUrlPage === stringId) {
+      arrayTri.push(data)
+    }
+  })
+
+  arrayTri.forEach(item => {
+    const lightboxTemplate = new MediaFactory(item)
+    containerLightbox.innerHTML += lightboxTemplate.creatHtmlImgLightbox()
+  })
   lightbox()
-  video()
 }
 
 const init = async () => {
-  idUrl()
-  renderPhotographersPageFiche()
-  renderPhotographersPageGallery()
+  templateFiche()
+  templateSelect()
+  templateGallery()
 }
 
 init()

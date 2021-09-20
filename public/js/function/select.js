@@ -1,4 +1,4 @@
-async function select () {
+function select () {
   const SPACEBAR_KEY_CODE = [0, 32]
   const ENTER_KEY_CODE = 13
   const DOWN_ARROW_KEY_CODE = 40
@@ -46,8 +46,10 @@ async function select () {
 
   function setSelectedListItem (e) {
     const selectedTextToAppend = document.createTextNode(e.target.innerText)
-    dropdownSelectedNode.innerHTML = null
+    const pictoI = '<i class="fas fa-chevron-down dropdown__arrow" viewBox="0 0 10 5" fill-rule="evenodd"></i>'
+    dropdownSelectedNode.textContent = null
     dropdownSelectedNode.appendChild(selectedTextToAppend)
+    dropdownSelectedNode.innerHTML += pictoI
   }
 
   function closeList () {

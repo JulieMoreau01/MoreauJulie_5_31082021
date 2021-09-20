@@ -2,7 +2,6 @@
 function lightbox () {
   const containerLightbox = document.getElementById('lightbox')
   containerLightbox.style.display = 'none'
-
   const figureGallery = document.querySelectorAll('section#lightbox figure')
   const imgGallery = document.querySelectorAll('section#gallery figure img')
   const videoGallery = document.querySelectorAll('section#gallery figure video')
