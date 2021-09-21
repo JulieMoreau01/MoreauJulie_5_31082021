@@ -1,7 +1,7 @@
 /**
  * FILTRES TAG
  */
-async function filtre () {
+function filtre () {
   const main = document.getElementById('index')
   const sectionPhotographe = main.children
   const tags = document.getElementsByClassName('tag')

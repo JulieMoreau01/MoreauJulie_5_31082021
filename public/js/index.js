@@ -1,18 +1,19 @@
 /**
  * Template HTML Page Index
  */
-async function renderPhotographers () {
+
+async function IndexPage () {
   const dataPhotographers = await getDataPhotographer()
   dataPhotographers.forEach(dataPhotographers => {
     const photograpeTemplate = new Photographer(dataPhotographers)
-    const container = document.getElementById('index')
-    container.innerHTML += photograpeTemplate.creatHtmlIndex()
+    const containerIndex = document.getElementById('index')
+    containerIndex.innerHTML += photograpeTemplate.creatHtmlIndex()
   })
   filtre()
 }
 
-const initIndex = async () => {
-  renderPhotographers()
+const init = async () => {
+  IndexPage()
 }
 
-initIndex()
+init()

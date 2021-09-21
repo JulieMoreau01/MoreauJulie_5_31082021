@@ -49,3 +49,7 @@ html {
   white-space: nowrap; /* added line */
   border: 0;
 }
+
+:focus {
+  border: 2px solid red;
+}

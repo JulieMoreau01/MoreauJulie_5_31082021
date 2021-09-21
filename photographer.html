@@ -21,14 +21,60 @@
     </header>
     <main class="photographer">
       <section id="fiche"></section>
-      <section id="select" tabindex="8"></section>
+      <section id="select" tabindex="8">
+        <ul class="dropdown" tabindex="8">
+          <li id="dropdown-label" class="dropdown-label" tabindex="8">Trier par</li>
+          <li role="button" aria-labelledby="dropdown-label" id="dropdown__selected" tabindex="8">
+            Popularité <i class="fas fa-chevron-down dropdown__arrow" viewBox="0 0 10 5" fill-rule="evenodd"></i>
+          </li>
+          <li aria-expanded="false" role="list" class="dropdown__list-container">
+            <ul class="dropdown__list">
+              <li class="dropdown__list-item" tabindex="8" id="option-1" role="button" aria-labelledby="dropdown-label" id="dropdown__selected" tabindex="8">
+                Popularité
+              </li>
+              <li class="dropdown__list-item" tabindex="8" id="option-2">
+                Date
+              </li>
+              <li class="dropdown__list-item" tabindex="8" id="option-3">
+                Titre
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
       <section id="gallery"></section>
       <section id="price"></section>
       <section id="lightbox"></section>
+      <section id="modal">
+        <form>
+          <p class="close-modal"><i class="fas fa-times" aria-hidden="true" aria-label="Fermer la modal"></i></p>
+          <h2>Contactez-moi<br/>Mimi Keel</h2>
+          <p>
+            <label for="prenom">Prénom</label>
+            <input id="prenom" type="text" name="prenom" />
+          </p>
+          <p>
+            <label for="nom">Nom</label>
+            <input id="nom" type="text" name="nom" />
+          </p>
+          <p>
+            <label for="mail">Email</label>
+            <input id="mail" type="email" name="mail" />
+          </p>
+          <p>
+            <label for="mail">Votre message</label>
+            <textarea></textarea>
+          </p>
+          <p>
+            <input id="submitButton" class="" type="submit" value="Envoyer">
+          </p>  
+        </form>
+      </section>
     </main>
     <!--Javascript-->
-    <script src="public/js/function/lightbox.js"></script>
     <script src="public/js/data.js"></script>
+    <script src="public/js/function/lightbox.js"></script>
+    <script src="public/js/function/modal.js"></script>
     <script src="public/js/function/select.js"></script>
     <script src="public/js/class/Photographer.js"></script>
     <script src="public/js/class/Media.js"></script>

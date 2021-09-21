@@ -40,7 +40,7 @@ class Photographer {
   creatHtmlPhotographer () {
     return `
     <p class="name" id="thename" tabindex="2">${this.name}</p>
-    <p class="contact" tabindex="5"><a href="" class="btn" tabindex="3">Contactez-moi</a></p>
+    <p class="contact" tabindex="5"><button class="btn" tabindex="3" id="contact">Contactez-moi</button></p>
     <p class="country" tabindex="3">${this.city}, ${this.country}</p>
     <p class="tagline" tabindex="3">${this.tagline}</p>
     <ul tabindex="4">${this.liTags}</ul>
