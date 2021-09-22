@@ -482,6 +482,9 @@ main.photographer section#gallery figure figcaption span.title, main.photographe
 main.photographer section#gallery figure figcaption .newcolor {
   color: #DB8876 !important;
 }
+main.photographer section#select {
+  z-index: 10;
+}
 @media screen and (min-width: 0px) {
   main.photographer section#select {
     display: none;
@@ -514,7 +517,7 @@ main.photographer section#select .dropdown-label {
 }
 main.photographer section#select .dropdown__arrow {
   position: absolute;
-  z-index: 1;
+  z-index: 11;
   right: 10px;
   top: 19px;
   transition: transform 0.2s linear;
@@ -525,6 +528,7 @@ main.photographer section#select .dropdown__arrow.expanded {
 main.photographer section#select .dropdown__list {
   width: 100%;
   position: absolute;
+  z-index: 10;
   left: 0;
   top: -66px;
   border-bottom-left-radius: 2px;
@@ -633,7 +637,7 @@ main.photographer section#lightbox {
   background-color: white;
   width: 100%;
   height: 100vh;
-  z-index: 2;
+  z-index: 12;
 }
 main.photographer section#lightbox .close-lightbox {
   position: absolute;
@@ -733,7 +737,7 @@ main.photographer section#modal {
   background-color: white;
   width: 100%;
   height: 100vh;
-  z-index: 2;
+  z-index: 15;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -768,6 +772,7 @@ main.photographer section#modal form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  /*** Error message ***/
 }
 main.photographer section#modal form h2 {
   font-size: 2.3125rem;
@@ -802,6 +807,21 @@ main.photographer section#modal form p input[type=submit] {
   border-radius: 5px;
   padding: 20px;
   border: none;
+}
+main.photographer section#modal form p[data-error]::after {
+  content: attr(data-error);
+  font-size: 0.875rem;
+  color: #901C1C;
+  display: block;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  text-align: left;
+  line-height: 0.3;
+  opacity: 0;
+  transition: 0.3s;
+}
+main.photographer section#modal form p[data-error-visible=true]::after {
+  opacity: 1;
 }
 
 .tag {
