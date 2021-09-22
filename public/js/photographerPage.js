@@ -11,7 +11,7 @@ const containerLightbox = document.getElementById('lightbox')
 const containerModal = document.getElementById('modal')
 
 /**
- * TEMPLATE FICHE PHOTOGRAPHER & PRICE
+ * TEMPLATE FICHE PHOTOGRAPHER & PRICE & SELECT
  */
 async function photographerPageTop () {
   const dataPhotographers = await getDataPhotographer()
@@ -32,30 +32,22 @@ async function photographerPageTop () {
 }
 
 /**
- * TEMPLATE GALLERY
+ * TEMPLATE GALLERY & LIGHTBOX
  */
 async function photographerPageGallery () {
-  const dataMedia = await getDataMedia()
-  const arrayTri = []
+  const arrayTri = await sortGallery()
 
-  dataMedia.forEach(data => {
-    const stringId = (data.photographerId).toString()
-    if (idUrlPage === stringId) {
-      arrayTri.push(data)
-    }
+  // DISPLAY GALLERY
+  containerGallery.innerHTML = ''
+  arrayTri.forEach(item => {
+    const mediaTemplate = new MediaFactory(item)
+    containerGallery.innerHTML += mediaTemplate.creatHtmlGallery()
   })
+  templateLightbox()
+  video()
+  likeCounterFunction()
 
-  function gallery () {
-    containerGallery.innerHTML = ''
-    arrayTri.forEach(item => {
-      const mediaTemplate = new MediaFactory(item)
-      containerGallery.innerHTML += mediaTemplate.creatHtmlGallery()
-    })
-    templateLightbox()
-    video()
-    likeCounterFunction()
-  }
-
+  // DISPLAY LIGHTBOX
   function templateLightbox () {
     containerLightbox.innerHTML = ''
     arrayTri.forEach(item => {
@@ -64,44 +56,6 @@ async function photographerPageGallery () {
     })
     lightbox()
   }
-
-  // Tri par default popularite
-  triPopularite()
-
-  function triPopularite () {
-    arrayTri.sort(function (a, b) {
-      return b.likes - a.likes
-    })
-    gallery()
-  }
-
-  const triPopulariteId = document.getElementById('option-1')
-  triPopulariteId.addEventListener('click', function () {
-    triPopularite()
-  })
-
-  // Tri par Date
-  const triDateId = document.getElementById('option-2')
-  triDateId.addEventListener('click', function () {
-    arrayTri.sort(function (a, b) {
-      return new Date(b.date) - new Date(a.date)
-    })
-    gallery()
-  })
-
-  // Tri par Titre
-  const triTitleId = document.getElementById('option-3')
-  triTitleId.addEventListener('click', function () {
-    arrayTri.sort(function compare (a, b) {
-      if (a.title < b.title) {
-        return -1
-      } if (a.title > b.title) {
-        return 1
-      }
-      return 0
-    })
-    gallery()
-  })
 }
 
 const init = async () => {
