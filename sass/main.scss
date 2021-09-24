@@ -11,7 +11,12 @@
 
 //PAGES
 @import "pages/index.scss/";
-@import "pages/photographer.scss/";
+@import "pages/photographer/section_fiche.scss/";
+@import "pages/photographer/section_gallery.scss/";
+@import "pages/photographer/section_lightbox.scss/";
+@import "pages/photographer/section_modal.scss/";
+@import "pages/photographer/section_price.scss/";
+@import "pages/photographer/section_select.scss/";
 
 //COMPOSANT
 @import "composants/composants.scss/";

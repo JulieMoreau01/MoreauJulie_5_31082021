@@ -1,0 +1,27 @@
+section#price {
+  background-color: $color-third;
+  position: fixed;
+  bottom: 0px;
+  right: 30px;
+  padding: 20px;
+  border-radius: 5px 5px 0px 0px;
+  @include media(phone) {
+    display: none;
+  }
+  @include media(desktop) {
+    display: block;
+  }
+  p {
+    color: black;
+    margin: 0px;
+    @include font-size(24);
+    font-weight: 500;
+    #total_like {
+      display: inline-block;
+      margin-right: 5px;
+    }
+    i {
+      margin-right: 70px;
+    }
+  }
+}

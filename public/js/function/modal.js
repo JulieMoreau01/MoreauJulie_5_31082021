@@ -11,6 +11,7 @@ function modal () {
 
   btnContact.addEventListener('click', function () {
     containerModal.style.display = 'flex'
+    containerModal.focus()
   })
   btnContact.addEventListener('keydown', function (event) {
     if (event.key === 13) {
@@ -112,7 +113,6 @@ function modal () {
   /**
    * If ValidateForm = True Send Success Message and Reset Form
    */
-  console.log(formContact)
   formContact.addEventListener('submit', function (e) {
     e.preventDefault()
     if (validateForm() !== true) {

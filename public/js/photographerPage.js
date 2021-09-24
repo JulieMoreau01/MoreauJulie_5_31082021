@@ -53,7 +53,7 @@ async function photographerPageGallery () {
   function templateLightbox () {
     containerLightbox.innerHTML = ''
     arrayTri.forEach(item => {
-      const lightboxTemplate = new MediaFactory(item)
+      const lightboxTemplate = new LightBox(item)
       containerLightbox.innerHTML += lightboxTemplate.creatHtmlImgLightbox()
     })
     lightbox()

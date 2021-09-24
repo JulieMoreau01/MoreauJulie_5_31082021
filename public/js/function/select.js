@@ -5,9 +5,9 @@ function select () {
   const UP_ARROW_KEY_CODE = 38
   const ESCAPE_KEY_CODE = 27
 
+  const dropdown = document.querySelector('.dropdown')
   const list = document.querySelector('.list')
   const listContainer = document.querySelector('.list-container')
-  const dropdownArrow = document.querySelector('.arrow')
   const listItems = document.querySelectorAll('.list-item')
   const dropdownSelectedNode = document.querySelector('#selected')
   const listItemIds = []
@@ -46,16 +46,13 @@ function select () {
 
   function setSelectedListItem (e) {
     const selectedTextToAppend = document.createTextNode(e.target.innerText)
-    const pictoI = '<i class="fas fa-chevron-down arrow" viewBox="0 0 10 5" fill-rule="evenodd"></i>'
     dropdownSelectedNode.textContent = null
     dropdownSelectedNode.appendChild(selectedTextToAppend)
-    dropdownSelectedNode.innerHTML += pictoI
   }
 
   function closeList () {
     list.classList.remove('open')
-    dropdownArrow.classList.remove('expanded')
-    console.log(dropdownArrow)
+    dropdown.classList.remove('arrowOpen')
     listContainer.setAttribute('aria-expanded', false)
   }
 
@@ -69,7 +66,7 @@ function select () {
 
     if (e.type === 'click' || openDropDown) {
       list.classList.toggle('open')
-      dropdownArrow.classList.add('expanded')
+      dropdown.classList.toggle('arrowOpen')
       listContainer.setAttribute('aria-expanded', list.classList.contains('open')
       )
     }

@@ -4,6 +4,14 @@ function likeCounterFunction () {
 
   heartIcon.forEach(element => {
     element.addEventListener('click', function () {
+      displayLike()
+    })
+    element.addEventListener('keydown', function (e) {
+      if (e.keyCode === 13) {
+        displayLike()
+      }
+    })
+    function displayLike () {
       ariaExpanded = element.getAttribute('aria-expanded')
       if (ariaExpanded === 'false') {
         addALike(element)
@@ -12,19 +20,7 @@ function likeCounterFunction () {
         removeLike(element)
         totalLike()
       }
-    })
-    element.addEventListener('keydown', function (e) {
-      if (e.keyCode === 13) {
-        ariaExpanded = element.getAttribute('aria-expanded')
-        if (ariaExpanded === 'false') {
-          addALike(element)
-          totalLike()
-        } else {
-          removeLike(element)
-          totalLike()
-        }
-      }
-    })
+    }
   })
 
   function addALike (element) {
@@ -55,7 +51,6 @@ function likeCounterFunction () {
     const reducer = (previousValue, currentValue) => previousValue + currentValue
     const sumAllCounter = allCounterArray.reduce(reducer)
     const totalLikeId = document.getElementById('total_like')
-    console.log(totalLikeId)
     totalLikeId.textContent = sumAllCounter
   }
 }

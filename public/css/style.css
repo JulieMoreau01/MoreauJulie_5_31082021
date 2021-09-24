@@ -1,3 +1,8 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-family: "DM Sans", sans-serif;
   font-size: 100%;
@@ -26,7 +31,7 @@ html body {
 }
 @media screen and (min-width: 1024px) {
   html body {
-    max-width: 1240px;
+    max-width: 1440px;
   }
 }
 html body p {
@@ -69,18 +74,35 @@ html body p .skip-content:focus, html body p .skip-content:active {
     padding: 10px 0px 0px 0px;
   }
 }
+html body main#index.index {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: center;
+}
 @media screen and (min-width: 0px) {
-  html body main {
+  html body main#index.index {
+    padding: 30px 0px 0px 0px;
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 1024px) {
+  html body main#index.index {
+    padding: 100px 0px 0px 0px;
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 0px) {
+  html body main.photographer {
     padding: 30px 0px 0px 0px;
   }
 }
 @media screen and (min-width: 1024px) {
-  html body main {
-    padding: 100px 0px 0px 0px;
+  html body main.photographer {
+    padding: 50px 0px 0px 0px;
   }
 }
-
-.sr-only {
+html .sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -92,8 +114,7 @@ html body p .skip-content:focus, html body p .skip-content:active {
   /* added line */
   border: 0;
 }
-
-:focus {
+html :focus {
   border: 2px solid red;
 }
 
@@ -118,13 +139,17 @@ header figure {
   height: auto;
   width: max-content;
 }
+header figure a {
+  height: 100%;
+  display: block;
+}
 @media screen and (min-width: 0px) {
-  header figure img {
+  header figure a img {
     width: 150px;
   }
 }
 @media screen and (min-width: 1024px) {
-  header figure img {
+  header figure a img {
     width: 200px;
   }
 }
@@ -167,29 +192,6 @@ header nav ul li {
   display: flex;
 }
 
-main#index.index {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-content: center;
-}
-@media screen and (min-width: 0px) {
-  main#index.index {
-    flex-direction: column;
-  }
-}
-@media screen and (min-width: 1024px) {
-  main#index.index {
-    flex-direction: row;
-  }
-}
-main#index.index section figure figcaption.index_name {
-  font-size: 2.25rem;
-  color: #D3573C;
-  font-weight: 400;
-  margin: 0px 0px 10px 0px;
-  text-align: center;
-}
 main#index.index h1 {
   font-weight: 400;
   color: #901C1C;
@@ -220,13 +222,29 @@ main#index.index section {
   align-items: center;
   margin-bottom: 30px;
   flex-grow: 1;
-  min-width: 33%;
+}
+@media screen and (min-width: 0px) {
+  main#index.index section {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main#index.index section {
+    width: 33%;
+  }
 }
 main#index.index section a {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-decoration: none;
+}
+main#index.index section a figcaption.index_name {
+  font-size: 2.25rem;
+  color: #D3573C;
+  font-weight: 400;
+  margin: 0px 0px 10px 0px;
+  text-align: center;
 }
 main#index.index section p {
   display: flex;
@@ -262,17 +280,7 @@ main#index.index section ul li {
   margin-right: 5px;
 }
 
-@media screen and (min-width: 0px) {
-  main.photographer {
-    padding: 30px 0px 0px 0px;
-  }
-}
-@media screen and (min-width: 1024px) {
-  main.photographer {
-    padding: 50px 0px 0px 0px;
-  }
-}
-main.photographer section#fiche {
+section#fiche {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -280,18 +288,18 @@ main.photographer section#fiche {
   flex-wrap: wrap;
 }
 @media screen and (min-width: 0px) {
-  main.photographer section#fiche {
+  section#fiche {
     background-color: white;
     padding: 0px;
   }
 }
 @media screen and (min-width: 1024px) {
-  main.photographer section#fiche {
+  section#fiche {
     background-color: #FAFAFA;
     padding: 50px;
   }
 }
-main.photographer section#fiche p.name {
+section#fiche p.name {
   font-weight: 400;
   color: #D3573C;
   margin: 0;
@@ -299,17 +307,17 @@ main.photographer section#fiche p.name {
   align-items: center;
 }
 @media screen and (min-width: 0px) {
-  main.photographer section#fiche p.name {
+  section#fiche p.name {
     font-size: 2.25rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  main.photographer section#fiche p.name {
+  section#fiche p.name {
     font-size: 4rem;
   }
 }
 @media screen and (min-width: 0px) {
-  main.photographer section#fiche p.contact {
+  section#fiche p.contact {
     display: flex;
     justify-content: center;
     font-size: 1.125rem;
@@ -322,7 +330,7 @@ main.photographer section#fiche p.name {
   }
 }
 @media screen and (min-width: 1024px) {
-  main.photographer section#fiche p.contact {
+  section#fiche p.contact {
     display: inline-block;
     justify-content: unset;
     font-size: 1.25rem;
@@ -333,7 +341,7 @@ main.photographer section#fiche p.name {
     width: max-content;
   }
 }
-main.photographer section#fiche p.contact button.btn {
+section#fiche p.contact button.btn {
   font-size: 1.125rem;
   font-weight: 700;
   color: white;
@@ -349,134 +357,136 @@ main.photographer section#fiche p.contact button.btn {
   height: 100%;
   cursor: pointer;
 }
-main.photographer section#fiche p.contact button.btn:hover, main.photographer section#fiche p.contact button.btn:focus {
+section#fiche p.contact button.btn:hover, section#fiche p.contact button.btn:focus {
   background-color: #D3573C;
 }
-main.photographer section#fiche p.country {
+section#fiche p.country {
   width: 100%;
   color: #901C1C;
   margin: 0px;
 }
 @media screen and (min-width: 0px) {
-  main.photographer section#fiche p.country {
+  section#fiche p.country {
     font-size: 0.8125rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  main.photographer section#fiche p.country {
+  section#fiche p.country {
     font-size: 1.5rem;
   }
 }
-main.photographer section#fiche p.tagline {
+section#fiche p.tagline {
   width: 100%;
   color: #525252;
 }
 @media screen and (min-width: 0px) {
-  main.photographer section#fiche p.tagline {
+  section#fiche p.tagline {
     font-size: 0.8125rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  main.photographer section#fiche p.tagline {
+  section#fiche p.tagline {
     font-size: 1.125rem;
   }
 }
-main.photographer section#fiche ul {
+section#fiche ul {
   width: 100%;
   list-style: none;
   display: flex;
   margin: 10px 0px 0px 0px;
   padding: 0px;
 }
-main.photographer section#fiche ul li {
+section#fiche ul li {
   margin-right: 5px;
 }
 @media screen and (min-width: 0px) {
-  main.photographer section#fiche ul li a {
+  section#fiche ul li a {
     font-size: 0.8125rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  main.photographer section#fiche ul li a {
+  section#fiche ul li a {
     font-size: 1.125rem;
   }
 }
-main.photographer section#fiche figure {
+section#fiche figure {
   position: absolute;
 }
 @media screen and (min-width: 0px) {
-  main.photographer section#fiche figure {
+  section#fiche figure {
     top: 0px;
     right: 0px;
   }
-  main.photographer section#fiche figure img {
+  section#fiche figure img {
     width: 100px;
     height: 100px;
   }
 }
 @media screen and (min-width: 1024px) {
-  main.photographer section#fiche figure {
+  section#fiche figure {
     top: 50px;
     right: 50px;
   }
-  main.photographer section#fiche figure img {
+  section#fiche figure img {
     width: 200px;
     height: 200px;
   }
 }
-main.photographer section#gallery {
+
+section#gallery {
   display: flex;
   flex-wrap: wrap;
   margin-top: 30px;
 }
 @media screen and (min-width: 0px) {
-  main.photographer section#gallery {
+  section#gallery {
     align-items: center;
     flex-direction: column;
   }
 }
 @media screen and (min-width: 1024px) {
-  main.photographer section#gallery {
-    justify-content: space-between;
+  section#gallery {
+    justify-content: flex-start;
     flex-direction: row;
   }
 }
-main.photographer section#gallery figure {
+section#gallery figure {
   display: flex;
   flex-direction: column;
   margin: 0px 0px 30px 0px;
 }
 @media screen and (min-width: 0px) {
-  main.photographer section#gallery figure {
+  section#gallery figure {
     width: 100%;
     max-width: 500px;
   }
 }
 @media screen and (min-width: 1024px) {
-  main.photographer section#gallery figure {
-    width: 350px;
+  section#gallery figure {
+    width: 30%;
+    margin-right: 5%;
   }
 }
-main.photographer section#gallery figure img {
+section#gallery figure img {
   border-radius: 5px;
   object-fit: cover;
   object-position: top;
   cursor: pointer;
 }
 @media screen and (min-width: 0px) {
-  main.photographer section#gallery figure img {
+  section#gallery figure img {
     width: 100%;
     max-width: 500px;
     height: 190px;
   }
 }
 @media screen and (min-width: 1024px) {
-  main.photographer section#gallery figure img {
-    width: 350px;
+  section#gallery figure img {
+    width: 100%;
     height: 300px;
   }
 }
-main.photographer section#gallery figure video {
+section#gallery figure video {
   margin: 0px 0px 0px 0px;
   object-fit: cover;
   object-position: top;
@@ -484,204 +494,54 @@ main.photographer section#gallery figure video {
   border-radius: 5px;
 }
 @media screen and (min-width: 0px) {
-  main.photographer section#gallery figure video {
+  section#gallery figure video {
     width: 100%;
     max-width: 500px;
     height: 190px;
   }
 }
 @media screen and (min-width: 1024px) {
-  main.photographer section#gallery figure video {
-    max-width: 500px;
+  section#gallery figure video {
+    width: 100%;
     height: 300px;
   }
 }
-main.photographer section#gallery figure canvas {
-  width: 100%;
-  height: 300px;
-  order: 1;
-  display: flex;
-}
-main.photographer section#gallery figure figcaption {
+section#gallery figure figcaption {
   display: flex;
   order: 2;
   display: flex;
   justify-content: space-between;
 }
-main.photographer section#gallery figure figcaption span.title {
-  width: 78%;
-}
-main.photographer section#gallery figure figcaption span.like {
+section#gallery figure figcaption span.title {
   width: max-content;
 }
-main.photographer section#gallery figure figcaption span.title, main.photographer section#gallery figure figcaption span.like {
+section#gallery figure figcaption span.like {
+  width: max-content;
+}
+section#gallery figure figcaption span.title, section#gallery figure figcaption span.like {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   color: #901C1C;
 }
 @media screen and (min-width: 0px) {
-  main.photographer section#gallery figure figcaption span.title, main.photographer section#gallery figure figcaption span.like {
+  section#gallery figure figcaption span.title, section#gallery figure figcaption span.like {
     font-size: 0.875rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  main.photographer section#gallery figure figcaption span.title, main.photographer section#gallery figure figcaption span.like {
-    font-size: 1.5rem;
+  section#gallery figure figcaption span.title, section#gallery figure figcaption span.like {
+    font-size: 1.375rem;
   }
 }
-main.photographer section#gallery figure figcaption .newcolor {
+section#gallery figure figcaption .newcolor {
   color: #DB8876 !important;
 }
-main.photographer section#select {
-  z-index: 10;
+section#gallery figure:nth-child(3n+0) {
+  margin-right: 0 !important;
 }
-@media screen and (min-width: 0px) {
-  main.photographer section#select {
-    display: none;
-  }
-}
-@media screen and (min-width: 1024px) {
-  main.photographer section#select {
-    display: block;
-  }
-}
-main.photographer section#select .list {
-  width: 100%;
-  position: absolute;
-  z-index: 10;
-  left: 0;
-  top: -66px;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
-  transition: opacity 0.1s cubic-bezier(0, 0, 0.38, 0.9), max-height 0.5s cubic-bezier(0, 0, 0.38, 0.9);
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-}
-main.photographer section#select .dropdown {
-  list-style: none;
-  position: relative;
-  background: #901C1C;
-  width: 180px;
-  height: 69px;
-  cursor: pointer;
-  margin: 30px 0 0 90px;
-  padding: 0 0 0;
-  border-radius: 5px;
-}
-main.photographer section#select .dropdown .label {
-  position: absolute;
-  top: 18px;
-  left: -90px;
-  background: #fff;
-  color: black;
-  font-weight: 700;
-  font-size: 1.125rem;
-}
-main.photographer section#select .dropdown .arrow {
-  position: absolute;
-  z-index: 11;
-  right: 10px;
-  top: 19px;
-  transition: transform 0.2s linear;
-}
-main.photographer section#select .dropdown .arrow .expanded {
-  transform: rotate(-180deg);
-}
-main.photographer section#select .dropdown .list-container {
-  position: relative;
-}
-main.photographer section#select .dropdown ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background-color: #901C1C;
-  border-radius: 5px;
-}
-main.photographer section#select .dropdown ul .list-item {
-  padding: 15px 0px 15px 15px;
-  transition: background-color 0.1s linear, color 0.1s linear;
-  color: white;
-  list-style-position: inside;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-weight: 700;
-  position: relative;
-  font-size: 1.125rem;
-}
-main.photographer section#select .dropdown ul .list-item::after {
-  content: "";
-  position: absolute;
-  bottom: 0px;
-  right: 5%;
-  background-color: white;
-  height: 1px;
-  width: 90%;
-}
-main.photographer section#select .dropdown ul .list-item:hover, main.photographer section#select .dropdown ul .list-item:focus {
-  background-color: #DB8876;
-  color: black;
-}
-main.photographer section#select .dropdown ul .list-item:last-child::after {
-  display: none;
-}
-main.photographer section#select #selected {
-  color: white;
-  padding: 0px 15px;
-  list-style-position: inside;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%;
-  height: 66px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 1.125rem;
-  font-weight: 700;
-}
-main.photographer section#select #selected:focus {
-  outline: 1px solid #00C2FF;
-}
-main.photographer section#select .open {
-  opacity: 1;
-  overflow: auto;
-  max-height: 15rem;
-}
-main.photographer section#price {
-  background-color: #DB8876;
-  position: fixed;
-  bottom: 0px;
-  right: 30px;
-  padding: 20px;
-  border-radius: 5px 5px 0px 0px;
-}
-@media screen and (min-width: 0px) {
-  main.photographer section#price {
-    display: none;
-  }
-}
-@media screen and (min-width: 1024px) {
-  main.photographer section#price {
-    display: block;
-  }
-}
-main.photographer section#price p {
-  color: black;
-  margin: 0px;
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-main.photographer section#price p #total_like {
-  display: inline-block;
-  margin-right: 5px;
-}
-main.photographer section#price p i {
-  margin-right: 70px;
-}
-main.photographer section#lightbox {
+
+section#lightbox {
   position: fixed;
   top: 0;
   right: 0;
@@ -690,7 +550,7 @@ main.photographer section#lightbox {
   height: 100vh;
   z-index: 12;
 }
-main.photographer section#lightbox .close-lightbox {
+section#lightbox .close-lightbox {
   position: absolute;
   color: #901C1C;
   background: none;
@@ -698,20 +558,20 @@ main.photographer section#lightbox .close-lightbox {
   cursor: pointer;
 }
 @media screen and (min-width: 0px) {
-  main.photographer section#lightbox .close-lightbox {
+  section#lightbox .close-lightbox {
     top: 20px;
     right: 20px;
-    font-size: 0.75rem;
+    font-size: 1.1875rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  main.photographer section#lightbox .close-lightbox {
+  section#lightbox .close-lightbox {
     top: 40px;
     right: 40px;
     font-size: 2.625rem;
   }
 }
-main.photographer section#lightbox .btnright-lightbox, main.photographer section#lightbox .btnleft-lightbox {
+section#lightbox .btnright-lightbox, section#lightbox .btnleft-lightbox {
   position: absolute;
   top: 50%;
   color: #901C1C;
@@ -720,36 +580,36 @@ main.photographer section#lightbox .btnright-lightbox, main.photographer section
   cursor: pointer;
 }
 @media screen and (min-width: 0px) {
-  main.photographer section#lightbox .btnright-lightbox, main.photographer section#lightbox .btnleft-lightbox {
+  section#lightbox .btnright-lightbox, section#lightbox .btnleft-lightbox {
     font-size: 0.625rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  main.photographer section#lightbox .btnright-lightbox, main.photographer section#lightbox .btnleft-lightbox {
+  section#lightbox .btnright-lightbox, section#lightbox .btnleft-lightbox {
     font-size: 1.875rem;
   }
 }
 @media screen and (min-width: 0px) {
-  main.photographer section#lightbox .btnright-lightbox {
+  section#lightbox .btnright-lightbox {
     right: 20px;
   }
 }
 @media screen and (min-width: 1024px) {
-  main.photographer section#lightbox .btnright-lightbox {
+  section#lightbox .btnright-lightbox {
     right: 40px;
   }
 }
 @media screen and (min-width: 0px) {
-  main.photographer section#lightbox .btnleft-lightbox {
+  section#lightbox .btnleft-lightbox {
     left: 20px;
   }
 }
 @media screen and (min-width: 1024px) {
-  main.photographer section#lightbox .btnleft-lightbox {
+  section#lightbox .btnleft-lightbox {
     left: 40px;
   }
 }
-main.photographer section#lightbox figure {
+section#lightbox figure {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -758,30 +618,31 @@ main.photographer section#lightbox figure {
   flex-direction: column;
   margin: 0;
 }
-main.photographer section#lightbox figure img {
+section#lightbox figure img {
   width: 72%;
   height: 87%;
   object-fit: contain;
 }
-main.photographer section#lightbox figure figcaption {
+section#lightbox figure figcaption {
   color: #901C1C;
 }
 @media screen and (min-width: 0px) {
-  main.photographer section#lightbox figure figcaption {
+  section#lightbox figure figcaption {
     font-size: 0.875rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  main.photographer section#lightbox figure figcaption {
+  section#lightbox figure figcaption {
     font-size: 1.5rem;
   }
 }
-main.photographer section#lightbox video {
+section#lightbox video {
   width: 72%;
   height: 87%;
   object-fit: contain;
 }
-main.photographer section#modal {
+
+section#modal {
   position: fixed;
   top: 0;
   right: 0;
@@ -793,30 +654,10 @@ main.photographer section#modal {
   justify-content: center;
   align-items: center;
 }
-main.photographer section#modal .close-modal {
-  position: absolute;
-  color: #901C1C;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-@media screen and (min-width: 0px) {
-  main.photographer section#modal .close-modal {
-    top: 20px;
-    right: 20px;
-    font-size: 0.75rem;
-  }
-}
-@media screen and (min-width: 1024px) {
-  main.photographer section#modal .close-modal {
-    top: 40px;
-    right: 40px;
-    font-size: 2.625rem;
-  }
-}
-main.photographer section#modal form {
+section#modal form {
   margin: 0;
   background-color: #DB8876;
+  position: relative;
   padding: 25px 35px;
   display: flex;
   flex-direction: column;
@@ -824,44 +665,65 @@ main.photographer section#modal form {
   /*** Error message ***/
 }
 @media screen and (min-width: 0px) {
-  main.photographer section#modal form {
-    max-width: 400px;
+  section#modal form {
+    max-width: 500px;
     width: 100%;
     height: 100vh;
   }
 }
 @media screen and (min-width: 1024px) {
-  main.photographer section#modal form {
-    width: 400px;
+  section#modal form {
+    width: 700px;
     height: 80%;
   }
 }
-main.photographer section#modal form h2 {
+section#modal form .close-modal {
+  position: absolute;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+@media screen and (min-width: 0px) {
+  section#modal form .close-modal {
+    top: 20px;
+    right: 20px;
+    font-size: 1.1875rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  section#modal form .close-modal {
+    top: 35px;
+    right: 35px;
+    font-size: 2.625rem;
+  }
+}
+section#modal form h2 {
   font-size: 2.3125rem;
   line-height: 45px;
   font-weight: 400;
   margin: 0;
 }
-main.photographer section#modal form p {
+section#modal form p {
   display: flex;
   flex-direction: column;
   margin: 0;
 }
-main.photographer section#modal form p label {
+section#modal form p label {
   font-size: 1.125rem;
 }
-main.photographer section#modal form p input[type=text], main.photographer section#modal form p input[type=email] {
+section#modal form p input[type=text], section#modal form p input[type=email] {
   width: 100%;
   border-radius: 5px;
   border: none;
   height: 48px;
 }
-main.photographer section#modal form p textarea {
+section#modal form p textarea {
   height: 135px;
   border-radius: 5px;
   border: none;
 }
-main.photographer section#modal form p input[type=submit] {
+section#modal form p input[type=submit] {
   width: min-content;
   background-color: #901C1C;
   color: white;
@@ -870,7 +732,7 @@ main.photographer section#modal form p input[type=submit] {
   padding: 20px;
   border: none;
 }
-main.photographer section#modal form p[data-error]::after {
+section#modal form p[data-error]::after {
   content: attr(data-error);
   font-size: 0.875rem;
   color: #901C1C;
@@ -882,8 +744,162 @@ main.photographer section#modal form p[data-error]::after {
   opacity: 0;
   transition: 0.3s;
 }
-main.photographer section#modal form p[data-error-visible=true]::after {
+section#modal form p[data-error-visible=true]::after {
   opacity: 1;
+}
+
+section#price {
+  background-color: #DB8876;
+  position: fixed;
+  bottom: 0px;
+  right: 30px;
+  padding: 20px;
+  border-radius: 5px 5px 0px 0px;
+}
+@media screen and (min-width: 0px) {
+  section#price {
+    display: none;
+  }
+}
+@media screen and (min-width: 1024px) {
+  section#price {
+    display: block;
+  }
+}
+section#price p {
+  color: black;
+  margin: 0px;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+section#price p #total_like {
+  display: inline-block;
+  margin-right: 5px;
+}
+section#price p i {
+  margin-right: 70px;
+}
+
+section#select {
+  z-index: 10;
+}
+@media screen and (min-width: 0px) {
+  section#select {
+    display: none;
+  }
+}
+@media screen and (min-width: 1024px) {
+  section#select {
+    display: block;
+  }
+}
+section#select .list {
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top: -57px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  transition: opacity 0.1s cubic-bezier(0, 0, 0.38, 0.9), max-height 0.5s cubic-bezier(0, 0, 0.38, 0.9);
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+section#select .dropdown {
+  list-style: none;
+  position: relative;
+  background: #901C1C;
+  width: 180px;
+  height: 57px;
+  cursor: pointer;
+  margin: 30px 0 0 90px;
+  padding: 0 0 0;
+  border-radius: 5px;
+}
+section#select .dropdown .label {
+  position: absolute;
+  top: 18px;
+  left: -90px;
+  background: #fff;
+  color: black;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+section#select .dropdown .list-container {
+  position: relative;
+}
+section#select .dropdown ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #901C1C;
+  border-radius: 5px;
+}
+section#select .dropdown ul .list-item {
+  padding: 15px 0px 15px 15px;
+  transition: background-color 0.1s linear, color 0.1s linear;
+  color: white;
+  list-style-position: inside;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 700;
+  position: relative;
+  font-size: 1.125rem;
+}
+section#select .dropdown ul .list-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  right: 5%;
+  background-color: white;
+  height: 1px;
+  width: 90%;
+}
+section#select .dropdown ul .list-item:hover, section#select .dropdown ul .list-item:focus {
+  background-color: #DB8876;
+  color: black;
+}
+section#select .dropdown ul .list-item:last-child::after {
+  display: none;
+}
+section#select #selected {
+  color: white;
+  padding: 0px 15px;
+  list-style-position: inside;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  height: 57px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+section#select #selected:focus {
+  outline: 1px solid #00C2FF;
+}
+section#select .open {
+  opacity: 1;
+  overflow: auto;
+  max-height: 15rem;
+}
+section#select .dropdown::before {
+  content: "";
+  position: absolute;
+  z-index: 11;
+  right: 10px;
+  top: 19px;
+  transition: transform 0.2s linear;
+  color: white;
+  font-weight: 900;
+  font-family: "FontAwesome";
+}
+section#select .dropdown.arrowOpen::before {
+  transform: rotate(-180deg);
 }
 
 .tag {

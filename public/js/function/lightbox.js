@@ -37,21 +37,14 @@ function lightbox () {
   })
 
   function closeLightbox () {
-    console.log('closeLightbox')
     const newBtnClose = document.createElement('button')
     containerLightbox.appendChild(newBtnClose)
     newBtnClose.classList.add('close-lightbox')
     newBtnClose.setAttribute('aria-label', 'Fermer la lightbox')
     newBtnClose.innerHTML = '<i class="fas fa-times" tabindex="12"></i>'
-    const btnClose = document.querySelector('button.close-lightbox')
-    btnClose.addEventListener('click', function () {
-      containerLightbox.style.display = 'none'
-      containerLightbox.removeChild(btnClose)
-    })
   }
 
   function rightLightbox () {
-    console.log('rightLightbox')
     const newBtnarrowright = document.createElement('button')
     containerLightbox.appendChild(newBtnarrowright)
     newBtnarrowright.classList.add('btnright-lightbox')
@@ -60,7 +53,6 @@ function lightbox () {
   }
 
   function leftLightbox () {
-    console.log('leftLightbox')
     const newBtnarrowleft = document.createElement('button')
     containerLightbox.appendChild(newBtnarrowleft)
     newBtnarrowleft.classList.add('btnleft-lightbox')
@@ -90,9 +82,7 @@ function lightbox () {
     const figureNext = actifImg.nextElementSibling
     actifImg.style.display = 'none'
     actifImg.classList.remove('active')
-    console.log('figureNext = ' + figureNext)
     if (figureNext === btnArrowRight) {
-      console.log('youhou')
       firstFigure = figureGallery[0]
       firstFigure.style.display = 'flex'
       firstFigure.classList.add('active')
@@ -105,28 +95,25 @@ function lightbox () {
   function action () {
     const btnArrowRight = document.querySelector('button.btnright-lightbox')
     const btnArrowLeft = document.querySelector('button.btnleft-lightbox')
+    const btnClose = document.querySelector('button.close-lightbox')
     window.addEventListener('keydown', function (e) {
-      console.log('in')
       if (e.key === 'Escape') {
-        console.log('escape key')
         containerLightbox.style.display = 'none'
       } else if (e.keyCode === 37) {
         goLeft()
-        console.log('left key')
       } else if (e.keyCode === 39) {
         goRight()
-        console.log('right key')
       }
     })
 
     btnArrowLeft.addEventListener('click', function () {
       goLeft()
-      console.log('left click')
     })
-
     btnArrowRight.addEventListener('click', function () {
       goRight()
-      console.log('right click')
+    })
+    btnClose.addEventListener('click', function () {
+      containerLightbox.style.display = 'none'
     })
   }
 }

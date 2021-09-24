@@ -1,0 +1,128 @@
+section#fiche {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  @include media(phone) {
+    background-color: white;
+    padding: 0px;
+  }
+  @include media(desktop) {
+    background-color: $color-light-gray;
+    padding: 50px;
+  }
+  p.name {
+    font-weight: 400;
+    color: $color-secondary;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    @include media(phone) {
+      @include font-size(36);
+    }
+    @include media(desktop) {
+      @include font-size(64);
+    }
+  }
+  p.contact {
+    @include media(phone) {
+      display: flex;
+      justify-content: center;
+      @include font-size(18);
+      position: fixed;
+      bottom: 28px;
+      left: 0;
+      margin: 0px auto;
+      height: 35px;
+      width: 100%;
+    }
+    @include media(desktop) {
+      display: inline-block;
+      justify-content: unset;
+      @include font-size(20);
+      position: relative;
+      bottom: unset;
+      margin-left: 50px;
+      height: 69px;
+      width: max-content;
+    }
+    button.btn { 
+      @include font-size(18);
+      font-weight: 700;
+      color: white;
+      background-color: $color-primary;
+      width: max-content;
+      padding: 0px 11px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      cursor: pointer;
+      &:hover, &:focus {
+        background-color: $color-secondary;
+      }
+    }
+  }
+  p.country {
+    width: 100%;
+    color: $color-primary;
+    margin: 0px;
+    @include media(phone) {
+      @include font-size(13);
+    }
+    @include media(desktop) {
+      @include font-size(24);
+    }
+  }
+  p.tagline {
+    width: 100%;
+    color: $color-darker-gray;
+    @include media(phone) {
+      @include font-size(13);
+    }
+    @include media(desktop) {
+      @include font-size(18);
+    }
+  }
+  ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    margin: 10px 0px 0px 0px;
+    padding: 0px;
+    li {
+        margin-right: 5px;
+        a {
+          @include media(phone) {
+            @include font-size(13);
+          }
+          @include media(desktop) {
+            @include font-size(18);
+          }
+        }
+    }
+  }
+  figure {
+    position: absolute;
+    @include media(phone) {
+      top: 0px;
+      right: 0px;
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+    @include media(desktop) {
+      top: 50px;
+      right: 50px;
+      img {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  }
+}

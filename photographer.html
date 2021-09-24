@@ -15,8 +15,8 @@
   <body>
     <p><a href="#photographer" tabindex="1" class="skip-content">Passer au contenu</a></p>
     <header role="banner">
-        <figure tabindex="2">
-            <a href="index.html"><img src="public/images/logo.svg" alt="logo du site Fisheye et lien vers la page d'accueil" /></a>
+        <figure>
+            <a href="index.html" tabindex="2"><img src="public/images/logo.svg" alt="logo du site Fisheye et lien vers la page d'accueil" /></a>
         </figure>
     </header>
     <main class="photographer" id="photographer">
@@ -25,7 +25,7 @@
         <ul class="dropdown">
           <li id="label" class="label" tabindex="9">Trier par</li>
           <li role="button" aria-labelledby="label" id="selected" tabindex="10">
-            Popularité <i class="fas fa-chevron-down arrow" viewBox="0 0 10 5" fill-rule="evenodd" aria-hidden="true"></i>
+            Popularité
           </li>
           <li aria-expanded="false" role="list" class="list-container">
             <ul class="list">
@@ -45,29 +45,29 @@
       <section id="gallery"></section>
       <section id="price"></section>
       <section id="lightbox" tabindex="12"></section>
-      <section id="modal">
-        <form id="formcontact">
-          <p class="close-modal"><i class="fas fa-times" aria-hidden="false" aria-label="Fermer la modal"></i></p>
-          <h2>Contactez-moi<br/>Mimi Keel</h2>
+      <section id="modal" tabindex="12">
+        <form id="formcontact" tabindex="12">
+          <h2 tabindex="12">Contactez-moi<br/>Mimi Keel</h2>
           <p>
-            <label for="prenom">Prénom</label>
-            <input type="text" id="prenom" name="prenom" />
+            <label for="prenom" tabindex="12">Prénom</label>
+            <input type="text" id="prenom" name="prenom"  tabindex="12"/>
           </p>
           <p>
-            <label for="nom">Nom</label>
-            <input type="text" id="nom" name="nom" />
+            <label for="nom" tabindex="12">Nom</label>
+            <input type="text" id="nom" name="nom"  tabindex="12"/>
           </p>
           <p>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" />
+            <label for="email" tabindex="12">Email</label>
+            <input type="email" id="email" name="email"  tabindex="12"/>
           </p>
           <p>
-            <label for="textarea">Votre message</label>
-            <textarea id="textarea"></textarea>
+            <label for="textarea" tabindex="12">Votre message</label>
+            <textarea id="textarea" tabindex="12"></textarea>
           </p>
           <p>
-            <input id="submitButton" class="" type="submit" value="Envoyer">
-          </p>  
+            <input id="submitButton" class="" type="submit" value="Envoyer" tabindex="12">
+          </p>
+          <p class="close-modal"><i class="fas fa-times" aria-hidden="false" aria-label="Fermer la modal" tabindex="12"></i></p>
         </form>
       </section>
     </main>
@@ -79,6 +79,7 @@
     <script src="public/js/function/select.js"></script>
     <script src="public/js/class/Photographer.js"></script>
     <script src="public/js/class/Media.js"></script>
+    <script src="public/js/class/LightBox.js"></script>
     <script src="public/js/function/like.js"></script>
     <script src="public/js/function/video.js"></script>
     <script src="public/js/photographerPage.js"></script>
