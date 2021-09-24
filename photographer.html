@@ -1,4 +1,4 @@
-<html lang="fr">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
   <head>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width" />
@@ -13,13 +13,13 @@
       <title>FishEye - Site web de photographes freelances</title>
   </head>
   <body>
-    <p><a href="#photographer" tabindex="1" class="skip-content">Passer au contenu</a></p>
+    <p><a href="#photographer_content" tabindex="1" class="skip-content">Passer au contenu</a></p>
     <header role="banner">
         <figure>
             <a href="index.html" tabindex="2"><img src="public/images/logo.svg" alt="logo du site Fisheye et lien vers la page d'accueil" /></a>
         </figure>
     </header>
-    <main class="photographer" id="photographer">
+    <main class="photographer" id="photographer_content">
       <section id="fiche"></section>
       <section id="select">
         <ul class="dropdown">
@@ -50,19 +50,19 @@
           <h2 tabindex="12">Contactez-moi<br/>Mimi Keel</h2>
           <p>
             <label for="prenom" tabindex="12">Prénom</label>
-            <input type="text" id="prenom" name="prenom"  tabindex="12"/>
+            <input type="text" id="prenom" name="prenom" tabindex="12" aria-labelledby="prenom"/>
           </p>
           <p>
             <label for="nom" tabindex="12">Nom</label>
-            <input type="text" id="nom" name="nom"  tabindex="12"/>
+            <input type="text" id="nom" name="nom" tabindex="12" aria-labelledby="nom"/>
           </p>
           <p>
             <label for="email" tabindex="12">Email</label>
-            <input type="email" id="email" name="email"  tabindex="12"/>
+            <input type="email" id="email" name="email" tabindex="12" aria-labelledby="Email"/>
           </p>
           <p>
             <label for="textarea" tabindex="12">Votre message</label>
-            <textarea id="textarea" tabindex="12"></textarea>
+            <textarea id="textarea" tabindex="12" aria-labelledby="message"></textarea>
           </p>
           <p>
             <input id="submitButton" class="" type="submit" value="Envoyer" tabindex="12">

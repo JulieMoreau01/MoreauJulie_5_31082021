@@ -25,15 +25,15 @@ class Photographer {
     <section class="index ${this.classTag}">
       <figure>
         <a href="photographer.html?id=${this.id}" alt="${this.name}" tabindex="5">
-          <img src="public/images/photographers_id_photos/${this.portrait}" alt="${this.name}" />
+          <img src="public/images/photographers_id_photos/${this.portrait}" alt="" />
           <figcaption class="index_name" aria-label="${this.name} cliquer pour voir sa fiche">${this.name}</figcaption>
         </a>
       </figure>
       <p>
         <a href="photographer.html?id=${this.id}" alt="${this.name}" tabindex="5">
-          <span class="index_country" tabindex="5">${this.city}, ${this.country}</span>
-          <span class="index_tagline" tabindex="5">${this.tagline}</span>
-          <span class="index_price" tabindex="5">${this.price} €/jour</span></a>
+          <span class="index_country">${this.city}, ${this.country}</span>
+          <span class="index_tagline">${this.tagline}</span>
+          <span class="index_price">${this.price} €/jour</span></a>
       </p>
       <ul>${this.liTags}</ul>
     </section>
