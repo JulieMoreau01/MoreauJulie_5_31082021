@@ -1,4 +1,4 @@
-<html lang="fr-fr">
+<html lang="fr">
   <head>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width" />
@@ -10,32 +10,32 @@
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet"> 
-      <title>FishEye</title>
+      <title>FishEye - Site web de photographes freelances</title>
   </head>
   <body>
-    <p class="pass-content"><a href="#index" tabindex="1">Passer au contenu</a></p>
+    <p><a href="#photographer" tabindex="1" class="skip-content">Passer au contenu</a></p>
     <header role="banner">
-        <figure tabindex="1">
-            <a href="index.html"><img src="public/images/logo.svg" alt="logo du site Fisheye" /></a>
+        <figure tabindex="2">
+            <a href="index.html"><img src="public/images/logo.svg" alt="logo du site Fisheye et lien vers la page d'accueil" /></a>
         </figure>
     </header>
-    <main class="photographer">
+    <main class="photographer" id="photographer">
       <section id="fiche"></section>
-      <section id="select" tabindex="8">
-        <ul class="dropdown" tabindex="8">
-          <li id="dropdown-label" class="dropdown-label" tabindex="8">Trier par</li>
-          <li role="button" aria-labelledby="dropdown-label" id="dropdown__selected" tabindex="8">
-            Popularité <i class="fas fa-chevron-down dropdown__arrow" viewBox="0 0 10 5" fill-rule="evenodd"></i>
+      <section id="select">
+        <ul class="dropdown">
+          <li id="label" class="label" tabindex="9">Trier par</li>
+          <li role="button" aria-labelledby="label" id="selected" tabindex="10">
+            Popularité <i class="fas fa-chevron-down arrow" viewBox="0 0 10 5" fill-rule="evenodd" aria-hidden="true"></i>
           </li>
-          <li aria-expanded="false" role="list" class="dropdown__list-container">
-            <ul class="dropdown__list">
-              <li class="dropdown__list-item activePop" tabindex="8" id="option-1" role="button" aria-labelledby="dropdown-label" id="dropdown__selected" tabindex="8">
+          <li aria-expanded="false" role="list" class="list-container">
+            <ul class="list">
+              <li class="list-item activePop" tabindex="10" id="option-1" role="button" aria-labelledby="label" id="selected" tabindex="8">
                 Popularité
               </li>
-              <li class="dropdown__list-item" tabindex="8" id="option-2">
+              <li class="list-item" tabindex="10" id="option-2">
                 Date
               </li>
-              <li class="dropdown__list-item" tabindex="8" id="option-3">
+              <li class="list-item" tabindex="10" id="option-3">
                 Titre
               </li>
             </ul>
@@ -44,25 +44,25 @@
       </section>
       <section id="gallery"></section>
       <section id="price"></section>
-      <section id="lightbox"></section>
+      <section id="lightbox" tabindex="12"></section>
       <section id="modal">
         <form id="formcontact">
-          <p class="close-modal"><i class="fas fa-times" aria-hidden="true" aria-label="Fermer la modal"></i></p>
+          <p class="close-modal"><i class="fas fa-times" aria-hidden="false" aria-label="Fermer la modal"></i></p>
           <h2>Contactez-moi<br/>Mimi Keel</h2>
           <p>
             <label for="prenom">Prénom</label>
-            <input id="prenom" type="text" name="prenom" />
+            <input type="text" id="prenom" name="prenom" />
           </p>
           <p>
             <label for="nom">Nom</label>
-            <input id="nom" type="text" name="nom" />
+            <input type="text" id="nom" name="nom" />
           </p>
           <p>
             <label for="email">Email</label>
-            <input id="email" type="email" name="email" />
+            <input type="email" id="email" name="email" />
           </p>
           <p>
-            <label for="mail">Votre message</label>
+            <label for="textarea">Votre message</label>
             <textarea id="textarea"></textarea>
           </p>
           <p>

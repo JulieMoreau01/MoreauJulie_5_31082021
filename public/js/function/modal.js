@@ -3,19 +3,27 @@ function modal () {
   const btnCloseModal = document.querySelector('p.close-modal')
   const formContact = document.getElementById('formcontact')
 
-  containerModal.style.display = 'none'
+  window.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+      containerModal.style.display = 'none'
+    }
+  })
 
   btnContact.addEventListener('click', function () {
     containerModal.style.display = 'flex'
   })
-  btnContact.addEventListener('keydown', function () {
-    containerModal.style.display = 'flex'
+  btnContact.addEventListener('keydown', function (event) {
+    if (event.key === 13) {
+      containerModal.style.display = 'flex'
+    }
   })
   btnCloseModal.addEventListener('click', function () {
     containerModal.style.display = 'none'
   })
-  btnCloseModal.addEventListener('keydown', function () {
-    containerModal.style.display = 'none'
+  btnCloseModal.addEventListener('keydown', function (event) {
+    if (event.key === 13) {
+      containerModal.style.display = 'none'
+    }
   })
 
   const InputFormat = /^[a-zA-Z]*$/ // only letters and not numbers
@@ -66,7 +74,7 @@ function modal () {
  */
   const emailInput = document.getElementById('email')
   const parentEmailInput = emailInput.parentElement
-  const mailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  const mailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 
   emailInput.addEventListener('change', emailFunction)
 

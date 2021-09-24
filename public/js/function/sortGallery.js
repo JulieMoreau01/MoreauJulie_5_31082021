@@ -1,11 +1,15 @@
+const listItemsSelect = document.querySelectorAll('.list-item')
 
-const triPopulariteId = document.getElementById('option-1')
-const triDateId = document.getElementById('option-2')
-const triTitleId = document.getElementById('option-3')
-
-triPopulariteId.addEventListener('click', stateSort)
-triDateId.addEventListener('click', stateSort)
-triTitleId.addEventListener('click', stateSort)
+listItemsSelect.forEach(item => {
+  item.addEventListener('click', e => {
+    stateSort(e)
+  })
+  item.addEventListener('keydown', e => {
+    if (e.keyCode === 13) {
+      stateSort(e)
+    }
+  })
+})
 
 let state = 1
 

@@ -1,6 +1,5 @@
-async function likeCounterFunction () {
+function likeCounterFunction () {
   const heartIcon = document.querySelectorAll('i.fa-heart')
-
   totalLike()
 
   heartIcon.forEach(element => {
@@ -14,14 +13,16 @@ async function likeCounterFunction () {
         totalLike()
       }
     })
-    element.addEventListener('keydown', function () {
-      ariaExpanded = element.getAttribute('aria-expanded')
-      if (ariaExpanded === 'false') {
-        addALike(element)
-        totalLike()
-      } else {
-        removeLike(element)
-        totalLike()
+    element.addEventListener('keydown', function (e) {
+      if (e.keyCode === 13) {
+        ariaExpanded = element.getAttribute('aria-expanded')
+        if (ariaExpanded === 'false') {
+          addALike(element)
+          totalLike()
+        } else {
+          removeLike(element)
+          totalLike()
+        }
       }
     })
   })
@@ -54,6 +55,7 @@ async function likeCounterFunction () {
     const reducer = (previousValue, currentValue) => previousValue + currentValue
     const sumAllCounter = allCounterArray.reduce(reducer)
     const totalLikeId = document.getElementById('total_like')
+    console.log(totalLikeId)
     totalLikeId.textContent = sumAllCounter
   }
 }

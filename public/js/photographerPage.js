@@ -8,7 +8,9 @@ const containerPrice = document.getElementById('price')
 const containerSelect = document.getElementById('select')
 const containerGallery = document.getElementById('gallery')
 const containerLightbox = document.getElementById('lightbox')
+containerLightbox.style.display = 'none'
 const containerModal = document.getElementById('modal')
+containerModal.style.display = 'none'
 
 /**
  * TEMPLATE FICHE PHOTOGRAPHER & PRICE & SELECT
@@ -17,15 +19,15 @@ async function photographerPageTop () {
   const dataPhotographers = await getDataPhotographer()
 
   // GET TABLE WITH GOOD PHOTOGRAPHER ID
-  const objetIdNb = dataPhotographers.findIndex(function (item, i) {
+  const getPhotographerById = dataPhotographers.findIndex(function (item, i) {
     const stringId = (item.id).toString()
     return stringId === idUrlPage
   })
 
   // DISPLAY FICHE PHOTOGRAPHER & PRICE
-  const data = dataPhotographers[objetIdNb]
+  const data = dataPhotographers[getPhotographerById]
   const photograpeTemplate = new Photographer(data)
-  containerFiche.innerHTML += photograpeTemplate.creatHtmlPhotographer()
+  containerFiche.innerHTML += photograpeTemplate.creatHtmlPhotographerFiche()
   containerPrice.innerHTML += photograpeTemplate.creatPrice()
   select()
   modal()

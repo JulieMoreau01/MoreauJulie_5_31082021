@@ -7,6 +7,7 @@ html {
     justify-content: center;
     box-sizing: border-box;
     body {
+      position: relative;
         margin: 0px;
         @include media(phone) {padding: 0px 20px;}
         @include media(desktop) {padding: 0px 100px;}
@@ -14,26 +15,39 @@ html {
         @include media(desktop) {max-width: 1240px;}
         display: flex;
         flex-direction: column;
-        .pass-content {
-            text-align: center;
-            a {
-                color: black;
-                font-weight: 700;
-                background-color: $color-third;
-                border-radius: 5px;
-                padding: 8px;
-                text-decoration: none;
-                opacity: 0;
-                &:focus {
-                    opacity: 1;
-                }
+        p {
+          margin: 0;
+          .skip-content {
+            @include media(phone) {
+              display: none
             }
+            @include media(desktop) {
+              display: block;
+            }
+            text-align: center;
+            margin: 5px auto 0px auto;
+            width: max-content;
+            color: black;
+            font-weight: 700;
+            @include font-size(18);
+            background-color: $color-third;
+            border-radius: 5px;
+            padding: 3px 8px;
+            text-decoration: none;
+            opacity: 0;
+            display: block;
+            &:focus, &:active {
+                opacity: 1;
+            }
+          }
         }
         header {
-            padding: 10px 0px 0px 0px;
+          @include media(phone) {padding: 30px 0px 0px 0px;}
+          @include media(desktop) {padding: 10px 0px 0px 0px;}
         }
         main {
-            padding: 40px 0px 0px 0px;
+          @include media(phone) {padding: 30px 0px 0px 0px;}
+          @include media(desktop) {padding: 100px 0px 0px 0px;}
         }
     }
 }

@@ -27,4 +27,3 @@ async function getDataMedia () {
   const { media } = await getData()
   return await media
 }
-

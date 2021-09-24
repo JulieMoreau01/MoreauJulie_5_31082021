@@ -1,7 +1,8 @@
 header {
     display: flex;
-    @include media(phone) {width: 100%; flex-direction: column;}
-    @include media(desktop) {width: 75%; flex-direction: row; flex-wrap: nowrap;}
+    width: 100%;
+    @include media(phone) {flex-direction: column;}
+    @include media(desktop) { flex-direction: row; flex-wrap: nowrap;}
     figure {
         margin: 0px;
         padding: 0px;
@@ -17,6 +18,8 @@ header {
         align-items: center;
         justify-content: center;
         width: 100%;
+        @include media(phone) {margin-right: 0px;}
+        @include media(desktop) {margin-right: 310px;}
         ul {
             display: flex;
             margin-top: 30px;

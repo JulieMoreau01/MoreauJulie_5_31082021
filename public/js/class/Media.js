@@ -35,15 +35,15 @@ class Image {
 
   creatHtmlGallery () {
     return `
-    <figure tabindex="10">
-    <img src="public/images/${this.name}/${this.image}" id="${this.id}" title="${this.title}" tabindex="10">
-    <figcaption tabindex="10">
-    <span class="title" tabindex="10">${this.title}</span>
-    <span class="like" tabindex="10">
-    <span class="counter" tabindex="10" aria-label="${this.likes} like sur cette photo">${this.likes}</span> 
-    <i class="fas fa-heart" tabindex="10" aria-label="ajouter un like" aria-expanded="false"></i>
-    </span>
-    </figcaption>
+    <figure>
+      <img src="public/images/${this.name}/${this.image}" id="${this.id}" title="${this.title}" alt="${this.title}" tabindex="11">
+      <figcaption>
+        <span class="title" tabindex="11" aria-label="${this.title}">${this.title}</span>
+        <span class="like">
+        <span class="counter" aria-label="${this.likes} like sur cette photo" tabindex="11">${this.likes}</span> 
+          <i class="fas fa-heart" aria-label="ajouter un like" aria-expanded="false" tabindex="11"></i>
+        </span>
+      </figcaption>
     </figure>
     `
   }
@@ -51,8 +51,8 @@ class Image {
   creatHtmlImgLightbox () {
     return `
     <figure>
-    <img src="public/images/${this.name}/${this.image}" title="${this.title}" />
-    <figcaption>${this.title}</figcaption>
+      <img src="public/images/${this.name}/${this.image}" title="${this.title}" alt="${this.title}" />
+      <figcaption>${this.title}</figcaption>
     </figure>
     `
   }
@@ -85,17 +85,18 @@ class Video {
 
   creatHtmlGallery () {
     return `
-    <figure id="video"><video controls width="350" tabindex="10">
-    <source src="public/images/${this.name}/${this.video}" type="video/mp4">
-    So sorry, your browser doesn't support embedded videos.
-    </video>
-    <figcaption tabindex="10">
-    <span class="title" tabindex="10">${this.title}</span>
-    <span class="like" tabindex="10">
-    <span class="counter" tabindex="10" aria-label="${this.likes} like sur cette photo">${this.likes}</span> 
-    <i class="fas fa-heart" tabindex="10" aria-label="ajouter un like" aria-expanded="false"></i>
-    </span>
-    </figcaption>
+    <figure id="video">
+      <video controls width="350" tabindex="11">
+        <source src="public/images/${this.name}/${this.video}" type="video/mp4">
+          So sorry, your browser doesn't support embedded videos.
+        </video>
+        <figcaption>
+          <span class="title" tabindex="11">${this.title}</span>
+          <span class="like">
+          <span class="counter" aria-label="${this.likes} like sur cette video" tabindex="11">${this.likes}</span> 
+            <i class="fas fa-heart" aria-label="ajouter un like" aria-expanded="false" tabindex="11"></i>
+          </span>
+        </figcaption>
     </figure>
     `
   }
@@ -103,11 +104,11 @@ class Video {
   creatHtmlImgLightbox () {
     return `
     <figure>
-    <video controls width="350" tabindex="10">
-    <source src="public/images/${this.name}/${this.video}" type="video/mp4">
-    So sorry, your browser doesn't support embedded videos.
-    </video>
-    <figcaption>${this.title}</figcaption>
+      <video controls width="350">
+        <source src="public/images/${this.name}/${this.video}" type="video/mp4">
+          So sorry, your browser doesn't support embedded videos.
+      </video>
+      <figcaption>${this.title}</figcaption>
     </figure>
     `
   }

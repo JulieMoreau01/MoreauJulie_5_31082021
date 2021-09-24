@@ -8,6 +8,7 @@ html {
   box-sizing: border-box;
 }
 html body {
+  position: relative;
   margin: 0px;
   width: 100%;
   display: flex;
@@ -28,26 +29,55 @@ html body {
     max-width: 1240px;
   }
 }
-html body .pass-content {
-  text-align: center;
+html body p {
+  margin: 0;
 }
-html body .pass-content a {
+html body p .skip-content {
+  text-align: center;
+  margin: 5px auto 0px auto;
+  width: max-content;
   color: black;
   font-weight: 700;
+  font-size: 1.125rem;
   background-color: #DB8876;
   border-radius: 5px;
-  padding: 8px;
+  padding: 3px 8px;
   text-decoration: none;
   opacity: 0;
+  display: block;
 }
-html body .pass-content a:focus {
+@media screen and (min-width: 0px) {
+  html body p .skip-content {
+    display: none;
+  }
+}
+@media screen and (min-width: 1024px) {
+  html body p .skip-content {
+    display: block;
+  }
+}
+html body p .skip-content:focus, html body p .skip-content:active {
   opacity: 1;
 }
-html body header {
-  padding: 10px 0px 0px 0px;
+@media screen and (min-width: 0px) {
+  html body header {
+    padding: 30px 0px 0px 0px;
+  }
 }
-html body main {
-  padding: 40px 0px 0px 0px;
+@media screen and (min-width: 1024px) {
+  html body header {
+    padding: 10px 0px 0px 0px;
+  }
+}
+@media screen and (min-width: 0px) {
+  html body main {
+    padding: 30px 0px 0px 0px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  html body main {
+    padding: 100px 0px 0px 0px;
+  }
 }
 
 .sr-only {
@@ -69,16 +99,15 @@ html body main {
 
 header {
   display: flex;
+  width: 100%;
 }
 @media screen and (min-width: 0px) {
   header {
-    width: 100%;
     flex-direction: column;
   }
 }
 @media screen and (min-width: 1024px) {
   header {
-    width: 75%;
     flex-direction: row;
     flex-wrap: nowrap;
   }
@@ -105,6 +134,16 @@ header nav {
   justify-content: center;
   width: 100%;
 }
+@media screen and (min-width: 0px) {
+  header nav {
+    margin-right: 0px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  header nav {
+    margin-right: 310px;
+  }
+}
 header nav ul {
   display: flex;
   margin-top: 30px;
@@ -129,7 +168,6 @@ header nav ul li {
 }
 
 main#index.index {
-  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -165,13 +203,15 @@ main#index.index h1 {
 @media screen and (min-width: 0px) {
   main#index.index h1 {
     font-size: 0.875rem;
-    top: -122px;
+    top: 17px;
+    right: 20px;
   }
 }
 @media screen and (min-width: 1024px) {
   main#index.index h1 {
     font-size: 2.25rem;
-    top: -48px;
+    top: 45px;
+    right: 100px;
   }
 }
 main#index.index section {
@@ -198,12 +238,12 @@ main#index.index section p span.index_country {
   display: block;
   font-size: 0.8125rem;
   color: #901C1C;
-  margin: 0px 0px 10px 0px;
+  margin: 0px 0px 5px 0px;
 }
 main#index.index section p span.index_tagline {
   display: block;
   font-size: 0.625rem;
-  margin: 0px 0px 10px 0px;
+  margin: 0px 0px 5px 0px;
   color: black;
 }
 main#index.index section p span.index_price {
@@ -222,6 +262,16 @@ main#index.index section ul li {
   margin-right: 5px;
 }
 
+@media screen and (min-width: 0px) {
+  main.photographer {
+    padding: 30px 0px 0px 0px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main.photographer {
+    padding: 50px 0px 0px 0px;
+  }
+}
 main.photographer section#fiche {
   position: relative;
   display: flex;
@@ -265,6 +315,7 @@ main.photographer section#fiche p.name {
     font-size: 1.125rem;
     position: fixed;
     bottom: 28px;
+    left: 0;
     margin: 0px auto;
     height: 35px;
     width: 100%;
@@ -356,7 +407,7 @@ main.photographer section#fiche figure {
 @media screen and (min-width: 0px) {
   main.photographer section#fiche figure {
     top: 0px;
-    right: 20px;
+    right: 0px;
   }
   main.photographer section#fiche figure img {
     width: 100px;
@@ -458,7 +509,7 @@ main.photographer section#gallery figure figcaption {
   justify-content: space-between;
 }
 main.photographer section#gallery figure figcaption span.title {
-  width: 80%;
+  width: 78%;
 }
 main.photographer section#gallery figure figcaption span.like {
   width: max-content;
@@ -495,37 +546,7 @@ main.photographer section#select {
     display: block;
   }
 }
-main.photographer section#select .dropdown {
-  list-style: none;
-  position: relative;
-  background: #901C1C;
-  width: 250px;
-  height: 69px;
-  cursor: pointer;
-  margin: 30px 0 0 90px;
-  padding: 0 0 0;
-  border-radius: 5px;
-}
-main.photographer section#select .dropdown-label {
-  position: absolute;
-  top: 18px;
-  left: -90px;
-  background: #fff;
-  color: black;
-  font-weight: 700;
-  font-size: 1.125rem;
-}
-main.photographer section#select .dropdown__arrow {
-  position: absolute;
-  z-index: 11;
-  right: 10px;
-  top: 19px;
-  transition: transform 0.2s linear;
-}
-main.photographer section#select .dropdown__arrow.expanded {
-  transform: rotate(-180deg);
-}
-main.photographer section#select .dropdown__list {
+main.photographer section#select .list {
   width: 100%;
   position: absolute;
   z-index: 10;
@@ -538,7 +559,37 @@ main.photographer section#select .dropdown__list {
   overflow: hidden;
   opacity: 0;
 }
-main.photographer section#select .dropdown__list-container {
+main.photographer section#select .dropdown {
+  list-style: none;
+  position: relative;
+  background: #901C1C;
+  width: 180px;
+  height: 69px;
+  cursor: pointer;
+  margin: 30px 0 0 90px;
+  padding: 0 0 0;
+  border-radius: 5px;
+}
+main.photographer section#select .dropdown .label {
+  position: absolute;
+  top: 18px;
+  left: -90px;
+  background: #fff;
+  color: black;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+main.photographer section#select .dropdown .arrow {
+  position: absolute;
+  z-index: 11;
+  right: 10px;
+  top: 19px;
+  transition: transform 0.2s linear;
+}
+main.photographer section#select .dropdown .arrow .expanded {
+  transform: rotate(-180deg);
+}
+main.photographer section#select .dropdown .list-container {
   position: relative;
 }
 main.photographer section#select .dropdown ul {
@@ -548,7 +599,7 @@ main.photographer section#select .dropdown ul {
   background-color: #901C1C;
   border-radius: 5px;
 }
-main.photographer section#select .dropdown__list-item {
+main.photographer section#select .dropdown ul .list-item {
   padding: 15px 0px 15px 15px;
   transition: background-color 0.1s linear, color 0.1s linear;
   color: white;
@@ -560,7 +611,7 @@ main.photographer section#select .dropdown__list-item {
   position: relative;
   font-size: 1.125rem;
 }
-main.photographer section#select .dropdown__list-item::after {
+main.photographer section#select .dropdown ul .list-item::after {
   content: "";
   position: absolute;
   bottom: 0px;
@@ -569,14 +620,14 @@ main.photographer section#select .dropdown__list-item::after {
   height: 1px;
   width: 90%;
 }
-main.photographer section#select .dropdown__list-item:hover, main.photographer section#select .dropdown__list-item:focus {
+main.photographer section#select .dropdown ul .list-item:hover, main.photographer section#select .dropdown ul .list-item:focus {
   background-color: #DB8876;
   color: black;
 }
-main.photographer section#select .dropdown__list-item:last-child::after {
+main.photographer section#select .dropdown ul .list-item:last-child::after {
   display: none;
 }
-main.photographer section#select #dropdown__selected {
+main.photographer section#select #selected {
   color: white;
   padding: 0px 15px;
   list-style-position: inside;
@@ -591,7 +642,7 @@ main.photographer section#select #dropdown__selected {
   font-size: 1.125rem;
   font-weight: 700;
 }
-main.photographer section#select #dropdown__selected:focus {
+main.photographer section#select #selected:focus {
   outline: 1px solid #00C2FF;
 }
 main.photographer section#select .open {
@@ -766,13 +817,24 @@ main.photographer section#modal .close-modal {
 main.photographer section#modal form {
   margin: 0;
   background-color: #DB8876;
-  width: 400px;
-  height: 80%;
   padding: 25px 35px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   /*** Error message ***/
+}
+@media screen and (min-width: 0px) {
+  main.photographer section#modal form {
+    max-width: 400px;
+    width: 100%;
+    height: 100vh;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main.photographer section#modal form {
+    width: 400px;
+    height: 80%;
+  }
 }
 main.photographer section#modal form h2 {
   font-size: 2.3125rem;

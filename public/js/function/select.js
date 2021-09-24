@@ -5,11 +5,11 @@ function select () {
   const UP_ARROW_KEY_CODE = 38
   const ESCAPE_KEY_CODE = 27
 
-  const list = document.querySelector('.dropdown__list')
-  const listContainer = document.querySelector('.dropdown__list-container')
-  const dropdownArrow = document.querySelector('.dropdown__arrow')
-  const listItems = document.querySelectorAll('.dropdown__list-item')
-  const dropdownSelectedNode = document.querySelector('#dropdown__selected')
+  const list = document.querySelector('.list')
+  const listContainer = document.querySelector('.list-container')
+  const dropdownArrow = document.querySelector('.arrow')
+  const listItems = document.querySelectorAll('.list-item')
+  const dropdownSelectedNode = document.querySelector('#selected')
   const listItemIds = []
 
   dropdownSelectedNode.addEventListener('click', e => toggleListVisibility(e))
@@ -46,7 +46,7 @@ function select () {
 
   function setSelectedListItem (e) {
     const selectedTextToAppend = document.createTextNode(e.target.innerText)
-    const pictoI = '<i class="fas fa-chevron-down dropdown__arrow" viewBox="0 0 10 5" fill-rule="evenodd"></i>'
+    const pictoI = '<i class="fas fa-chevron-down arrow" viewBox="0 0 10 5" fill-rule="evenodd"></i>'
     dropdownSelectedNode.textContent = null
     dropdownSelectedNode.appendChild(selectedTextToAppend)
     dropdownSelectedNode.innerHTML += pictoI
@@ -55,6 +55,7 @@ function select () {
   function closeList () {
     list.classList.remove('open')
     dropdownArrow.classList.remove('expanded')
+    console.log(dropdownArrow)
     listContainer.setAttribute('aria-expanded', false)
   }
 
@@ -68,7 +69,7 @@ function select () {
 
     if (e.type === 'click' || openDropDown) {
       list.classList.toggle('open')
-      dropdownArrow.classList.toggle('expanded')
+      dropdownArrow.classList.add('expanded')
       listContainer.setAttribute('aria-expanded', list.classList.contains('open')
       )
     }
@@ -83,7 +84,7 @@ function select () {
 
   function focusNextListItem (direction) {
     const activeElementId = document.activeElement.id
-    if (activeElementId === 'dropdown__selected') {
+    if (activeElementId === 'selected') {
       document.querySelector(`#${listItemIds[0]}`).focus()
     } else {
       const currentActiveElementIndex = listItemIds.indexOf(
@@ -106,31 +107,4 @@ function select () {
       }
     }
   }
-}
-
-function htmlSelect () {
-  return `
-      <ul class="dropdown" tabindex="8">
-          <li id="dropdown-label" class="dropdown-label" tabindex="8">
-            Trier par
-          </li>
-          <li role="button" aria-labelledby="dropdown-label" id="dropdown__selected" tabindex="8">
-            Popularité <i class="fas fa-chevron-down dropdown__arrow" viewBox="0 0 10 5" fill-rule="evenodd"></i>
-          </li>
-          
-          <li aria-expanded="false" role="list" class="dropdown__list-container">
-            <ul class="dropdown__list">
-              <li class="dropdown__list-item" tabindex="8" id="option-1" role="button" aria-labelledby="dropdown-label" id="dropdown__selected" tabindex="8">
-                Popularité
-              </li>
-              <li class="dropdown__list-item" tabindex="8" id="option-2">
-                Date
-              </li>
-              <li class="dropdown__list-item" tabindex="8" id="option-3">
-                Titre
-              </li>
-            </ul>
-          </li>
-        </ul>
-  `
 }
