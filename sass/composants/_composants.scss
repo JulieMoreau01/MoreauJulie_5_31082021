@@ -1,5 +1,5 @@
 // ETIQUETTE TAG FILTRE
-.tag {
+.tag a {
   border: 0.5px solid #C4C4C4;
   border-radius: 11px; 
   color: $color-primary;
@@ -8,6 +8,7 @@
   padding: 3px;
   text-decoration: none;
   cursor: pointer;
+  text-decoration: none;
   &:hover, &:focus {
       color: white;
       background-color: $color-primary;

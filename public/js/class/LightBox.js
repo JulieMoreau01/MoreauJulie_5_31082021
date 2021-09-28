@@ -36,7 +36,7 @@ class ImageLightBox {
 
   creatHtmlImgLightbox () {
     return `
-    <figure>
+    <figure tabindex="12">
       <img src="public/images/${this.name}/${this.image}" title="${this.title}" alt="${this.title}" />
       <figcaption>${this.title}</figcaption>
     </figure>
@@ -71,7 +71,7 @@ class VideoLightBox {
 
   creatHtmlImgLightbox () {
     return `
-    <figure>
+    <figure tabindex="12">
       <video controls width="350">
         <source src="public/images/${this.name}/${this.video}" type="video/mp4">
           So sorry, your browser doesn't support embedded videos.

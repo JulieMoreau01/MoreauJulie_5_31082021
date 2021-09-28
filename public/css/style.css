@@ -906,7 +906,7 @@ section#select .dropdown.arrowOpen::before {
   transform: rotate(-180deg);
 }
 
-.tag {
+.tag a {
   border: 0.5px solid #C4C4C4;
   border-radius: 11px;
   color: #901C1C;
@@ -915,8 +915,9 @@ section#select .dropdown.arrowOpen::before {
   padding: 3px;
   text-decoration: none;
   cursor: pointer;
+  text-decoration: none;
 }
-.tag:hover, .tag:focus {
+.tag a:hover, .tag a:focus {
   color: white;
   background-color: #901C1C;
 }

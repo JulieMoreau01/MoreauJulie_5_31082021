@@ -8,7 +8,7 @@ class Photographer {
     this.tagline = data.tagline
     this.price = data.price
     this.portrait = data.portrait
-    this.liTags = data.tags.map(tag => `<li class="tag ${tag}" aria-label="cliquez pour trier" tabindex="5">#${tag}</li>`).join(' ')
+    this.liTags = data.tags.map(tag => `<li class="tag ${tag}"><a href="index.html?${tag}" tabindex="5" aria-label="cliquez pour trier par ${tag}">#${tag}</a></li>`).join(' ')
     this.classTag = data.tags.join(' ')
   }
 
@@ -48,9 +48,7 @@ class Photographer {
     <p class="tagline" tabindex="4">${this.tagline}</p>
     <ul>${this.liTags}</ul>
     <figure>
-      <a href="photographer.html?id=${this.id}" alt="${this.name}">
-        <img src="public/images/photographers_id_photos/${this.portrait}" alt="${this.name}" tabindex="7" />
-      </a>
+      <img src="public/images/photographers_id_photos/${this.portrait}" alt="${this.name}" tabindex="7" />
     </figure>
     `
   }

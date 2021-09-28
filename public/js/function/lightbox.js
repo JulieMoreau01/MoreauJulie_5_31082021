@@ -22,6 +22,11 @@ function lightbox () {
     function displayLightbox () {
       containerLightbox.style.display = 'flex'
       containerLightbox.setAttribute('aria-hidden', 'false')
+      containerGallery.setAttribute('aria-hidden', 'true')
+      containerSelect.setAttribute('aria-hidden', 'true')
+      containerModal.setAttribute('aria-hidden', 'true')
+      containerFiche.setAttribute('aria-hidden', 'true')
+      containerPrice.setAttribute('aria-hidden', 'true')
       containerLightbox.focus()
       const ImageSrc = img.getAttribute('src')
       // DISPLAY PICTURE CLICKED ON LIGHTBOX

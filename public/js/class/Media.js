@@ -42,18 +42,9 @@ class Image {
         <span class="like">
         <span class="counter" aria-label="${this.likes} like sur cette photo" tabindex="11">${this.likes}</span> 
           <i class="fas fa-heart" aria-label="ajouter un like" aria-expanded="false" tabindex="11"></i>
-          <span class="sr-only">like - cliquer sur le coeur pour ajouter un like</span>
+          <span class="sr-only">like - cliquer sur le coeur pour ajouter ou retirer un like</span>
         </span>
       </figcaption>
-    </figure>
-    `
-  }
-
-  creatHtmlImgLightbox () {
-    return `
-    <figure>
-      <img src="public/images/${this.name}/${this.image}" title="${this.title}" alt="${this.title}" />
-      <figcaption>${this.title}</figcaption>
     </figure>
     `
   }
@@ -97,19 +88,8 @@ class Video {
           <span class="counter" aria-label="${this.likes} like sur cette video" tabindex="11">${this.likes}</span> 
             <i class="fas fa-heart" aria-label="ajouter un like" aria-expanded="false" tabindex="11"></i>
           </span>
+          <span class="sr-only">like - cliquer sur le coeur pour ajouter ou retirer un like</span>
         </figcaption>
-    </figure>
-    `
-  }
-
-  creatHtmlImgLightbox () {
-    return `
-    <figure>
-      <video controls width="350">
-        <source src="public/images/${this.name}/${this.video}" type="video/mp4">
-          So sorry, your browser doesn't support embedded videos.
-      </video>
-      <figcaption>${this.title}</figcaption>
     </figure>
     `
   }
