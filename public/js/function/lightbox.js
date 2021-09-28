@@ -21,6 +21,7 @@ function lightbox () {
 
     function displayLightbox () {
       containerLightbox.style.display = 'flex'
+      containerLightbox.setAttribute('aria-hidden', 'false')
       containerLightbox.focus()
       const ImageSrc = img.getAttribute('src')
       // DISPLAY PICTURE CLICKED ON LIGHTBOX
@@ -79,6 +80,7 @@ function lightbox () {
   function goRight () {
     const btnArrowRight = document.querySelector('button.btnright-lightbox')
     const actifImg = document.querySelector('.active')
+    console.log(actifImg)
     const figureNext = actifImg.nextElementSibling
     actifImg.style.display = 'none'
     actifImg.classList.remove('active')
@@ -114,6 +116,7 @@ function lightbox () {
     })
     btnClose.addEventListener('click', function () {
       containerLightbox.style.display = 'none'
+      containerLightbox.setAttribute('aria-hidden', 'true')
     })
   }
 }

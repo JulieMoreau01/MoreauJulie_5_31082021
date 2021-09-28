@@ -6,24 +6,29 @@ function modal () {
   window.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
       containerModal.style.display = 'none'
+      containerModal.setAttribute('aria-hidden', 'true')
     }
   })
 
   btnContact.addEventListener('click', function () {
     containerModal.style.display = 'flex'
+    containerModal.setAttribute('aria-hidden', 'false')
     containerModal.focus()
   })
   btnContact.addEventListener('keydown', function (event) {
     if (event.key === 13) {
       containerModal.style.display = 'flex'
+      containerModal.setAttribute('aria-hidden', 'false')
     }
   })
   btnCloseModal.addEventListener('click', function () {
     containerModal.style.display = 'none'
+    containerModal.setAttribute('aria-hidden', 'true')
   })
   btnCloseModal.addEventListener('keydown', function (event) {
     if (event.key === 13) {
       containerModal.style.display = 'none'
+      containerModal.setAttribute('aria-hidden', 'true')
     }
   })
 

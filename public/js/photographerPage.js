@@ -15,8 +15,8 @@ containerModal.style.display = 'none'
 /**
  * TEMPLATE FICHE PHOTOGRAPHER & PRICE & SELECT
  */
-async function photographerPageTop () {
-  const dataPhotographers = await getDataPhotographer()
+function photographerPageTop (photographers) {
+  const dataPhotographers = photographers
 
   // GET TABLE WITH GOOD PHOTOGRAPHER ID
   const getPhotographerById = dataPhotographers.findIndex(function (item, i) {
@@ -33,36 +33,38 @@ async function photographerPageTop () {
   modal()
 }
 
+
 /**
  * TEMPLATE GALLERY & LIGHTBOX
  */
-async function photographerPageGallery () {
-  const arrayTri = await sortGallery()
+function photographerPageGallery (media) {
 
+  // RESULT OF SORT GALLERY
+  const arrayTri = sortGallery(media)
+  
   // DISPLAY GALLERY
   containerGallery.innerHTML = ''
   arrayTri.forEach(item => {
     const mediaTemplate = new MediaFactory(item)
     containerGallery.innerHTML += mediaTemplate.creatHtmlGallery()
   })
-  templateLightbox()
   video()
   likeCounterFunction()
 
   // DISPLAY LIGHTBOX
-  function templateLightbox () {
-    containerLightbox.innerHTML = ''
-    arrayTri.forEach(item => {
-      const lightboxTemplate = new LightBox(item)
-      containerLightbox.innerHTML += lightboxTemplate.creatHtmlImgLightbox()
-    })
-    lightbox()
-  }
+  containerLightbox.innerHTML = ''
+  arrayTri.forEach(item => {
+    const lightboxTemplate = new LightBox(item)
+    containerLightbox.innerHTML += lightboxTemplate.creatHtmlImgLightbox()
+  })
+  lightbox()
 }
 
+
 const init = async () => {
-  photographerPageTop()
-  photographerPageGallery()
+  const { photographers, media } = await getData()
+  photographerPageTop(photographers)
+  photographerPageGallery(media)
 }
 
 init()

@@ -13,8 +13,7 @@
       <title>FishEye - Site web de photographes freelances</title>
   </head>
   <body>
-    <p><a href="#photographer_content" tabindex="1" class="skip-content">Passer au contenu</a></p>
-    <header role="banner">
+    <header role="banner" class="photographer">
         <figure>
             <a href="index.html" tabindex="2"><img src="public/images/logo.svg" alt="logo du site Fisheye et lien vers la page d'accueil" /></a>
         </figure>
@@ -44,8 +43,8 @@
       </section>
       <section id="gallery"></section>
       <section id="price"></section>
-      <section id="lightbox" tabindex="12"></section>
-      <section id="modal" tabindex="12">
+      <section id="lightbox" tabindex="12" aria-hidden="true"></section>
+      <section id="modal" tabindex="12" aria-hidden="true">
         <form id="formcontact" tabindex="12">
           <h2 tabindex="12">Contactez-moi<br/>Mimi Keel</h2>
           <p>
@@ -73,7 +72,6 @@
     </main>
     <!--Javascript-->
     <script src="public/js/data.js"></script>
-    <script src="public/js/function/sortGallery.js"></script>
     <script src="public/js/function/lightbox.js"></script>
     <script src="public/js/function/modal.js"></script>
     <script src="public/js/function/select.js"></script>
@@ -83,5 +81,6 @@
     <script src="public/js/function/like.js"></script>
     <script src="public/js/function/video.js"></script>
     <script src="public/js/photographerPage.js"></script>
+    <script src="public/js/function/sortGallery.js"></script>
   </body>
 </html>

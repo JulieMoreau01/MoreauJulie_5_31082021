@@ -11,19 +11,3 @@ async function getData () {
     console.log(error)
   }
 }
-
-/**
- * GET TABLE PHOTOGRAPHER
- */
-async function getDataPhotographer () {
-  const { photographers } = await getData()
-  return await photographers
-}
-
-/**
- * GET TABLE MEDIA
- */
-async function getDataMedia () {
-  const { media } = await getData()
-  return await media
-}

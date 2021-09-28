@@ -2,8 +2,8 @@
  * Template HTML Page Index
  */
 
-async function IndexPage () {
-  const dataPhotographers = await getDataPhotographer()
+function IndexPage (photographers) {
+  const dataPhotographers = photographers
   dataPhotographers.forEach(dataPhotographers => {
     const photograpeTemplate = new Photographer(dataPhotographers)
     const containerIndex = document.getElementById('index')
@@ -13,7 +13,8 @@ async function IndexPage () {
 }
 
 const init = async () => {
-  IndexPage()
+  const { photographers } = await getData()
+  IndexPage(photographers)
 }
 
 init()

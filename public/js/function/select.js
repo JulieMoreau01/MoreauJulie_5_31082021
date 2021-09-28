@@ -4,6 +4,7 @@ function select () {
   const DOWN_ARROW_KEY_CODE = 40
   const UP_ARROW_KEY_CODE = 38
   const ESCAPE_KEY_CODE = 27
+  const TAB_KEY_CODE = 9
 
   const dropdown = document.querySelector('.dropdown')
   const list = document.querySelector('.list')
@@ -69,6 +70,13 @@ function select () {
       dropdown.classList.toggle('arrowOpen')
       listContainer.setAttribute('aria-expanded', list.classList.contains('open')
       )
+    }
+
+    if (e.keyCode === TAB_KEY_CODE ) {
+      listItems.forEach(item => {
+        item.setAttribute('tabindex', '-1')
+      })
+      //containerGallery.focus()
     }
 
     if (e.keyCode === DOWN_ARROW_KEY_CODE) {

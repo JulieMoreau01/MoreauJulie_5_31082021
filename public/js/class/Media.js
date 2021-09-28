@@ -37,11 +37,12 @@ class Image {
     return `
     <figure>
       <img src="public/images/${this.name}/${this.image}" id="${this.id}" title="${this.title}" alt="${this.title}" tabindex="11">
-      <figcaption>
+      <figcaption aria-hidden="true">
         <span class="title" tabindex="11" aria-label="${this.title}">${this.title}</span>
         <span class="like">
         <span class="counter" aria-label="${this.likes} like sur cette photo" tabindex="11">${this.likes}</span> 
           <i class="fas fa-heart" aria-label="ajouter un like" aria-expanded="false" tabindex="11"></i>
+          <span class="sr-only">like - cliquer sur le coeur pour ajouter un like</span>
         </span>
       </figcaption>
     </figure>
@@ -90,7 +91,7 @@ class Video {
         <source src="public/images/${this.name}/${this.video}" type="video/mp4">
           So sorry, your browser doesn't support embedded videos.
         </video>
-        <figcaption>
+        <figcaption aria-hidden="true">
           <span class="title" tabindex="11">${this.title}</span>
           <span class="like">
           <span class="counter" aria-label="${this.likes} like sur cette video" tabindex="11">${this.likes}</span> 
