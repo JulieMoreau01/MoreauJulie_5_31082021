@@ -1,12 +1,3 @@
-export class LightBox {
-  constructor (item) {
-    if (item.type === 'image') {
-      return new ImageLightBox(item)
-    } else if (item.type === 'video') {
-      return new VideoLightBox(item)
-    }
-  }
-}
 class ImageLightBox {
   constructor (data) {
     this.id = data.id
@@ -78,5 +69,14 @@ class VideoLightBox {
       <figcaption>${this.title}</figcaption>
     </figure>
     `
+  }
+}
+export class LightBox {
+  constructor (item) {
+    if (item.type === 'image') {
+      return new ImageLightBox(item)
+    } else if (item.type === 'video') {
+      return new VideoLightBox(item)
+    }
   }
 }

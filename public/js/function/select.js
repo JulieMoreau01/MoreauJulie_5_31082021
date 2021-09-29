@@ -5,8 +5,8 @@ const listItems = document.querySelectorAll('.list-item')
 const dropdownSelectedNode = document.querySelector('#selected')
 const listItemIds = []
 
-function setSelectedListItem (e) {
-  const selectedTextToAppend = document.createTextNode(e.target.innerText)
+function setSelectedListItem (event) {
+  const selectedTextToAppend = document.createTextNode(event.target.innerText)
   dropdownSelectedNode.textContent = null
   dropdownSelectedNode.appendChild(selectedTextToAppend)
 }
@@ -22,9 +22,9 @@ function focusNextListItem (direction) {
   const currentActiveElementIndex = listItemIds.indexOf(activeElementId)
   if (activeElementId === 'selected') {
     document.querySelector(`#${listItemIds[0]}`).focus()
-  } else {
-    if (direction === 'ArrowDown') {
-      const currentActiveElementIsNotLastItem = currentActiveElementIndex < listItemIds.length - 1
+  } else if (direction === 'ArrowDown') {
+      const currentActiveElementIsNotLastItem = 
+      currentActiveElementIndex < listItemIds.length - 1
       if (currentActiveElementIsNotLastItem) {
         const nextListItemId = listItemIds[currentActiveElementIndex + 1]
         document.querySelector(`#${nextListItemId}`).focus()
@@ -37,22 +37,21 @@ function focusNextListItem (direction) {
         document.querySelector(`#${nextListItemId}`).focus()
       }
     }
-  }
 }
 
 export function select () {
   listItems.forEach(item => listItemIds.push(item.id))
 
   listItems.forEach(item => {
-    item.addEventListener('click', e => {
-      setSelectedListItem(e)
+    item.addEventListener('click', event => {
+      setSelectedListItem(event)
       closeList()
     })
 
-    item.addEventListener('keydown', e => {
-      switch (e.key) {
+    item.addEventListener('keydown', event => {
+      switch (event.key) {
         case 'Enter':
-          setSelectedListItem(e)
+          setSelectedListItem(event)
           closeList()
           return
 
@@ -75,30 +74,36 @@ export function select () {
     })
   })
 
-  function toggleListVisibility (e) {
-    const openDropDown = e.key === 'Enter'
-    if (e.key === 'Escape') {
+  function toggleListVisibility (event) {
+    const openDropDown = event.key === 'Enter'
+    if (event.key === 'Escape') {
       closeList()
     }
-    if (e.type === 'click' || openDropDown) {
+    if (event.type === 'click' || openDropDown) {
       list.classList.toggle('open')
       dropdown.classList.toggle('arrowOpen')
-      listContainer.setAttribute('aria-expanded', list.classList.contains('open'))
+      listContainer.setAttribute(
+        'aria-expanded', 
+        list.classList.contains('open')
+      )
     }
-    if (e.key === 'Tab') {
+    if (event.key === 'Tab') {
       listItems.forEach(item => {
         item.setAttribute('tabindex', '-1')
       })
     }
-    if (e.key === 'ArrowDown') {
+    if (event.key === 'ArrowDown') {
       focusNextListItem('ArrowDown')
     }
-    if (e.key === 'ArrowUp') {
+    if (event.key === 'ArrowUp') {
       focusNextListItem('ArrowUp')
     }
   }
 
-  dropdownSelectedNode.addEventListener('click', e => toggleListVisibility(e))
-  dropdownSelectedNode.addEventListener('keydown', e => toggleListVisibility(e))
-
+  dropdownSelectedNode.addEventListener('click', event => 
+    toggleListVisibility(event)
+  )
+  dropdownSelectedNode.addEventListener('keydown', event => 
+    toggleListVisibility(event)
+    )
 }

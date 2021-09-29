@@ -22,20 +22,20 @@
     <main class="photographer" id="photographer_content">
       <section id="fiche"></section>
       <section id="select">
-        <ul class="dropdown">
+        <ul class="dropdown" arial-label="Trier les images">
           <li id="label" class="label" tabindex="10">Trier par</li>
           <li aria-labelledby="label" id="selected" tabindex="10">
             Popularité
           </li>
           <li aria-expanded="false" class="list-container">
-            <ul class="list">
-              <li class="list-item activePop" tabindex="10" id="option-1" aria-labelledby="label">
+            <ul class="list" role="listbox">
+              <li class="list-item activePop" tabindex="10" id="option-1" aria-labelledby="label" role="option">
                 Popularité
               </li>
-              <li class="list-item" tabindex="10" id="option-2">
+              <li class="list-item" tabindex="10" id="option-2" role="option">
                 Date
               </li>
-              <li class="list-item" tabindex="10" id="option-3">
+              <li class="list-item" tabindex="10" id="option-3" role="option">
                 Titre
               </li>
             </ul>
@@ -47,27 +47,32 @@
       <section id="lightbox" tabindex="12" aria-hidden="true"></section>
       <section id="modal" tabindex="12" aria-hidden="true">
         <form id="formcontact" tabindex="12">
-          <h2 tabindex="12">Contactez-moi<br/>Mimi Keel</h2>
-          <p>
-            <label for="prenom" tabindex="12">Prénom</label>
-            <input type="text" id="prenom" name="prenom" tabindex="12" aria-labelledby="prenom"/>
-          </p>
-          <p>
-            <label for="nom" tabindex="12">Nom</label>
-            <input type="text" id="nom" name="nom" tabindex="12" aria-labelledby="nom"/>
-          </p>
-          <p>
-            <label for="email" tabindex="12">Email</label>
-            <input type="email" id="email" name="email" tabindex="12" aria-labelledby="email"/>
-          </p>
-          <p>
-            <label for="textarea" tabindex="12">Votre message</label>
-            <textarea id="textarea" tabindex="12" aria-labelledby="textarea"></textarea>
-          </p>
-          <p>
-            <input id="submitButton" class="" type="submit" value="Envoyer" tabindex="12">
-          </p>
-          <p class="close-modal"><i class="fas fa-times" aria-hidden="false" tabindex="12"><span class="sr-only">Fermer la modal</span></i></p>
+          <fieldset>
+            <legend tabindex="12">Contactez-moi<br/>Mimi Keel</legend>
+            <p>
+              <label for="prenom" tabindex="12">Prénom</label>
+              <input type="text" id="prenom" name="prenom" tabindex="12" aria-labelledby="prenom"/>
+            </p>
+            <p>
+              <label for="nom" tabindex="12">Nom</label>
+              <input type="text" id="nom" name="nom" tabindex="12" aria-labelledby="nom"/>
+            </p>
+            <p>
+              <label for="email" tabindex="12">Email</label>
+              <input type="email" id="email" name="email" tabindex="12" aria-labelledby="email"/>
+            </p>
+            <p>
+              <label for="textarea" tabindex="12">Votre message</label>
+              <textarea id="textarea" tabindex="12" aria-labelledby="textarea"></textarea>
+            </p>
+            <p>
+              <input id="submitButton" class="" type="submit" value="Envoyer" tabindex="12">
+            </p>
+            <p class="close-modal" tabindex="12" aria-label="Fermer la modal">
+              <i class="fas fa-times" aria-hidden="true"></i>
+              <span class="sr-only" tabindex="12">Fermer la modal</span>
+            </p>
+          </fieldset>
         </form>
       </section>
     </main>

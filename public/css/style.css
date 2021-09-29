@@ -421,19 +421,23 @@ section#fiche figure {
     top: 0px;
     right: 0px;
   }
-  section#fiche figure img {
-    width: 100px;
-    height: 100px;
-  }
 }
 @media screen and (min-width: 1024px) {
   section#fiche figure {
     top: 50px;
     right: 50px;
   }
+}
+@media screen and (min-width: 0px) {
   section#fiche figure img {
-    width: 200px;
-    height: 200px;
+    width: 100px !important;
+    height: 100px !important;
+  }
+}
+@media screen and (min-width: 1024px) {
+  section#fiche figure img {
+    width: 200px !important;
+    height: 200px !important;
   }
 }
 
@@ -663,10 +667,6 @@ section#modal form {
   background-color: #DB8876;
   position: relative;
   padding: 25px 35px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  /*** Error message ***/
 }
 @media screen and (min-width: 0px) {
   section#modal form {
@@ -681,7 +681,16 @@ section#modal form {
     height: 80%;
   }
 }
-section#modal form .close-modal {
+section#modal form fieldset {
+  height: 100%;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: none;
+  /*** Error message ***/
+}
+section#modal form fieldset .close-modal {
   position: absolute;
   color: white;
   background: none;
@@ -689,45 +698,46 @@ section#modal form .close-modal {
   cursor: pointer;
 }
 @media screen and (min-width: 0px) {
-  section#modal form .close-modal {
+  section#modal form fieldset .close-modal {
     top: 20px;
     right: 20px;
     font-size: 1.1875rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  section#modal form .close-modal {
+  section#modal form fieldset .close-modal {
     top: 35px;
     right: 35px;
     font-size: 2.625rem;
   }
 }
-section#modal form h2 {
+section#modal form fieldset legend {
   font-size: 2.3125rem;
   line-height: 45px;
   font-weight: 400;
-  margin: 0;
+  margin: 0px 0px 20px 0px;
+  width: 100%;
 }
-section#modal form p {
+section#modal form fieldset p {
   display: flex;
   flex-direction: column;
   margin: 0;
 }
-section#modal form p label {
+section#modal form fieldset p label {
   font-size: 1.125rem;
 }
-section#modal form p input[type=text], section#modal form p input[type=email] {
+section#modal form fieldset p input[type=text], section#modal form fieldset p input[type=email] {
   width: 100%;
   border-radius: 5px;
   border: none;
   height: 48px;
 }
-section#modal form p textarea {
+section#modal form fieldset p textarea {
   height: 135px;
   border-radius: 5px;
   border: none;
 }
-section#modal form p input[type=submit] {
+section#modal form fieldset p input[type=submit] {
   width: min-content;
   background-color: #901C1C;
   color: white;
@@ -736,7 +746,7 @@ section#modal form p input[type=submit] {
   padding: 20px;
   border: none;
 }
-section#modal form p[data-error]::after {
+section#modal form fieldset p[data-error]::after {
   content: attr(data-error);
   font-size: 0.875rem;
   color: #901C1C;
@@ -748,7 +758,7 @@ section#modal form p[data-error]::after {
   opacity: 0;
   transition: 0.3s;
 }
-section#modal form p[data-error-visible=true]::after {
+section#modal form fieldset p[data-error-visible=true]::after {
   opacity: 1;
 }
 
@@ -931,10 +941,6 @@ section#fiche figure img, section.index figure img {
   object-fit: cover;
   border-radius: 50%;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
-}
-
-.hidden {
-  display: none;
 }
 
 .sr-only {

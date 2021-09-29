@@ -3,13 +3,12 @@ console.log(containerLightbox)
 
 function goRight () {
   const actifImg = document.querySelector('.active')
-  const figureGallery = document.querySelectorAll('section#lightbox figure')
   const figureNext = actifImg.nextElementSibling
   const btnRight = document.querySelector('button.btnright-lightbox')
   actifImg.style.display = 'none'
   actifImg.classList.remove('active')
   if (figureNext === btnRight) {
-    const firstFigure = figureGallery[0]
+    const firstFigure = containerLightbox.firstElementChild
     firstFigure.style.display = 'flex'
     firstFigure.classList.add('active')
   } else {
@@ -27,6 +26,7 @@ function goLeft () {
   if (figurePrevious === null) {
     const figureNbombre = (figureGallery.length) - 1
     const lastFigure = figureGallery[figureNbombre]
+    console.log(lastFigure)
     lastFigure.style.display = 'flex'
     lastFigure.classList.add('active')
   } else {
@@ -63,12 +63,12 @@ function action () {
   const btnRight = document.querySelector('button.btnright-lightbox')
   const btnLeft = document.querySelector('button.btnleft-lightbox')
   const btnClose = document.querySelector('button.close-lightbox')
-  window.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') {
+  window.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
       containerLightbox.style.display = 'none'
-    } else if (e.key === 'ArrowLeft') {
+    } else if (event.key === 'ArrowLeft') {
       goLeft()
-    } else if (e.key === 'ArrowRight') {
+    } else if (event.key === 'ArrowRight') {
       goRight()
     }
   })
@@ -93,12 +93,17 @@ function lightboxAction () {
 }
 
 export function lightbox () {
-  const mediaGallery = []
   const imgGallery = document.querySelectorAll('section#gallery figure img')
   const videoGallery = document.querySelectorAll('section#gallery figure video')
   const figureGallery = document.querySelectorAll('section#lightbox figure')
-  mediaGallery.push.apply(mediaGallery, imgGallery)
-  mediaGallery.push.apply(mediaGallery, videoGallery)
+  // Creat array with Image & Video
+  const mediaGallery = []
+  const args = [
+    imgGallery,
+    videoGallery
+  ]
+  mediaGallery.push.apply(mediaGallery, ...args)
+  // Display the lightbox Section and get the src of click picture on gallery
   mediaGallery.forEach(img => {
     function displayLightbox () {
       containerLightbox.style.display = 'flex'
@@ -124,5 +129,4 @@ export function lightbox () {
       }
     })
   })
-
 }

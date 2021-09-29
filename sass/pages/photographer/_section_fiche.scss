@@ -111,18 +111,20 @@ section#fiche {
     @include media(phone) {
       top: 0px;
       right: 0px;
-      img {
-        width: 100px;
-        height: 100px;
-      }
     }
     @include media(desktop) {
       top: 50px;
       right: 50px;
-      img {
-        width: 200px;
-        height: 200px;
+    }
+    img {
+      @include media(phone) {
+        width: 100px !important;
+        height: 100px !important;
       }
+      @include media(desktop) {
+        width: 200px !important;
+        height: 200px !important;
+      }      
     }
   }
 }

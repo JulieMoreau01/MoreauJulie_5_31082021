@@ -13,14 +13,14 @@ export function filtre () {
     const urlPageIndex = window.location.search
     const tagUrlPageIndex = urlPageIndex.replace('?', '')
     console.log(tagUrlPageIndex)
-    for (let i = 1; i < sectionIndex.length; i += addValue) {
-      if ((sectionIndex[i].classList.contains(tagUrlPageIndex) === true) ||
+    for (let sec = 1; sec < sectionIndex.length; sec += addValue) {
+      if ((sectionIndex[sec].classList.contains(tagUrlPageIndex) === true) ||
        (tagUrlPageIndex === '')) {
         console.log('1')
-        sectionIndex[i].style.display = 'flex'
+        sectionIndex[sec].style.display = 'flex'
       } else {
         console.log('2')
-        sectionIndex[i].style.display = 'none'
+        sectionIndex[sec].style.display = 'none'
       }
     }
   }

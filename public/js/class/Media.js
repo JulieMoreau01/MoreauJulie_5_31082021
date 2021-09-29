@@ -1,12 +1,3 @@
-export class MediaFactory {
-  constructor (item) {
-    if (item.type === 'image') {
-      return new Image(item)
-    } else if (item.type === 'video') {
-      return new Video(item)
-    }
-  }
-}
 class Image {
   constructor (data) {
     this.id = data.id
@@ -38,11 +29,17 @@ class Image {
     <figure>
       <img src="public/images/${this.name}/${this.image}" id="${this.id}" title="${this.title}" alt="${this.title}" tabindex="11">
       <figcaption aria-hidden="true">
-        <span class="title" tabindex="11" aria-label="${this.title}">${this.title}</span>
+        <span class="title" tabindex="11" aria-label="${this.title}">
+          ${this.title}
+        </span>
         <span class="like">
-        <span class="counter" aria-label="${this.likes} like sur cette photo" tabindex="11">${this.likes}</span> 
+        <span class="counter" aria-label="${this.likes} like sur cette photo" tabindex="11">
+          ${this.likes}
+        </span> 
           <i class="fas fa-heart" aria-label="ajouter un like" aria-expanded="false" tabindex="11"></i>
-          <span class="sr-only">like - cliquer sur le coeur pour ajouter ou retirer un like</span>
+          <span class="sr-only">
+            like - cliquer sur le coeur pour ajouter ou retirer un like
+          </span>
         </span>
       </figcaption>
     </figure>
@@ -85,12 +82,26 @@ class Video {
         <figcaption aria-hidden="true">
           <span class="title" tabindex="11">${this.title}</span>
           <span class="like">
-          <span class="counter" aria-label="${this.likes} like sur cette video" tabindex="11">${this.likes}</span> 
+          <span class="counter" aria-label="${this.likes} like sur cette video" tabindex="11">
+            ${this.likes}
+          </span> 
             <i class="fas fa-heart" aria-label="ajouter un like" aria-expanded="false" tabindex="11"></i>
           </span>
-          <span class="sr-only">like - cliquer sur le coeur pour ajouter ou retirer un like</span>
+          <span class="sr-only">
+            like - cliquer sur le coeur pour ajouter ou retirer un like
+          </span>
         </figcaption>
     </figure>
     `
+  }
+}
+
+export class MediaFactory {
+  constructor (item) {
+    if (item.type === 'image') {
+      return new Image(item)
+    } else if (item.type === 'video') {
+      return new Video(item)
+    }
   }
 }

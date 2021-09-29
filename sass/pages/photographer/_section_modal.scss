@@ -23,77 +23,84 @@ section#modal {
       height: 80%;
     }
     padding: 25px 35px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    .close-modal {
-      position: absolute;
-      color: white;
-      background: none;
-      border: none;
-      cursor: pointer;
-      @include media(phone) {
-        top: 20px;
-        right: 20px;
-        @include font-size(19);
-      }
-      @include media(desktop) {
-        top: 35px;
-        right: 35px;
-        @include font-size(42);
-      }
-    }
-    h2 {
-      @include font-size(37);
-      line-height: 45px;
-      font-weight: 400;
-      margin: 0;
-    }
-    p {
+
+    fieldset {
+      height: 100%;
+      padding: 0px;
       display: flex;
       flex-direction: column;
-      margin: 0;;
-      label {
-        @include font-size(18);
-      }
-      input[type=text], input[type=email] {
-        width: 100%;
-        border-radius: 5px;
-        border: none;
-        height: 48px;
-      }
-      textarea {
-        height: 135px;
-        border-radius: 5px;
-        border: none;
-      }
-      input[type=submit] {
-        width: min-content;
-        background-color: $color-primary;
+      justify-content: space-between;
+      border: none;
+      .close-modal {
+        position: absolute;
         color: white;
-        @include font-size(18);
-        border-radius: 5px;
-        padding: 20px;
+        background: none;
         border: none;
-
+        cursor: pointer;
+        @include media(phone) {
+          top: 20px;
+          right: 20px;
+          @include font-size(19);
+        }
+        @include media(desktop) {
+          top: 35px;
+          right: 35px;
+          @include font-size(42);
+        }
       }
-    }
-    /*** Error message ***/
-    p[data-error]::after {
-      content: attr(data-error);
-      @include font-size(14);
-      color: $color-primary;
-      display: block;
-      margin-top: 7px;
-      margin-bottom: 7px;
-      text-align: left;
-      line-height: 0.3;
-      opacity: 0;
-      transition: 0.3s;
-    }
+      legend {
+        @include font-size(37);
+        line-height: 45px;
+        font-weight: 400;
+        margin: 0px 0px 20px 0px;
+        width: 100%;
+      }
+      p {
+        display: flex;
+        flex-direction: column;
+        margin: 0;;
+        label {
+          @include font-size(18);
+        }
+        input[type=text], input[type=email] {
+          width: 100%;
+          border-radius: 5px;
+          border: none;
+          height: 48px;
+        }
+        textarea {
+          height: 135px;
+          border-radius: 5px;
+          border: none;
+        }
+        input[type=submit] {
+          width: min-content;
+          background-color: $color-primary;
+          color: white;
+          @include font-size(18);
+          border-radius: 5px;
+          padding: 20px;
+          border: none;
 
-    p[data-error-visible="true"]::after {
-      opacity: 1;
+        }
+      }
+      /*** Error message ***/
+      p[data-error]::after {
+        content: attr(data-error);
+        @include font-size(14);
+        color: $color-primary;
+        display: block;
+        margin-top: 7px;
+        margin-bottom: 7px;
+        text-align: left;
+        line-height: 0.3;
+        opacity: 0;
+        transition: 0.3s;
+      }
+
+      p[data-error-visible="true"]::after {
+        opacity: 1;
+      }
     }
   }
 }

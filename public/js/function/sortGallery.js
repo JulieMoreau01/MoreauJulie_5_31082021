@@ -39,12 +39,12 @@ export function sortGallery (media) {
   return arrayTri
 }
 
-function stateSort (media, e) {
-  if (e.target.id === 'option-1') {
+function stateSort (media, event) {
+  if (event.target.id === 'option-1') {
     state = 'popState'
-  } else if (e.target.id === 'option-2') {
+  } else if (event.target.id === 'option-2') {
     state = 'dateState'
-  } else if (e.target.id === 'option-3') {
+  } else if (event.target.id === 'option-3') {
     state = 'titleState'
   }
   sortGallery(media)
@@ -54,12 +54,12 @@ function stateSort (media, e) {
 
 function selectAction (media) {
   listItemsSelect.forEach(item => {
-    item.addEventListener('click', e => {
-      stateSort(media, e)
+    item.addEventListener('click', event => {
+      stateSort(media, event)
     })
-    item.addEventListener('keydown', e => {
-      if (e.key === 'Enter') {
-        stateSort(media, e)
+    item.addEventListener('keydown', event => {
+      if (event.key === 'Enter') {
+        stateSort(media, event)
       }
     })
   })
