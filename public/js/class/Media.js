@@ -1,4 +1,4 @@
-class MediaFactory {
+export class MediaFactory {
   constructor (item) {
     if (item.type === 'image') {
       return new Image(item)

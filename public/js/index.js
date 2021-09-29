@@ -1,3 +1,9 @@
+
+import { Photographer } from '/public/js/class/Photographer.js'
+import { filtre } from '/public/js/function/filtres.js'
+import { getData } from '/public/js/data.js'
+
+
 /**
  * Template HTML Page Index
  */
@@ -18,3 +24,4 @@ const init = async () => {
 }
 
 init()
+

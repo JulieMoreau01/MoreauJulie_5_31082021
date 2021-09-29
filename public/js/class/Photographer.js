@@ -1,4 +1,4 @@
-class Photographer {
+export class Photographer {
   constructor (data) {
     this.name = data.name
     this.id = data.id
@@ -15,7 +15,10 @@ class Photographer {
   creatPrice () {
     return `
     <p tabindex="8">
-      <span id="total_like"></span><i class="fas fa-heart"></i><span class="sr-only">like au total</span> ${this.price}€ / jour
+      <span id="total_like"></span>
+      <i class="fas fa-heart"></i>
+      <span class="sr-only">like au total</span> 
+      ${this.price}€ / jour
     </p>
     `
   }
@@ -43,7 +46,9 @@ class Photographer {
   creatHtmlPhotographerFiche () {
     return `
     <h1 class="name" id="thename" tabindex="3">${this.name}</h1>
-    <p class="contact"><button class="btn" tabindex="6" id="contact">Contactez-moi</button></p>
+    <p class="contact">
+      <button class="btn" tabindex="6" id="contact">Contactez-moi</button>
+    </p>
     <p class="country" tabindex="4">${this.city}, ${this.country}</p>
     <p class="tagline" tabindex="4">${this.tagline}</p>
     <ul>${this.liTags}</ul>

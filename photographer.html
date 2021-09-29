@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
   <head>
       <meta charset="utf-8" />
@@ -13,7 +14,7 @@
       <title>FishEye - Site web de photographes freelances</title>
   </head>
   <body>
-    <header role="banner" class="photographer">
+    <header class="photographer">
         <figure>
             <a href="index.html" tabindex="2"><img src="public/images/logo.svg" alt="logo du site Fisheye et lien vers la page d'accueil" /></a>
         </figure>
@@ -22,13 +23,13 @@
       <section id="fiche"></section>
       <section id="select">
         <ul class="dropdown">
-          <li id="label" class="label" tabindex="9">Trier par</li>
-          <li role="button" aria-labelledby="label" id="selected" tabindex="10">
+          <li id="label" class="label" tabindex="10">Trier par</li>
+          <li aria-labelledby="label" id="selected" tabindex="10">
             Popularité
           </li>
-          <li aria-expanded="false" role="list" class="list-container">
+          <li aria-expanded="false" class="list-container">
             <ul class="list">
-              <li class="list-item activePop" tabindex="10" id="option-1" role="button" aria-labelledby="label" id="selected" tabindex="8">
+              <li class="list-item activePop" tabindex="10" id="option-1" aria-labelledby="label">
                 Popularité
               </li>
               <li class="list-item" tabindex="10" id="option-2">
@@ -57,30 +58,21 @@
           </p>
           <p>
             <label for="email" tabindex="12">Email</label>
-            <input type="email" id="email" name="email" tabindex="12" aria-labelledby="Email"/>
+            <input type="email" id="email" name="email" tabindex="12" aria-labelledby="email"/>
           </p>
           <p>
             <label for="textarea" tabindex="12">Votre message</label>
-            <textarea id="textarea" tabindex="12" aria-labelledby="message"></textarea>
+            <textarea id="textarea" tabindex="12" aria-labelledby="textarea"></textarea>
           </p>
           <p>
             <input id="submitButton" class="" type="submit" value="Envoyer" tabindex="12">
           </p>
-          <p class="close-modal"><i class="fas fa-times" aria-hidden="false" aria-label="Fermer la modal" tabindex="12"></i></p>
+          <p class="close-modal"><i class="fas fa-times" aria-hidden="false" tabindex="12"><span class="sr-only">Fermer la modal</span></i></p>
         </form>
       </section>
     </main>
     <!--Javascript-->
-    <script src="public/js/data.js"></script>
-    <script src="public/js/function/lightbox.js"></script>
-    <script src="public/js/function/modal.js"></script>
-    <script src="public/js/function/select.js"></script>
-    <script src="public/js/class/Photographer.js"></script>
-    <script src="public/js/class/Media.js"></script>
-    <script src="public/js/class/LightBox.js"></script>
-    <script src="public/js/function/like.js"></script>
-    <script src="public/js/function/video.js"></script>
-    <script src="public/js/photographerPage.js"></script>
-    <script src="public/js/function/sortGallery.js"></script>
+    <script type="module" src="public/js/function/sortGallery.js"></script>
+    <script type="module" src="public/js/photographer.js"></script>
   </body>
 </html>

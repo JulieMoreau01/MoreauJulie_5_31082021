@@ -1,7 +1,13 @@
-function modal () {
+const containerModal = document.getElementById('modal')
+
+export function modal () {
   const btnContact = document.getElementById('contact')
   const btnCloseModal = document.querySelector('p.close-modal')
   const formContact = document.getElementById('formcontact')
+  // containerGallery.setAttribute('aria-hidden', 'true')
+  // containerSelect.setAttribute('aria-hidden', 'true')
+  // containerFiche.setAttribute('aria-hidden', 'true')
+  // containerPrice.setAttribute('aria-hidden', 'true')
 
   window.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
@@ -17,7 +23,7 @@ function modal () {
   })
   btnContact.addEventListener('keydown', function (event) {
     if (event.key === 13) {
-      containerModal.style.display = 'flex'
+      containerModal.style.display = 'flex';
       containerModal.setAttribute('aria-hidden', 'false')
     }
   })

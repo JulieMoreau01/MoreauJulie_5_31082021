@@ -1,4 +1,4 @@
-class LightBox {
+export class LightBox {
   constructor (item) {
     if (item.type === 'image') {
       return new ImageLightBox(item)
@@ -7,7 +7,6 @@ class LightBox {
     }
   }
 }
-
 class ImageLightBox {
   constructor (data) {
     this.id = data.id
