@@ -22,6 +22,13 @@ section#lightbox {
       right: 40px;
       @include font-size(42);
     }
+    &::before {
+      content: "\f00d";
+      width: 42px;
+      height: 42px;
+      font-weight: 900;
+      font-family: 'fontawesome';
+    }
   }
   .btnright-lightbox, .btnleft-lightbox {
     position: absolute;
@@ -36,6 +43,12 @@ section#lightbox {
     @include media(desktop) {
       @include font-size(30);
     }
+    &::before {
+      width: 42px;
+      height: 42px;
+      font-weight: 900;
+      font-family: 'fontawesome';
+    }
   }
   .btnright-lightbox {
     @include media(phone) {
@@ -43,7 +56,10 @@ section#lightbox {
     }
     @include media(desktop) {
       right: 40px; 
-    }    
+    }
+    &::before {
+      content: "\f054";
+    }
   }
   .btnleft-lightbox {
     @include media(phone) {
@@ -51,7 +67,10 @@ section#lightbox {
     }
     @include media(desktop) {
       left: 40px; 
-    }     
+    }
+    &::before {
+      content: "\f053";
+    }   
   }
   figure {
     width: 100%;

@@ -45,14 +45,21 @@ section#modal {
         @include media(desktop) {
           top: 35px;
           right: 35px;
-          @include font-size(42);
+          @include font-size(35);
+        }
+        &::before {
+          content: "\f00d";
+          width: 42px;
+          height: 42px;
+          font-weight: 900;
+          font-family: 'fontawesome';
         }
       }
       h2 {
-        @include font-size(37);
-        line-height: 45px;
+        @include font-size(28);
+        line-height: 30px;
         font-weight: 400;
-        margin: 0px 0px 20px 0px;
+        margin: 0px 0px 10px 0px;
         width: 100%;
       }
       p {
@@ -60,16 +67,16 @@ section#modal {
         flex-direction: column;
         margin: 0;;
         label {
-          @include font-size(18);
+          @include font-size(16);
         }
         input[type=text], input[type=email] {
           width: 100%;
           border-radius: 5px;
           border: none;
-          height: 48px;
+          height: 45px;
         }
         textarea {
-          height: 135px;
+          height: 125px;
           border-radius: 5px;
           border: none;
         }

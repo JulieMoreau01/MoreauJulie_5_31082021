@@ -53,10 +53,14 @@
       <section id="gallery"></section>
       
       <!-- MODAL LIGHTBOX -->
-      <section id="lightbox" tabindex="12" aria-hidden="true" role="dialog" aria-modal="true"></section>
+      <section id="lightbox" tabindex="12" aria-hidden="true" role="dialog" aria-modal="true" class="hidden">
+        <button class="btnright-lightbox" aria-label="Photo suivante"></button>
+        <button class="btnleft-lightbox" aria-label="Photo précedente"></button>
+        <button class="close-lightbox" aria-label="Fermer la lightbox"></button>
+      </section>
       
       <!-- MODAL CONTACR FORM -->
-      <section id="modal" tabindex="12" aria-hidden="true" role="dialog" aria-modal="true">
+      <section id="modal" tabindex="12" aria-hidden="true" role="dialog" aria-modal="true" class="hidden">
         <form id="formcontact" tabindex="12">
           <fieldset>
             <h2 tabindex="12">Contactez-moi<br/>Mimi Keel</h2>
@@ -79,10 +83,7 @@
             <p>
               <input id="submitButton" class="" type="submit" value="Envoyer" tabindex="12">
             </p>
-            <button class="close-modal" tabindex="12" aria-label="Fermer la modal">
-              <i class="fas fa-times" aria-hidden="true"></i>
-              <span class="sr-only">Fermer la modal</span>
-            </button>
+            <button class="close-modal" tabindex="12" aria-label="Fermer la modal"></button>
           </fieldset>
         </form>
       </section>

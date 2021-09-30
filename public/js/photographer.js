@@ -2,7 +2,7 @@ import { LightBox } from './class/LightBox.js'
 import { MediaFactory } from './class/Media.js'
 import { Photographer } from './class/Photographer.js'
 import { getData } from './data.js'
-import { lightbox } from './function/lightbox.js'
+import { displayLightbox } from './function/lightbox.js'
 import { likeCounterFunction } from './function/like.js'
 import { modal } from './function/modal.js'
 import { select } from './function/select.js'
@@ -52,27 +52,52 @@ export function photographerPageGallery (media) {
   // DISPLAY GALLERY
   containerGallery.innerHTML = ''
   arrayTri.forEach(item => {
+    console.log(item)
     const mediaTemplate = new MediaFactory(item)
     containerGallery.innerHTML += mediaTemplate.creatHtmlGallery()
   })
-  const video = document.querySelector('video')
+
   // Make a image of the video
+  const video = document.querySelector('video')
   video.removeAttribute('controls')
   likeCounterFunction()
+}
 
-  // DISPLAY LIGHTBOX
-  containerLightbox.innerHTML = ''
-  arrayTri.forEach(item => {
-    const lightboxTemplate = new LightBox(item)
-    containerLightbox.innerHTML += lightboxTemplate.creatHtmlImgLightbox()
+// DISPLAY LIGHTBOX
+function lightBox (media) {
+  function lightboxHidden () {
+    const arrayTri = sortGallery(media)
+    arrayTri.forEach(item => {
+      const lightboxTemplate = new LightBox(item)
+      containerLightbox.innerHTML = lightboxTemplate.creatHtmlImgLightbox() + containerLightbox.innerHTML
+    })
+  }
+  const imgGallery = document.querySelectorAll('section#gallery figure img')
+  const videoGallery = document.querySelectorAll('section#gallery figure video')
+
+  const allImgGallery = [].slice.call(imgGallery)
+  const allVideoGallery = [].slice.call(videoGallery)
+  const mediaGallery = allImgGallery.concat(allVideoGallery)
+
+  mediaGallery.forEach(img => {
+    img.addEventListener('click', event => {
+      lightboxHidden()
+      displayLightbox(event, img)
+    })
+    img.addEventListener('keydown', event => {
+      if (event.key === 'Enter') {
+        lightboxHidden()
+        displayLightbox(event, img)
+      }
+    })
   })
-  lightbox()
 }
 
 const init = async () => {
   const { photographers, media } = await getData()
   photographerPageTop(photographers)
   photographerPageGallery(media)
+  lightBox(media)
 }
 
 init()

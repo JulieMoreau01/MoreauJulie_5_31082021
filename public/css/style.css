@@ -102,18 +102,6 @@ html body main#index.index {
     padding: 50px 0px 0px 0px;
   }
 }
-html .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  /* added line */
-  border: 0;
-}
 html :focus {
   border: 2px solid black;
 }
@@ -579,6 +567,13 @@ section#lightbox .close-lightbox {
     font-size: 2.625rem;
   }
 }
+section#lightbox .close-lightbox::before {
+  content: "";
+  width: 42px;
+  height: 42px;
+  font-weight: 900;
+  font-family: "fontawesome";
+}
 section#lightbox .btnright-lightbox, section#lightbox .btnleft-lightbox {
   position: absolute;
   top: 50%;
@@ -597,6 +592,12 @@ section#lightbox .btnright-lightbox, section#lightbox .btnleft-lightbox {
     font-size: 1.875rem;
   }
 }
+section#lightbox .btnright-lightbox::before, section#lightbox .btnleft-lightbox::before {
+  width: 42px;
+  height: 42px;
+  font-weight: 900;
+  font-family: "fontawesome";
+}
 @media screen and (min-width: 0px) {
   section#lightbox .btnright-lightbox {
     right: 20px;
@@ -607,6 +608,9 @@ section#lightbox .btnright-lightbox, section#lightbox .btnleft-lightbox {
     right: 40px;
   }
 }
+section#lightbox .btnright-lightbox::before {
+  content: "";
+}
 @media screen and (min-width: 0px) {
   section#lightbox .btnleft-lightbox {
     left: 20px;
@@ -616,6 +620,9 @@ section#lightbox .btnright-lightbox, section#lightbox .btnleft-lightbox {
   section#lightbox .btnleft-lightbox {
     left: 40px;
   }
+}
+section#lightbox .btnleft-lightbox::before {
+  content: "";
 }
 section#lightbox figure {
   width: 100%;
@@ -708,14 +715,21 @@ section#modal form fieldset .close-modal {
   section#modal form fieldset .close-modal {
     top: 35px;
     right: 35px;
-    font-size: 2.625rem;
+    font-size: 2.1875rem;
   }
 }
+section#modal form fieldset .close-modal::before {
+  content: "";
+  width: 42px;
+  height: 42px;
+  font-weight: 900;
+  font-family: "fontawesome";
+}
 section#modal form fieldset h2 {
-  font-size: 2.3125rem;
-  line-height: 45px;
+  font-size: 1.75rem;
+  line-height: 30px;
   font-weight: 400;
-  margin: 0px 0px 20px 0px;
+  margin: 0px 0px 10px 0px;
   width: 100%;
 }
 section#modal form fieldset p {
@@ -724,16 +738,16 @@ section#modal form fieldset p {
   margin: 0;
 }
 section#modal form fieldset p label {
-  font-size: 1.125rem;
+  font-size: 1rem;
 }
 section#modal form fieldset p input[type=text], section#modal form fieldset p input[type=email] {
   width: 100%;
   border-radius: 5px;
   border: none;
-  height: 48px;
+  height: 45px;
 }
 section#modal form fieldset p textarea {
-  height: 135px;
+  height: 125px;
   border-radius: 5px;
   border: none;
 }
@@ -953,6 +967,10 @@ section#fiche figure img, section.index figure img {
   white-space: nowrap;
   /* added line */
   border: 0;
+}
+
+.hidden {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

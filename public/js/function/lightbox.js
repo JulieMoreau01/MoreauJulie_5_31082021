@@ -1,5 +1,6 @@
+// import { displayLightBoxHidden } from './../photographer.js'
+
 const containerLightbox = document.getElementById('lightbox')
-console.log(containerLightbox)
 
 function goRight () {
   const actifImg = document.querySelector('.active')
@@ -35,34 +36,11 @@ function goLeft () {
   }
 }
 
-function closeLightbox () {
-  const newBtnClose = document.createElement('button')
-  containerLightbox.appendChild(newBtnClose)
-  newBtnClose.classList.add('close-lightbox')
-  newBtnClose.setAttribute('aria-label', 'Fermer la lightbox')
-  newBtnClose.innerHTML = '<i class="fas fa-times" tabindex="12"></i>'
-}
-
-function rightLightbox () {
-  const newBtnRight = document.createElement('button')
-  containerLightbox.appendChild(newBtnRight)
-  newBtnRight.classList.add('btnright-lightbox')
-  newBtnRight.setAttribute('aria-label', 'Photo suivante')
-  newBtnRight.innerHTML = '<i class="fas fa-chevron-right" tabindex="12"></i>'
-}
-
-function leftLightbox () {
-  const newBtnLeft = document.createElement('button')
-  containerLightbox.appendChild(newBtnLeft)
-  newBtnLeft.classList.add('btnleft-lightbox')
-  newBtnLeft.setAttribute('aria-label', 'Photo précedente')
-  newBtnLeft.innerHTML = '<i class="fas fa-chevron-left" tabindex="12"></i>'
-}
-
-function action () {
+function lightboxAction () {
   const btnRight = document.querySelector('button.btnright-lightbox')
   const btnLeft = document.querySelector('button.btnleft-lightbox')
   const btnClose = document.querySelector('button.close-lightbox')
+  console.log(btnClose)
   window.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
       containerLightbox.style.display = 'none'
@@ -82,51 +60,28 @@ function action () {
   btnClose.addEventListener('click', function () {
     containerLightbox.style.display = 'none'
     containerLightbox.setAttribute('aria-hidden', 'true')
-  })
-}
-
-function lightboxAction () {
-  rightLightbox()
-  leftLightbox()
-  closeLightbox()
-  action()
-}
-
-export function lightbox () {
-  const imgGallery = document.querySelectorAll('section#gallery figure img')
-  const videoGallery = document.querySelectorAll('section#gallery figure video')
-  const figureGallery = document.querySelectorAll('section#lightbox figure')
-  // Creat array with Image & Video
-  const mediaGallery = []
-  const args = [
-    imgGallery,
-    videoGallery
-  ]
-  mediaGallery.push.apply(mediaGallery, ...args)
-  // Display the lightbox Section and get the src of click picture on gallery
-  mediaGallery.forEach(img => {
-    function displayLightbox () {
-      containerLightbox.style.display = 'flex'
-      containerLightbox.setAttribute('aria-hidden', 'false')
-      containerLightbox.focus()
-      const ImageSrc = img.getAttribute('src')
-      // DISPLAY PICTURE CLICKED ON LIGHTBOX
-      figureGallery.forEach(item => {
-        item.style.display = 'none'
-        const thisImage = item.children
-        const allsrc = thisImage.item(0).getAttribute('src')
-        if (allsrc === ImageSrc) {
-          item.style.display = 'flex'
-          item.classList.add('active')
-        }
-      })
-      lightboxAction()
-    }
-    img.addEventListener('click', event => displayLightbox(event))
-    img.addEventListener('keydown', event => {
-      if (event.key === 'Enter') {
-        displayLightbox(event)
-      }
+    const figureGallery = document.querySelectorAll('section#lightbox figure')
+    figureGallery.forEach(figure => {
+      containerLightbox.removeChild(figure)
     })
   })
+}
+
+export function displayLightbox (event, img) {
+  containerLightbox.style.display = 'flex'
+  containerLightbox.setAttribute('aria-hidden', 'false')
+  containerLightbox.focus()
+  const ImageSrc = img.getAttribute('src')
+  // DISPLAY PICTURE CLICKED ON LIGHTBOX
+  const figureGallery = document.querySelectorAll('section#lightbox figure')
+  figureGallery.forEach(item => {
+    item.style.display = 'none'
+    const thisImage = item.children
+    const allsrc = thisImage.item(0).getAttribute('src')
+    if (allsrc === ImageSrc) {
+      item.style.display = 'flex'
+      item.classList.add('active')
+    }
+  })
+  lightboxAction()
 }
