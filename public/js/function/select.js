@@ -23,20 +23,20 @@ function focusNextListItem (direction) {
   if (activeElementId === 'selected') {
     document.querySelector(`#${listItemIds[0]}`).focus()
   } else if (direction === 'ArrowDown') {
-      const currentActiveElementIsNotLastItem = 
+    const currentActiveElementIsNotLastItem =
       currentActiveElementIndex < listItemIds.length - 1
-      if (currentActiveElementIsNotLastItem) {
-        const nextListItemId = listItemIds[currentActiveElementIndex + 1]
-        document.querySelector(`#${nextListItemId}`).focus()
-      }
-    } else if (direction === 'ArrowUp') {
-      const currentActiveElementIsNotFirstItem =
-            currentActiveElementIndex > 0
-      if (currentActiveElementIsNotFirstItem) {
-        const nextListItemId = listItemIds[currentActiveElementIndex - 1]
-        document.querySelector(`#${nextListItemId}`).focus()
-      }
+    if (currentActiveElementIsNotLastItem) {
+      const nextListItemId = listItemIds[currentActiveElementIndex + 1]
+      document.querySelector(`#${nextListItemId}`).focus()
     }
+  } else if (direction === 'ArrowUp') {
+    const currentActiveElementIsNotFirstItem =
+    currentActiveElementIndex > 0
+    if (currentActiveElementIsNotFirstItem) {
+      const nextListItemId = listItemIds[currentActiveElementIndex - 1]
+      document.querySelector(`#${nextListItemId}`).focus()
+    }
+  }
 }
 
 export function select () {
@@ -69,7 +69,6 @@ export function select () {
 
         default:
           console.log('default')
-
       }
     })
   })
@@ -83,7 +82,7 @@ export function select () {
       list.classList.toggle('open')
       dropdown.classList.toggle('arrowOpen')
       listContainer.setAttribute(
-        'aria-expanded', 
+        'aria-expanded',
         list.classList.contains('open')
       )
     }
@@ -100,10 +99,10 @@ export function select () {
     }
   }
 
-  dropdownSelectedNode.addEventListener('click', event => 
+  dropdownSelectedNode.addEventListener('click', event =>
     toggleListVisibility(event)
   )
-  dropdownSelectedNode.addEventListener('keydown', event => 
+  dropdownSelectedNode.addEventListener('keydown', event =>
     toggleListVisibility(event)
-    )
+  )
 }

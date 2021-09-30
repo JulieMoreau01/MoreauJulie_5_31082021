@@ -1,5 +1,5 @@
 import { LightBox } from './class/LightBox.js'
-import { MediaFactory } from './class/media.js'
+import { MediaFactory } from './class/Media.js'
 import { Photographer } from './class/Photographer.js'
 import { getData } from './data.js'
 import { lightbox } from './function/lightbox.js'
