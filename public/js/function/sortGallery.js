@@ -1,5 +1,5 @@
-import { getData } from '/public/js/data.js'
-import { photographerPageGallery } from '/public/js/photographer.js'
+import { getData } from './../data.js'
+import { photographerPageGallery } from './../photographer.js'
 
 const listItemsSelect = document.querySelectorAll('.list-item')
 const urlPage = window.location.search

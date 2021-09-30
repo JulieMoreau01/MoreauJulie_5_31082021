@@ -1,10 +1,10 @@
 
-import { Photographer } from './public/js/class/Photographer.js'
-import { filtre } from './public/js/function/filtres.js'
-import { getData } from './public/js/data.js'
+import { Photographer } from './class/Photographer.js'
+import { filtre } from './function/filtres.js'
+import { getData } from './data.js'
 
 /**
- * TEMPLATE PAGE INDEX WITH CLASS PHOTOGRAPHER
+ * TEMPLATE HTML PAGE INDEX WITH CLASS PHOTOGRAPHER
  */
 
 function IndexPage (photographers) {
