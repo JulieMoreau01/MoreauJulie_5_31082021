@@ -14,8 +14,7 @@ export class Photographer {
 
   creatPrice () {
     return `
-      <span id="total_like" tabindex="8"></span>
-      <i class="fas fa-heart" aria-hidden="true"></i>
+      <span tabindex="8" class="like"><span id="total_like"></span> <i class="fas fa-heart" aria-hidden="true"></i><span class="sr-only">like total</span></span>
       <span tabindex="8">${this.price}€ / jour</span>
     `
   }

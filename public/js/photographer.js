@@ -61,6 +61,7 @@ export function photographerPageGallery (media) {
   const video = document.querySelector('video')
   video.removeAttribute('controls')
   likeCounterFunction()
+  lightBox(media)
 }
 
 // DISPLAY LIGHTBOX
@@ -97,7 +98,6 @@ const init = async () => {
   const { photographers, media } = await getData()
   photographerPageTop(photographers)
   photographerPageGallery(media)
-  lightBox(media)
 }
 
 init()

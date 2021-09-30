@@ -794,17 +794,17 @@ p#price {
     display: block;
   }
 }
-p#price p {
+p#price span {
   color: black;
   margin: 0px;
   font-size: 1.5rem;
   font-weight: 500;
 }
-p#price p #total_like {
+p#price span #total_like {
   display: inline-block;
   margin-right: 5px;
 }
-p#price p i {
+p#price span i {
   margin-right: 70px;
 }
 

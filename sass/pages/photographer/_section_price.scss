@@ -11,7 +11,7 @@ p#price {
   @include media(desktop) {
     display: block;
   }
-  p {
+  span {
     color: black;
     margin: 0px;
     @include font-size(24);
