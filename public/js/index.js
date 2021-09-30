@@ -1,11 +1,10 @@
 
-import { Photographer } from '/public/js/class/Photographer.js'
-import { filtre } from '/public/js/function/filtres.js'
-import { getData } from '/public/js/data.js'
-
+import { Photographer } from './public/js/class/Photographer.js'
+import { filtre } from './public/js/function/filtres.js'
+import { getData } from './public/js/data.js'
 
 /**
- * Template HTML Page Index
+ * TEMPLATE PAGE INDEX WITH CLASS PHOTOGRAPHER
  */
 
 function IndexPage (photographers) {
@@ -15,6 +14,7 @@ function IndexPage (photographers) {
     const containerIndex = document.getElementById('index')
     containerIndex.innerHTML += photograpeTemplate.creatHtmlIndex()
   })
+  // Call the filtre function for sort the photograher by tag
   filtre()
 }
 
@@ -24,4 +24,3 @@ const init = async () => {
 }
 
 init()
-
