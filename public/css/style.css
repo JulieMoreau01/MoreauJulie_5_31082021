@@ -303,7 +303,7 @@ section#fiche {
     padding: 50px;
   }
 }
-section#fiche h1.name {
+section#fiche h2.name {
   font-weight: 400;
   color: #D3573C;
   margin: 0;
@@ -311,12 +311,12 @@ section#fiche h1.name {
   align-items: center;
 }
 @media screen and (min-width: 0px) {
-  section#fiche h1.name {
+  section#fiche h2.name {
     font-size: 2.25rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  section#fiche h1.name {
+  section#fiche h2.name {
     font-size: 4rem;
   }
 }
@@ -711,7 +711,7 @@ section#modal form fieldset .close-modal {
     font-size: 2.625rem;
   }
 }
-section#modal form fieldset legend {
+section#modal form fieldset h2 {
   font-size: 2.3125rem;
   line-height: 45px;
   font-weight: 400;
@@ -762,7 +762,7 @@ section#modal form fieldset p[data-error-visible=true]::after {
   opacity: 1;
 }
 
-section#price {
+p#price {
   background-color: #DB8876;
   position: fixed;
   bottom: 0px;
@@ -771,56 +771,31 @@ section#price {
   border-radius: 5px 5px 0px 0px;
 }
 @media screen and (min-width: 0px) {
-  section#price {
+  p#price {
     display: none;
   }
 }
 @media screen and (min-width: 1024px) {
-  section#price {
+  p#price {
     display: block;
   }
 }
-section#price p {
+p#price p {
   color: black;
   margin: 0px;
   font-size: 1.5rem;
   font-weight: 500;
 }
-section#price p #total_like {
+p#price p #total_like {
   display: inline-block;
   margin-right: 5px;
 }
-section#price p i {
+p#price p i {
   margin-right: 70px;
 }
 
-section#select {
+ul.dropdown {
   z-index: 10;
-}
-@media screen and (min-width: 0px) {
-  section#select {
-    display: none;
-  }
-}
-@media screen and (min-width: 1024px) {
-  section#select {
-    display: block;
-  }
-}
-section#select .list {
-  width: 100%;
-  position: absolute;
-  z-index: 10;
-  left: 0;
-  top: -57px;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
-  transition: opacity 0.1s cubic-bezier(0, 0, 0.38, 0.9), max-height 0.5s cubic-bezier(0, 0, 0.38, 0.9);
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-}
-section#select .dropdown {
   list-style: none;
   position: relative;
   background: #901C1C;
@@ -831,7 +806,17 @@ section#select .dropdown {
   padding: 0 0 0;
   border-radius: 5px;
 }
-section#select .dropdown .label {
+@media screen and (min-width: 0px) {
+  ul.dropdown {
+    display: none;
+  }
+}
+@media screen and (min-width: 1024px) {
+  ul.dropdown {
+    display: block;
+  }
+}
+ul.dropdown li.label {
   position: absolute;
   top: 18px;
   left: -90px;
@@ -840,45 +825,7 @@ section#select .dropdown .label {
   font-weight: 700;
   font-size: 1.125rem;
 }
-section#select .dropdown .list-container {
-  position: relative;
-}
-section#select .dropdown ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background-color: #901C1C;
-  border-radius: 5px;
-}
-section#select .dropdown ul .list-item {
-  padding: 15px 0px 15px 15px;
-  transition: background-color 0.1s linear, color 0.1s linear;
-  color: white;
-  list-style-position: inside;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-weight: 700;
-  position: relative;
-  font-size: 1.125rem;
-}
-section#select .dropdown ul .list-item::after {
-  content: "";
-  position: absolute;
-  bottom: 0px;
-  right: 5%;
-  background-color: white;
-  height: 1px;
-  width: 90%;
-}
-section#select .dropdown ul .list-item:hover, section#select .dropdown ul .list-item:focus {
-  background-color: #DB8876;
-  color: black;
-}
-section#select .dropdown ul .list-item:last-child::after {
-  display: none;
-}
-section#select #selected {
+ul.dropdown li#selected {
   color: white;
   padding: 0px 15px;
   list-style-position: inside;
@@ -893,15 +840,41 @@ section#select #selected {
   font-size: 1.125rem;
   font-weight: 700;
 }
-section#select #selected:focus {
+ul.dropdown li#selected:focus {
   outline: 1px solid #00C2FF;
 }
-section#select .open {
-  opacity: 1;
-  overflow: auto;
-  max-height: 15rem;
+ul.dropdown li.list-container {
+  position: relative;
 }
-section#select .dropdown::before {
+ul.dropdown li.list-container ul.list li.list-item {
+  padding: 15px 0px 15px 15px;
+  transition: background-color 0.1s linear, color 0.1s linear;
+  color: white;
+  list-style-position: inside;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 700;
+  position: relative;
+  font-size: 1.125rem;
+}
+ul.dropdown li.list-container ul.list li.list-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  right: 5%;
+  background-color: white;
+  height: 1px;
+  width: 90%;
+}
+ul.dropdown li.list-container ul.list li.list-item:hover, ul.dropdown li.list-container ul.list li.list-item:focus {
+  background-color: #DB8876;
+  color: black;
+}
+ul.dropdown li.list-container ul.list li.list-item:last-child::after {
+  display: none;
+}
+ul.dropdown::before {
   content: "";
   position: absolute;
   z-index: 11;
@@ -912,8 +885,34 @@ section#select .dropdown::before {
   font-weight: 900;
   font-family: "FontAwesome";
 }
-section#select .dropdown.arrowOpen::before {
+
+ul.dropdown.arrowOpen::before {
   transform: rotate(-180deg);
+}
+
+ul.list {
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top: -57px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  transition: opacity 0.1s cubic-bezier(0, 0, 0.38, 0.9), max-height 0.5s cubic-bezier(0, 0, 0.38, 0.9);
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #901C1C;
+  border-radius: 5px;
+}
+
+ul.open {
+  opacity: 1;
+  overflow: auto;
+  max-height: 15rem;
 }
 
 .tag a {

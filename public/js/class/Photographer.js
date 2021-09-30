@@ -44,7 +44,7 @@ export class Photographer {
 
   creatHtmlPhotographerFiche () {
     return `
-    <h1 class="name" id="thename" tabindex="3">${this.name}</h1>
+    <h2 class="name" id="thename" tabindex="3">${this.name}</h2>
     <p class="contact">
       <button class="btn" tabindex="6" id="contact">Contactez-moi</button>
     </p>

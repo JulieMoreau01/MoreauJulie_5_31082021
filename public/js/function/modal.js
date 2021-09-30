@@ -112,7 +112,7 @@ function displayModal (arg1, arg2) {
 
 export function modal () {
   const btnContact = document.getElementById('contact')
-  const btnCloseModal = document.querySelector('p.close-modal')
+  const btnCloseModal = document.querySelector('button.close-modal')
   const formContact = document.getElementById('formcontact')
 
   window.addEventListener('keydown', function (event) {
