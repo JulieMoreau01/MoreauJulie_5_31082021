@@ -1,3 +1,5 @@
+import { focusModal } from './focusModal.js'
+
 const containerModal = document.getElementById('modal')
 // Only letters and not numbers
 const InputFormat = /^[a-zA-Z]*$/u
@@ -123,10 +125,11 @@ export function modal () {
 
   btnContact.addEventListener('click', function () {
     displayModal('flex', 'false')
-    containerModal.focus()
+    focusModal(containerModal)
   })
   btnContact.addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
+      focusModal(containerModal)
       displayModal('flex', 'false')
     }
   })

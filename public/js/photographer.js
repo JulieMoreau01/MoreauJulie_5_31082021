@@ -7,6 +7,7 @@ import { likeCounterFunction } from './function/like.js'
 import { modal } from './function/modal.js'
 import { select } from './function/select.js'
 import { sortGallery } from './function/sortGallery.js'
+import { focusModal } from './function/focusModal.js'
 
 /**
  * VARIABLE
@@ -52,7 +53,6 @@ export function photographerPageGallery (media) {
   // DISPLAY GALLERY
   containerGallery.innerHTML = ''
   arrayTri.forEach(item => {
-    console.log(item)
     const mediaTemplate = new MediaFactory(item)
     containerGallery.innerHTML += mediaTemplate.creatHtmlGallery()
   })
@@ -84,11 +84,13 @@ function lightBox (media) {
     img.addEventListener('click', event => {
       lightboxHidden()
       displayLightbox(event, img)
+      focusModal(containerLightbox)
     })
     img.addEventListener('keydown', event => {
       if (event.key === 'Enter') {
         lightboxHidden()
         displayLightbox(event, img)
+        focusModal(containerLightbox)
       }
     })
   })

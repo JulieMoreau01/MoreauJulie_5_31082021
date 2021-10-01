@@ -1,5 +1,3 @@
-// import { displayLightBoxHidden } from './../photographer.js'
-
 const containerLightbox = document.getElementById('lightbox')
 
 function goRight () {
@@ -27,7 +25,6 @@ function goLeft () {
   if (figurePrevious === null) {
     const figureNbombre = (figureGallery.length) - 1
     const lastFigure = figureGallery[figureNbombre]
-    console.log(lastFigure)
     lastFigure.style.display = 'flex'
     lastFigure.classList.add('active')
   } else {
@@ -40,7 +37,6 @@ function lightboxAction () {
   const btnRight = document.querySelector('button.btnright-lightbox')
   const btnLeft = document.querySelector('button.btnleft-lightbox')
   const btnClose = document.querySelector('button.close-lightbox')
-  console.log(btnClose)
   window.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
       containerLightbox.style.display = 'none'
