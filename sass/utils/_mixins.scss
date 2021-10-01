@@ -13,5 +13,4 @@ $breakpoint : (
 // Calcul taille Typo px en em
 @mixin font-size($sizeValue) {
   font-size: ($sizeValue / 16) + rem;
-  
 }

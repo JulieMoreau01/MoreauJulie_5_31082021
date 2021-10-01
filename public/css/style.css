@@ -830,7 +830,7 @@ ul.dropdown {
     display: block;
   }
 }
-ul.dropdown li.label {
+ul.dropdown li.label, ul.dropdown li.label:focus {
   position: absolute;
   top: 18px;
   left: -90px;
@@ -840,8 +840,6 @@ ul.dropdown li.label {
   font-size: 1.125rem;
 }
 ul.dropdown li#selected {
-  color: white;
-  padding: 0px 15px;
   list-style-position: inside;
   white-space: nowrap;
   overflow: hidden;
@@ -851,11 +849,18 @@ ul.dropdown li#selected {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+ul.dropdown li#selected button {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
   font-size: 1.125rem;
   font-weight: 700;
-}
-ul.dropdown li#selected:focus {
-  outline: 1px solid #00C2FF;
+  padding: 0px 15px;
+  color: white;
+  border-radius: 5px;
+  text-align: left;
+  cursor: pointer;
 }
 ul.dropdown li.list-container {
   position: relative;

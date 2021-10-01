@@ -22,6 +22,9 @@ function prenomFunction () {
   }
   parentInputPrenom.setAttribute('data-error', '2 caractères valide ou plus')
   parentInputPrenom.setAttribute('data-error-visible', 'true')
+  inputPrenom.setAttribute('aria-invalid', 'true')
+  inputPrenom.setAttribute('aria-live', 'Assertive')
+  parentInputPrenom.innerHTML = '<span class="sr-only" role="alert">2 caractères valide ou plus</span>' + parentInputPrenom.innerHTML
   return false
 }
 
@@ -42,6 +45,9 @@ function nomFunction () {
   }
   parentinputNom.setAttribute('data-error', '2 caractères valide ou plus')
   parentinputNom.setAttribute('data-error-visible', 'true')
+  inputNom.setAttribute('aria-invalid', 'true')
+  inputNom.setAttribute('aria-live', 'Assertive')
+  parentinputNom.innerHTML = '<span class="sr-only" role="alert">2 caractères valide ou plus</span>' + parentinputNom.innerHTML
   return false
 }
 
@@ -61,6 +67,9 @@ function emailFunction () {
   }
   parentEmailInput.setAttribute('data-error', 'Adresse Invalide')
   parentEmailInput.setAttribute('data-error-visible', 'true')
+  emailInput.setAttribute('aria-invalid', 'true')
+  emailInput.setAttribute('aria-live', 'Assertive')
+  parentEmailInput.innerHTML = '<span class="sr-only" role="alert">Adresse Invalide</span>' + parentEmailInput.innerHTML
   return false
 }
 
@@ -78,6 +87,9 @@ function textareaFunction () {
   }
   parentTextarea.setAttribute('data-error', 'Minimun 2 caractères')
   parentTextarea.setAttribute('data-error-visible', 'true')
+  textarea.setAttribute('aria-invalid', 'true')
+  textarea.setAttribute('aria-live', 'Assertive')
+  parentTextarea.innerHTML = '<span class="sr-only" role="alert">Minimun 2 caractères</span>' + parentTextarea.innerHTML
   return false
 }
 

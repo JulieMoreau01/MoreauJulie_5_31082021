@@ -27,7 +27,7 @@ class Image {
   creatHtmlGallery () {
     return `
     <figure>
-      <img src="public/images/${this.name}/${this.image}" id="${this.id}" title="${this.title}" alt="${this.title}" tabindex="11">
+      <img src="public/images/${this.name}/${this.image}" id="${this.id}" alt="Cliquer pour agrandir" tabindex="11">
       <figcaption aria-hidden="true">
         <span class="title" tabindex="11" aria-label="${this.title}">
           ${this.title}
@@ -75,7 +75,7 @@ class Video {
   creatHtmlGallery () {
     return `
     <figure id="video">
-      <video controls width="350" tabindex="11">
+      <video controls width="350" tabindex="11" aria-label="${this.title}">
         <source src="public/images/${this.name}/${this.video}" type="video/mp4">
           So sorry, your browser doesn't support embedded videos.
         </video>

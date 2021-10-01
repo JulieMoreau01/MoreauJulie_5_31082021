@@ -1,7 +1,7 @@
 export function focusModal (modalShow) {
   // add all the elements inside modal which you want to make focusable
   const focusableElements =
-      'button, h2, [href], input, select, textarea, figure.active [tabindex]:not([tabindex="-1"])'
+    'button, h2, [href], input, select, textarea, figure.active [tabindex]:not([tabindex="-1"])'
   const modal = modalShow
 
   const firstFocusableElement = modal.querySelectorAll(focusableElements)[0] // get first element to be focused inside modal

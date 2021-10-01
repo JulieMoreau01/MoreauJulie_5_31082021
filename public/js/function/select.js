@@ -1,28 +1,30 @@
+// VARIABLES
 const list = document.querySelector('.list')
 const dropdown = document.querySelector('.dropdown')
 const listContainer = document.querySelector('.list-container')
 const listItems = document.querySelectorAll('.list-item')
-const dropdownSelectedNode = document.querySelector('#selected')
+const dropdownSelectedNode = document.querySelector('#selected button')
 const listItemIds = []
 
+// DISPLAY SELECTED SORT NAME ON BUTTON
 function setSelectedListItem (event) {
   const selectedTextToAppend = document.createTextNode(event.target.innerText)
   dropdownSelectedNode.textContent = null
   dropdownSelectedNode.appendChild(selectedTextToAppend)
 }
 
+// CLOSE THE DROPDOWN MENU
 function closeList () {
   list.classList.remove('open')
   dropdown.classList.remove('arrowOpen')
   listContainer.setAttribute('aria-expanded', false)
 }
 
+// FOCUS ON NEXT ELEMENT WITH ARROW
 function focusNextListItem (direction) {
   const activeElementId = document.activeElement.id
   const currentActiveElementIndex = listItemIds.indexOf(activeElementId)
-  if (activeElementId === 'selected') {
-    document.querySelector(`#${listItemIds[0]}`).focus()
-  } else if (direction === 'ArrowDown') {
+  if (direction === 'ArrowDown') {
     const currentActiveElementIsNotLastItem =
       currentActiveElementIndex < listItemIds.length - 1
     if (currentActiveElementIsNotLastItem) {
@@ -39,9 +41,53 @@ function focusNextListItem (direction) {
   }
 }
 
+// OPEN DROPDOWN AND NEXT ACTION
+function toggleListVisibility () {
+  // Open the Dropdown Menu
+  list.classList.toggle('open')
+  dropdown.classList.toggle('arrowOpen')
+  listContainer.setAttribute(
+    'aria-expanded',
+    list.classList.contains('open')
+  )
+  listItems[0].focus()
+  // Then
+  dropdownSelectedNode.addEventListener('keydown', (event) => {
+    // CLose Dropdown if Escape
+    if (event.key === 'Escape') {
+      closeList()
+    }
+    // Go Down
+    if (event.key === 'ArrowDown') {
+      focusNextListItem('ArrowDown')
+    }
+    // Go Up
+    if (event.key === 'ArrowUp') {
+      focusNextListItem('ArrowUp')
+    }
+  })
+}
+
 export function select () {
+  // CLICK OR ENTER ON THE BUTTON
+  dropdownSelectedNode.addEventListener('click', (event) => {
+    if ((event.key === 'Enter') || (event.type === 'click')) {
+      toggleListVisibility()
+    }
+  }, false)
+
+  // PASS ON NEXT ELEMENT IF TAB
+  dropdownSelectedNode.addEventListener('keydown', (event) => {
+    if (event.key === 'Tab') {
+      listItems.forEach(item => {
+        console.log('tab')
+        item.setAttribute('tabindex', '-1')
+      })
+    }
+  }, false)
   listItems.forEach(item => listItemIds.push(item.id))
 
+  // EVENT ON LIST ITEM
   listItems.forEach(item => {
     item.addEventListener('click', event => {
       setSelectedListItem(event)
@@ -65,44 +111,7 @@ export function select () {
 
         case 'Escape':
           closeList()
-          return
-
-        default:
-          console.log('default')
       }
     })
   })
-
-  function toggleListVisibility (event) {
-    const openDropDown = event.key === 'Enter'
-    if (event.key === 'Escape') {
-      closeList()
-    }
-    if (event.type === 'click' || openDropDown) {
-      list.classList.toggle('open')
-      dropdown.classList.toggle('arrowOpen')
-      listContainer.setAttribute(
-        'aria-expanded',
-        list.classList.contains('open')
-      )
-    }
-    if (event.key === 'Tab') {
-      listItems.forEach(item => {
-        item.setAttribute('tabindex', '-1')
-      })
-    }
-    if (event.key === 'ArrowDown') {
-      focusNextListItem('ArrowDown')
-    }
-    if (event.key === 'ArrowUp') {
-      focusNextListItem('ArrowUp')
-    }
-  }
-
-  dropdownSelectedNode.addEventListener('click', event =>
-    toggleListVisibility(event)
-  )
-  dropdownSelectedNode.addEventListener('keydown', event =>
-    toggleListVisibility(event)
-  )
 }
