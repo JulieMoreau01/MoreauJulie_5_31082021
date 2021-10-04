@@ -15,9 +15,15 @@ function addALike (element) {
   const nbCounterValue = parseInt(counterValue, 10)
   const counterNewValue = (nbCounterValue + valuePerLike)
   counter.textContent = counterNewValue
-  element.setAttribute('aria-label', 'vous avez liké cette photo')
   element.setAttribute('aria-expanded', 'true')
   element.classList.add('newcolor')
+
+  const parent = element.parentElement.parentElement.parentElement
+  const alert = parent.querySelector('.alert_like')
+  element.setAttribute('aria-invalid', 'true')
+  element.setAttribute('aria-live', 'Assertive')
+  alert.setAttribute('role', 'alert')
+  alert.innerHTML = 'Vous avez ajouter un like'
 }
 
 function removeLike (element) {
@@ -26,9 +32,16 @@ function removeLike (element) {
   const nbCounterValue = parseInt(counterValue, 10)
   const counterNewValue = (nbCounterValue - valuePerLike)
   counter.textContent = counterNewValue
-  element.setAttribute('aria-label', 'vous n avez pas liké cette photo')
   element.setAttribute('aria-expanded', 'false')
   element.classList.remove('newcolor')
+
+  const parent = element.parentElement.parentElement.parentElement
+  console.log(parent)
+  const alert = parent.querySelector('.alert_like')
+  element.setAttribute('aria-invalid', 'true')
+  element.setAttribute('aria-live', 'Assertive')
+  alert.setAttribute('role', 'alert')
+  alert.innerHTML = 'Vous avez retirer un like'
 }
 
 export function likeCounterFunction () {

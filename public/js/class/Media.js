@@ -27,21 +27,19 @@ class Image {
   creatHtmlGallery () {
     return `
     <figure>
-      <img src="public/images/${this.name}/${this.image}" id="${this.id}" alt="Cliquer pour agrandir" tabindex="11">
+      <img src="public/images/${this.name}/${this.image}" id="${this.id}" tabindex="11" alt="Cliquer pour agrandir">
       <figcaption aria-hidden="true">
-        <span class="title" tabindex="11" aria-label="${this.title}">
+        <span class="title" tabindex="11">
           ${this.title}
         </span>
         <span class="like">
-        <span class="counter" aria-label="${this.likes} like sur cette photo" tabindex="11">
-          ${this.likes}
-        </span> 
-          <i class="fas fa-heart" aria-label="ajouter un like" aria-expanded="false" tabindex="11"></i>
-          <span class="sr-only">
-            like - cliquer sur le coeur pour ajouter ou retirer un like
-          </span>
+          <span class="counter" tabindex="11">
+            ${this.likes} <span class="sr-only">like</span>
+          </span> 
+          <i class="fas fa-heart" aria-expanded="false" tabindex="11"></i>
         </span>
       </figcaption>
+      <span class="sr-only alert_like"></span>
     </figure>
     `
   }
@@ -75,22 +73,20 @@ class Video {
   creatHtmlGallery () {
     return `
     <figure id="video">
-      <video controls width="350" tabindex="11" aria-label="${this.title}">
+      <video controls width="350" tabindex="11" aria-label="CLiquez pour agrandir">
         <source src="public/images/${this.name}/${this.video}" type="video/mp4">
           So sorry, your browser doesn't support embedded videos.
         </video>
         <figcaption aria-hidden="true">
           <span class="title" tabindex="11">${this.title}</span>
           <span class="like">
-          <span class="counter" aria-label="${this.likes} like sur cette video" tabindex="11">
-            ${this.likes}
+          <span class="counter" tabindex="11">
+            ${this.likes} <span class="sr-only">like</span>
           </span> 
-            <i class="fas fa-heart" aria-label="ajouter un like" aria-expanded="false" tabindex="11"></i>
-          </span>
-          <span class="sr-only">
-            like - cliquer sur le coeur pour ajouter ou retirer un like
+            <i class="fas fa-heart" aria-expanded="false" tabindex="11"></i>
           </span>
         </figcaption>
+        <span class="sr-only alert_like"></span>
     </figure>
     `
   }

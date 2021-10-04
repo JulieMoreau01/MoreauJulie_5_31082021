@@ -65,6 +65,9 @@ section#fiche {
       &:hover, &:focus {
         background-color: $color-secondary;
       }
+      &:focus {
+        border: 2px solid black;
+      }
     }
   }
   p.country {

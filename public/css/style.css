@@ -352,6 +352,9 @@ section#fiche p.contact button.btn {
 section#fiche p.contact button.btn:hover, section#fiche p.contact button.btn:focus {
   background-color: #D3573C;
 }
+section#fiche p.contact button.btn:focus {
+  border: 2px solid black;
+}
 section#fiche p.country {
   width: 100%;
   color: #901C1C;
@@ -860,6 +863,10 @@ ul.dropdown li#selected button {
   border-radius: 5px;
   text-align: left;
   cursor: pointer;
+  border: 0;
+}
+ul.dropdown li#selected button:focus {
+  border: 2px solid black;
 }
 ul.dropdown li.list-container {
   position: relative;
@@ -888,6 +895,7 @@ ul.dropdown li.list-container ul.list li.list-item::after {
 ul.dropdown li.list-container ul.list li.list-item:hover, ul.dropdown li.list-container ul.list li.list-item:focus {
   background-color: #DB8876;
   color: black;
+  border: 2px solid black;
 }
 ul.dropdown li.list-container ul.list li.list-item:last-child::after {
   display: none;
