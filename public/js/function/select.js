@@ -46,6 +46,7 @@ function toggleListVisibility () {
   // Open the Dropdown Menu
   list.classList.toggle('open')
   dropdown.classList.toggle('arrowOpen')
+  dropdownSelectedNode.innerHTML = dropdownSelectedNode.innerHTML + '<span class="sr-only" role="alert" tabindex="-1">Le Menu est ouvert</span>'
   listContainer.setAttribute(
     'aria-expanded',
     list.classList.contains('open')
@@ -80,20 +81,19 @@ export function select () {
   dropdownSelectedNode.addEventListener('keydown', (event) => {
     if (event.key === 'Tab') {
       listItems.forEach(item => {
-        console.log('tab')
         item.setAttribute('tabindex', '-1')
       })
     }
   }, false)
-  listItems.forEach(item => listItemIds.push(item.id))
 
   // EVENT ON LIST ITEM
+  listItems.forEach(item => listItemIds.push(item.id))
+
   listItems.forEach(item => {
     item.addEventListener('click', event => {
       setSelectedListItem(event)
       closeList()
     })
-
     item.addEventListener('keydown', event => {
       switch (event.key) {
         case 'Enter':

@@ -15,7 +15,7 @@ ul.dropdown {
   margin: 30px 0 0 90px;
   padding: 0 0 0;
   border-radius: 5px;
-  li.label, li.label:focus {
+  li.label {
     position: absolute;
     top: 18px;
     left: -90px;
@@ -61,12 +61,13 @@ ul.dropdown {
         font-weight: 700;
         position: relative;
         @include font-size(18);
+          // White Ligne
           &::after {
             content: "";
             position: absolute;
             bottom: 0px;
             right: 5%;
-            background-color: white;
+            background-color: white; 
             height: 1px;
             width: 90%;
           }

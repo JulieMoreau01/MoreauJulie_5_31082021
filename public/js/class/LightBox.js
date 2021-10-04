@@ -63,7 +63,7 @@ class VideoLightBox {
     return `
     <figure>
       <video controls width="350">
-        <source src="public/images/${this.name}/${this.video}" type="video/mp4">
+        <source src="public/images/${this.name}/${this.video}" type="video/mp4" aria-label="${this.title}">
           So sorry, your browser doesn't support embedded videos.
       </video>
       <figcaption tabindex="12">${this.title}</figcaption>

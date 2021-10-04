@@ -1,3 +1,4 @@
+import { focusModal } from './focusModal.js'
 const containerLightbox = document.getElementById('lightbox')
 
 function goRight () {
@@ -10,9 +11,11 @@ function goRight () {
     const firstFigure = containerLightbox.firstElementChild
     firstFigure.style.display = 'flex'
     firstFigure.classList.add('active')
+    focusModal(containerLightbox)
   } else {
     figureNext.style.display = 'flex'
     figureNext.classList.add('active')
+    focusModal(containerLightbox)
   }
 }
 
@@ -27,9 +30,11 @@ function goLeft () {
     const lastFigure = figureGallery[figureNbombre]
     lastFigure.style.display = 'flex'
     lastFigure.classList.add('active')
+    focusModal(containerLightbox)
   } else {
     figurePrevious.style.display = 'flex'
     figurePrevious.classList.add('active')
+    focusModal(containerLightbox)
   }
 }
 

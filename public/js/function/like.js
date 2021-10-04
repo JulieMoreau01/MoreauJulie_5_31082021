@@ -6,7 +6,7 @@ function totalLike () {
   const reducer = (previousValue, currentValue) => previousValue + currentValue
   const sumAllCounter = allCounterArray.reduce(reducer)
   const totalLikeId = document.getElementById('total_like')
-  totalLikeId.textContent = sumAllCounter
+  totalLikeId.innerHTML = sumAllCounter + '<span class="sr-only">like total</span>'
 }
 
 function addALike (element) {

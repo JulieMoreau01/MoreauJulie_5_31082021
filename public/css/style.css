@@ -736,6 +736,7 @@ section#modal form fieldset p {
   display: flex;
   flex-direction: column;
   margin: 0;
+  position: relative;
 }
 section#modal form fieldset p label {
   font-size: 1rem;
@@ -760,20 +761,18 @@ section#modal form fieldset p input[type=submit] {
   padding: 20px;
   border: none;
 }
-section#modal form fieldset p[data-error]::after {
-  content: attr(data-error);
+section#modal form fieldset span.error {
   font-size: 0.875rem;
   color: #901C1C;
   display: block;
-  margin-top: 7px;
-  margin-bottom: 7px;
+  position: absolute;
+  bottom: -35px;
+  left: 0px;
   text-align: left;
-  line-height: 0.3;
-  opacity: 0;
-  transition: 0.3s;
-}
-section#modal form fieldset p[data-error-visible=true]::after {
   opacity: 1;
+  transition: 0.3s;
+  width: 100%;
+  height: max-content;
 }
 
 p#price {
@@ -830,7 +829,7 @@ ul.dropdown {
     display: block;
   }
 }
-ul.dropdown li.label, ul.dropdown li.label:focus {
+ul.dropdown li.label {
   position: absolute;
   top: 18px;
   left: -90px;

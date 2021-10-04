@@ -32,11 +32,11 @@
       <ul class="dropdown">
         <li id="label" class="label">Trier par</li>
         <li id="selected">
-          <button aria-haspopup="true" tabindex="10" aria-labelledby="label">Popularité</button>
+          <button aria-haspopup="true" tabindex="10" aria-label="Cliquer pour trier les images">Popularité</button>
         </li>
         <li aria-expanded="false" class="list-container">
           <ul class="list" role="listbox">
-            <li class="list-item activePop" tabindex="10" id="option-1" aria-labelledby="label" role="option" aria-label="Cliquer pour Trier par popularité">
+            <li class="list-item activePop" tabindex="10" id="option-1" role="option" aria-label="Cliquer pour Trier par popularité">
               Popularité
             </li>
             <li class="list-item" tabindex="10" id="option-2" role="option" aria-label="Cliquer pour Trier par Date">
@@ -53,10 +53,10 @@
       <section id="gallery"></section>
       
       <!-- MODAL LIGHTBOX -->
-      <section id="lightbox" tabindex="12" aria-hidden="true" role="dialog" aria-modal="true" class="hidden">
-        <button class="btnright-lightbox" aria-label="Photo suivante"></button>
-        <button class="btnleft-lightbox" aria-label="Photo précedente"></button>
-        <button class="close-lightbox" aria-label="Fermer la lightbox"></button>
+      <section id="lightbox" tabindex="12" aria-hidden="true" role="dialog" aria-modal="true" class="hidden"> 
+        <button class="btnright-lightbox" aria-label="Photo suivante" type="button"></button>
+        <button class="btnleft-lightbox" aria-label="Photo précedente" type="button"></button>
+        <button class="close-lightbox" aria-label="Fermer la lightbox" type="button"></button>
       </section>
       
       <!-- MODAL CONTACR FORM -->
@@ -67,23 +67,28 @@
             <p>
               <label for="prenom" tabindex="12">Prénom</label>
               <input type="text" id="prenom" name="prenom" tabindex="12" aria-labelledby="prenom" aria-required="true"/>
+              <span class="error"></span>
             </p>
             <p>
               <label for="nom" tabindex="12">Nom</label>
               <input type="text" id="nom" name="nom" tabindex="12" aria-labelledby="nom" aria-required="true"/>
+              <span class="error"></span>
             </p>
             <p>
               <label for="email" tabindex="12">Email</label>
-              <input type="email" id="email" name="email" tabindex="12" aria-labelledby="email" aria-required="true"/>
+              <input type="email" id="email" name="email" tabindex="12" aria-labelledby="email" />
+              <span class="error"></span>
             </p>
             <p>
               <label for="textarea" tabindex="12">Votre message</label>
               <textarea id="textarea" tabindex="12" aria-labelledby="textarea" aria-required="true"></textarea>
+              <span class="error"></span>
             </p>
             <p>
-              <input id="submitButton" class="" type="submit" value="Envoyer" tabindex="12">
+              <input id="submitButton" type="submit" value="Envoyer" tabindex="12" aria-label="Envoyer le formualaire">
+              <span class="errorSubmit sr-only"></span>
             </p>
-            <button class="close-modal" tabindex="12" aria-label="Fermer la modal"></button>
+            <button class="close-modal" tabindex="12" aria-label="Fermer la modal" type="button"></button>
           </fieldset>
         </form>
       </section>
