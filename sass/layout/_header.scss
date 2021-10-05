@@ -42,5 +42,6 @@ header {
 }
 
 header.photographer {
-  margin-top: 38px;
+  @include media(phone) {margin-top: 0px;}
+  @include media(desktop) { margin-top: 38px;}
 }

@@ -180,8 +180,15 @@ header nav ul li {
   display: flex;
 }
 
-header.photographer {
-  margin-top: 38px;
+@media screen and (min-width: 0px) {
+  header.photographer {
+    margin-top: 0px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  header.photographer {
+    margin-top: 38px;
+  }
 }
 
 main#index.index h1 {
@@ -687,8 +694,9 @@ section#modal form {
 }
 @media screen and (min-width: 1024px) {
   section#modal form {
-    width: 700px;
-    height: 80%;
+    width: 670px;
+    height: max-content;
+    max-height: 96%;
   }
 }
 section#modal form fieldset {
@@ -729,10 +737,10 @@ section#modal form fieldset .close-modal::before {
   font-family: "fontawesome";
 }
 section#modal form fieldset h2 {
-  font-size: 1.75rem;
-  line-height: 30px;
+  font-size: 2.125rem;
+  line-height: 36px;
   font-weight: 400;
-  margin: 0px 0px 10px 0px;
+  margin: 0px 0px 20px 0px;
   width: 100%;
 }
 section#modal form fieldset p {
@@ -742,18 +750,20 @@ section#modal form fieldset p {
   position: relative;
 }
 section#modal form fieldset p label {
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 section#modal form fieldset p input[type=text], section#modal form fieldset p input[type=email] {
   width: 100%;
   border-radius: 5px;
   border: none;
   height: 45px;
+  margin-bottom: 26px;
 }
 section#modal form fieldset p textarea {
   height: 125px;
   border-radius: 5px;
   border: none;
+  margin-bottom: 26px;
 }
 section#modal form fieldset p input[type=submit] {
   width: min-content;
@@ -763,13 +773,14 @@ section#modal form fieldset p input[type=submit] {
   border-radius: 5px;
   padding: 20px;
   border: none;
+  cursor: pointer;
 }
 section#modal form fieldset span.error {
   font-size: 0.875rem;
   color: #901C1C;
   display: block;
   position: absolute;
-  bottom: -35px;
+  bottom: 0px;
   left: 0px;
   text-align: left;
   opacity: 1;
@@ -982,7 +993,7 @@ section#fiche figure img, section.index figure img {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -3,9 +3,9 @@ import { MediaFactory } from './class/Media.js'
 import { Photographer } from './class/Photographer.js'
 import { getData } from './data.js'
 import { displayLightbox } from './function/lightbox.js'
-import { likeCounterFunction } from './function/like.js'
-import { modal } from './function/modal.js'
-import { select } from './function/select.js'
+import { likeCounter } from './function/like.js'
+import { modalContact } from './function/modal.js'
+import { dropdownSort } from './function/dropdownSort.js'
 import { sortGallery } from './function/sortGallery.js'
 import { focusModal } from './function/focusModal.js'
 
@@ -18,9 +18,6 @@ const containerFiche = document.getElementById('fiche')
 const containerPrice = document.getElementById('price')
 const containerGallery = document.getElementById('gallery')
 const containerLightbox = document.getElementById('lightbox')
-containerLightbox.style.display = 'none'
-const containerModal = document.getElementById('modal')
-containerModal.style.display = 'none'
 
 /**
  * TEMPLATE FICHE PHOTOGRAPHER & PRICE & SELECT
@@ -28,29 +25,33 @@ containerModal.style.display = 'none'
 function photographerPageTop (photographers) {
   const dataPhotographers = photographers
 
-  // GET TABLE WITH GOOD PHOTOGRAPHER ID
+  // Get table with good photographer ID
   const getPhotographerById = dataPhotographers.findIndex(function (item) {
     const stringId = (item.id).toString()
     return stringId === idUrlPage
   })
 
-  // DISPLAY FICHE PHOTOGRAPHER & PRICE
+  // Display fiche Photographer & Price
   const data = dataPhotographers[getPhotographerById]
-  const photograpeTemplate = new Photographer(data)
-  containerFiche.innerHTML += photograpeTemplate.creatHtmlPhotographerFiche()
-  containerPrice.innerHTML += photograpeTemplate.creatPrice()
-  select()
-  modal()
+  const photographeTemplate = new Photographer(data)
+  containerFiche.innerHTML += photographeTemplate.creatHtmlPhotographerFiche()
+  containerPrice.innerHTML += photographeTemplate.creatHtmlPhotographerPrice()
+
+  // Display the modal Contact
+  modalContact()
+
+  // Display Dropdown Menu for sort the Gallery
+  dropdownSort()
 }
 
 /**
- * TEMPLATE GALLERY & LIGHTBOX
+ * TEMPLATE GALLERY
  */
 export function photographerPageGallery (media) {
-  // RESULT OF SORT GALLERY
+  // Result of sortGallery
   const arrayTri = sortGallery(media)
 
-  // DISPLAY GALLERY
+  // Display Gallery
   containerGallery.innerHTML = ''
   arrayTri.forEach(item => {
     const mediaTemplate = new MediaFactory(item)
@@ -60,12 +61,16 @@ export function photographerPageGallery (media) {
   // Make a image of the video
   const video = document.querySelector('video')
   video.removeAttribute('controls')
-  likeCounterFunction()
-  lightBox(media)
+
+  // Display Function Heart for count the like
+  likeCounter()
 }
 
-// DISPLAY LIGHTBOX
-function lightBox (media) {
+/**
+ * TEMPLATE LIGHTBOX
+ */
+export function photographerPagelightBox (media) {
+  // Display Lightbox with display:none
   function lightboxHidden () {
     const arrayTri = sortGallery(media)
     arrayTri.forEach(item => {
@@ -73,23 +78,25 @@ function lightBox (media) {
       containerLightbox.innerHTML = lightboxTemplate.creatHtmlImgLightbox() + containerLightbox.innerHTML
     })
   }
+
+  // Grouping of images & video on a new Array
   const imgGallery = document.querySelectorAll('section#gallery figure img')
   const videoGallery = document.querySelectorAll('section#gallery figure video')
-
   const allImgGallery = [].slice.call(imgGallery)
   const allVideoGallery = [].slice.call(videoGallery)
   const mediaGallery = allImgGallery.concat(allVideoGallery)
 
-  mediaGallery.forEach(img => {
-    img.addEventListener('click', event => {
+  // On click on each element of the new Array
+  mediaGallery.forEach(elt => {
+    elt.addEventListener('click', event => {
       lightboxHidden()
-      displayLightbox(event, img)
+      displayLightbox(event, elt)
       focusModal(containerLightbox)
     })
-    img.addEventListener('keydown', event => {
+    elt.addEventListener('keydown', event => {
       if (event.key === 'Enter') {
         lightboxHidden()
-        displayLightbox(event, img)
+        displayLightbox(event, elt)
         focusModal(containerLightbox)
       }
     })
@@ -100,6 +107,7 @@ const init = async () => {
   const { photographers, media } = await getData()
   photographerPageTop(photographers)
   photographerPageGallery(media)
+  photographerPagelightBox(media)
 }
 
 init()

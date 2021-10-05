@@ -44,7 +44,7 @@ function lightboxAction () {
   const btnClose = document.querySelector('button.close-lightbox')
   window.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
-      containerLightbox.style.display = 'none'
+      containerLightbox.classList.add('hidden')
     } else if (event.key === 'ArrowLeft') {
       goLeft()
     } else if (event.key === 'ArrowRight') {
@@ -59,7 +59,7 @@ function lightboxAction () {
     goRight()
   })
   btnClose.addEventListener('click', function () {
-    containerLightbox.style.display = 'none'
+    containerLightbox.classList.add('hidden')
     containerLightbox.setAttribute('aria-hidden', 'true')
     const figureGallery = document.querySelectorAll('section#lightbox figure')
     figureGallery.forEach(figure => {
@@ -68,12 +68,17 @@ function lightboxAction () {
   })
 }
 
-export function displayLightbox (event, img) {
-  containerLightbox.style.display = 'flex'
+/**
+ * Display LightBOx Function
+ * @param {*} elt Clicked element
+ */
+export function displayLightbox (event, elt) {
+  containerLightbox.classList.remove('hidden')
   containerLightbox.setAttribute('aria-hidden', 'false')
   containerLightbox.focus()
-  const ImageSrc = img.getAttribute('src')
-  // DISPLAY PICTURE CLICKED ON LIGHTBOX
+  const ImageSrc = elt.getAttribute('src')
+
+  // Display Picture clicked on lightBox
   const figureGallery = document.querySelectorAll('section#lightbox figure')
   figureGallery.forEach(item => {
     item.style.display = 'none'

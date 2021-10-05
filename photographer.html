@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+
   <head>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width" />
@@ -15,6 +16,7 @@
       <link rel="icon" href="favicon.ico" />
       <title>FishEye - Site web de photographes freelances</title>
   </head>
+
   <body>
     <header class="photographer">
         <figure>
@@ -60,10 +62,10 @@
       </section>
       
       <!-- MODAL CONTACR FORM -->
-      <section id="modal" tabindex="12" aria-hidden="true" role="dialog" aria-modal="true" class="hidden" aria-labelledby="titre_modal">
+      <section id="modal" tabindex="12" aria-hidden="true" role="dialog" aria-modal="true" class="hidden" aria-labelledby="titre_modal" aria-live="Assertive">
         <form id="formcontact" tabindex="12">
           <fieldset>
-            <h2 tabindex="12" id="titre_modal">Contactez-moi<br/>Mimi Keel</h2>
+            <h2 tabindex="12" id="titre_modal">Contactez-moi<br/>Mimi Keel<span class="sr-only">Formulaire de contact Ouvert</span></h2>
             <p>
               <label for="prenom" tabindex="12">Prénom</label>
               <input type="text" id="prenom" name="prenom" tabindex="12" aria-labelledby="prenom" aria-required="true"/>
@@ -85,8 +87,8 @@
               <span class="error"></span>
             </p>
             <p>
-              <input id="submitButton" type="submit" value="Envoyer" tabindex="12" aria-label="Envoyer le formualaire">
-              <span class="errorSubmit sr-only"></span>
+              <input id="submitButton" type="submit" value="Envoyer" tabindex="12" aria-label="Envoyer le formulaire">
+              <span class="messageSubmit sr-only"></span>
             </p>
             <button class="close-modal" tabindex="12" aria-label="Fermer la modal" type="button"></button>
           </fieldset>

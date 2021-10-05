@@ -36,7 +36,6 @@ function removeLike (element) {
   element.classList.remove('newcolor')
 
   const parent = element.parentElement.parentElement.parentElement
-  console.log(parent)
   const alert = parent.querySelector('.alert_like')
   element.setAttribute('aria-invalid', 'true')
   element.setAttribute('aria-live', 'Assertive')
@@ -44,7 +43,7 @@ function removeLike (element) {
   alert.innerHTML = 'Vous avez retirer un like'
 }
 
-export function likeCounterFunction () {
+export function likeCounter () {
   const heartIcon = document.querySelectorAll('i.fa-heart')
   totalLike()
 

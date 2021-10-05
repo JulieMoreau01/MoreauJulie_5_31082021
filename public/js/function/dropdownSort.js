@@ -1,4 +1,4 @@
-// VARIABLES
+// CONSTANTS
 const list = document.querySelector('.list')
 const dropdown = document.querySelector('.dropdown')
 const listContainer = document.querySelector('.list-container')
@@ -69,7 +69,7 @@ function toggleListVisibility () {
   })
 }
 
-export function select () {
+export function dropdownSort () {
   // CLICK OR ENTER ON THE BUTTON
   dropdownSelectedNode.addEventListener('click', (event) => {
     if ((event.key === 'Enter') || (event.type === 'click')) {

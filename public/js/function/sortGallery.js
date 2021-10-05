@@ -1,5 +1,5 @@
 import { getData } from './../data.js'
-import { photographerPageGallery } from './../photographer.js'
+import { photographerPageGallery, photographerPagelightBox } from './../photographer.js'
 
 const listItemsSelect = document.querySelectorAll('.list-item')
 const urlPage = window.location.search
@@ -49,6 +49,7 @@ function stateSort (media, event) {
   }
   sortGallery(media)
   photographerPageGallery(media)
+  photographerPagelightBox(media)
   return state
 }
 

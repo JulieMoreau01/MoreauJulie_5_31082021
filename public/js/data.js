@@ -8,6 +8,7 @@ export async function getData () {
     const res = await fetch(url)
     return await res.json()
   } catch (error) {
-    console.log(error)
+    const containerIndex = document.getElementById('index')
+    containerIndex.innerHTML = '"Erreur avec les données"'
   }
 }

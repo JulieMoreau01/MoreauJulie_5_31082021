@@ -12,16 +12,7 @@ export class Photographer {
     this.classTag = data.tags.join(' ')
   }
 
-  creatPrice () {
-    return `
-      <span tabindex="8" class="like">
-        <span id="total_like"></span> 
-        <i class="fas fa-heart" aria-hidden="true"></i>
-      </span>
-      <span tabindex="8">${this.price}€ / jour</span>
-    `
-  }
-
+  // Template HTML pour la page index.html
   creatHtmlIndex () {
     return `
     <section class="index ${this.classTag}">
@@ -42,6 +33,7 @@ export class Photographer {
     `
   }
 
+  // Template HTML pour la page photographer.html
   creatHtmlPhotographerFiche () {
     return `
     <h2 class="name" id="thename" tabindex="3">${this.name}</h2>
@@ -54,6 +46,17 @@ export class Photographer {
     <figure>
       <img src="public/images/photographers_id_photos/${this.portrait}" alt="${this.name}" tabindex="7" />
     </figure>
+    `
+  }
+
+  // Template Vignette Price
+  creatHtmlPhotographerPrice () {
+    return `
+      <span tabindex="8" class="like">
+        <span id="total_like"></span> 
+        <i class="fas fa-heart" aria-hidden="true"></i>
+      </span>
+      <span tabindex="8">${this.price}€ / jour</span>
     `
   }
 }

@@ -1,6 +1,6 @@
 
 import { Photographer } from './class/Photographer.js'
-import { filtre } from './function/filtres.js'
+import { displayPhotographerByURL } from './function/filtres.js'
 import { getData } from './data.js'
 
 /**
@@ -15,7 +15,7 @@ function IndexPage (photographers) {
     containerIndex.innerHTML += photograpeTemplate.creatHtmlIndex()
   })
   // Call the filtre function for sort the photograher by tag
-  filtre()
+  displayPhotographerByURL()
 }
 
 const init = async () => {
