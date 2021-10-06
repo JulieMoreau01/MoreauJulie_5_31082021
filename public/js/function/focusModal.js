@@ -3,13 +3,12 @@
  * @param {containerLightbox or containerModal} modalShow
  */
 export function focusModal (modalShow) {
-  // add all the elements inside modal which you want to make focusable
   const focusableElements =
     'form, button, h2, [href], input, select, textarea, figure.active [tabindex]:not([tabindex="-1"])'
-
   const firstFocusableElement = modalShow.querySelectorAll(focusableElements)[0] // get first element to be focused inside modal
   const focusableContent = modalShow.querySelectorAll(focusableElements)
   const lastFocusableElement = focusableContent[focusableContent.length - 1] // get last element to be focused inside modal
+
   document.addEventListener('keydown', function (event) {
     const isTabPressed = event.key === 'Tab'
     if (!isTabPressed) {
