@@ -37,7 +37,7 @@ html body {
 html body p {
   margin: 0;
 }
-html body p .skip-content {
+html body p #skip-content {
   text-align: center;
   margin: 5px auto 0px auto;
   width: max-content;
@@ -52,16 +52,16 @@ html body p .skip-content {
   display: block;
 }
 @media screen and (min-width: 0px) {
-  html body p .skip-content {
+  html body p #skip-content {
     display: none;
   }
 }
 @media screen and (min-width: 1024px) {
-  html body p .skip-content {
+  html body p #skip-content {
     display: block;
   }
 }
-html body p .skip-content:focus, html body p .skip-content:active {
+html body p #skip-content:focus, html body p #skip-content:active {
   opacity: 1;
 }
 @media screen and (min-width: 0px) {

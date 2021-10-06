@@ -19,7 +19,7 @@ html {
     flex-direction: column;
     p {
       margin: 0;
-      .skip-content {
+      #skip-content {
         @include media(phone) {
           display: none
         }

@@ -24,7 +24,7 @@ export class Photographer {
       </a>
       <p class="index_country" tabindex="5">${this.city}, ${this.country}</p>
       <p class="index_tagline" tabindex="5">${this.tagline}</p>
-      <p class="index_price" tabindex="5" aria-label="${this.price} € par jour">${this.price} €/jour</p>
+      <p class="index_price" tabindex="5" aria-label="${this.price} € par jour">${this.price} € / jour</p>
       <ul>${this.liTags}</ul>
     </section>
     `

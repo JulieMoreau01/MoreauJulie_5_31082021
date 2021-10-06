@@ -8,6 +8,8 @@ import { getData } from './data.js'
  */
 
 function IndexPage (photographers) {
+  const skip = document.getElementById('skip-content')
+  skip.focus()
   const dataPhotographers = photographers
   dataPhotographers.forEach(dataPhotographers => {
     const photograpeTemplate = new Photographer(dataPhotographers)
