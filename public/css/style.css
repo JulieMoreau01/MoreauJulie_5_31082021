@@ -684,6 +684,7 @@ section#modal form {
     max-width: 500px;
     width: 100%;
     height: 100vh;
+    overflow-y: scroll;
   }
 }
 @media screen and (min-width: 1024px) {
