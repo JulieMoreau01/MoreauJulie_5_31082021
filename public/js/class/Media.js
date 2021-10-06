@@ -28,7 +28,7 @@ class Image {
   creatHtmlGallery () {
     return `
     <figure>
-      <img src="public/images/${this.name}/${this.image}" id="${this.id}" tabindex="11" alt="Cliquer pour agrandir">
+      <img src="public/images/${this.name}/${this.image}" id="${this.id}" tabindex="11" alt="Agrandir">
       <figcaption aria-hidden="true">
         <span class="title" tabindex="11">
           ${this.title}
