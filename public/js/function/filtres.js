@@ -16,7 +16,6 @@ export function displayPhotographerByURL () {
     if ((sectionIndex[section].classList.contains(tagUrlPageIndex) === true) ||
      (tagUrlPageIndex === '')) {
       sectionIndex[section].style.display = 'flex'
-      sectionIndex[0].focus()
     } else {
       sectionIndex[section].style.display = 'none'
     }

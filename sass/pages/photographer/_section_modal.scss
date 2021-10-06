@@ -84,14 +84,21 @@ section#modal {
           margin-bottom: 26px;
         }
         input[type=submit] {
-          width: min-content;
+          width: 170px;
           background-color: $color-primary;
           color: white;
           @include font-size(18);
           border-radius: 5px;
-          padding: 20px;
           border: none;
           cursor: pointer;
+          @include media(phone) {
+            margin: 10px auto 0px auto;
+            padding: 10px;
+          }
+          @include media(desktop) {
+            margin: 10px 0px 0px 0px;
+            padding: 20px;
+          }
         }
       }
       /*** Error message ***/
@@ -107,6 +114,29 @@ section#modal {
         transition: 0.3s;
         width: 100%;
         height: max-content;
+      }
+      span.messageSubmit {
+        @include font-size(14);
+        @include media(phone) {
+          margin: 10px auto 0px auto;
+        }
+        @include media(desktop) {
+          position: absolute;
+          right: 0px;
+          top: 21px;
+        }
+        .red, .green {
+          background-color: white;
+          border-radius: 5px;
+          padding: 3px 7px;
+          box-shadow: 1px 2px 8px 1px rgba(0,0,0,0.50);
+        }
+        .red {
+          color: $color-primary;
+        }
+        .green {
+          color: green;
+        }
       }
     }
   }

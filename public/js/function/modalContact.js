@@ -17,6 +17,8 @@ const textarea = document.getElementById('textarea')
 
 const errorMinCaractere = '2 caractéres minimum'
 const errorMail = 'Adresse invalide'
+const errorSubmit = '<span class="red"><i class="fas fa-times-circle"></i> Champs Obligatoire</span>'
+const successSubmit = '<span class="green"><i class="fas fa-check-circle"></i> Le formulaire est envoyer</span>'
 
 /**
   * Validation INPUT PRENOM, NOM, MAIL et TEXTAREA
@@ -120,10 +122,10 @@ export function modalContact () {
       console.log(validateForm())
       formContact.reset()
       messageSubmit.setAttribute('role', 'alert')
-      messageSubmit.innerHTML = 'Le formulaire est envoyer'
+      messageSubmit.innerHTML = successSubmit
     } else if (validateForm() === false) {
       messageSubmit.setAttribute('role', 'alert')
-      messageSubmit.innerHTML = 'Merci de renseigner tout les champs'
+      messageSubmit.innerHTML = errorSubmit
     }
   })
 }

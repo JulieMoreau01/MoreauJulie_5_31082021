@@ -24,6 +24,7 @@ class ImageLightBox {
     }
   }
 
+  // Template HTML for photographer.html
   creatHtmlImgLightbox () {
     return `
     <figure>
@@ -59,6 +60,7 @@ class VideoLightBox {
     }
   }
 
+  // Template HTML for photographer.html
   creatHtmlImgLightbox () {
     return `
     <figure>

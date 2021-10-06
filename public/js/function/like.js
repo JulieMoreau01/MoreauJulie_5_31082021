@@ -43,6 +43,9 @@ function removeLike (element) {
   alert.innerHTML = 'Vous avez retirer un like'
 }
 
+/**
+ * ADD, OR REMOVE A LIKE AND CALCUL TOTAL LIKE ON PAGE PHOTOGRAPHER
+ */
 export function likeCounter () {
   const heartIcon = document.querySelectorAll('i.fa-heart')
   totalLike()

@@ -19,9 +19,11 @@
 
   <body>
     <header class="photographer">
+      <a href="index.html" tabindex="2">  
         <figure>
-            <a href="index.html" tabindex="2"><img src="public/images/logo.svg" alt="logo du site Fisheye et lien vers la page d'accueil" /></a>
+          <img src="public/images/logo.svg" alt="Fisheye - Retour vers la page d'accueil" />
         </figure>
+      </a>
     </header>
     <main class="photographer" id="photographer_content">
       <!-- PHOTOGRAPHER CARD -->
@@ -34,17 +36,17 @@
       <ul class="dropdown">
         <li id="label" class="label">Trier par</li>
         <li id="selected">
-          <button aria-haspopup="true" tabindex="10" aria-label="Cliquer pour trier les images">Popularité</button>
+          <button aria-haspopup="true" tabindex="10" aria-label="Trier les images">Popularité</button>
         </li>
         <li aria-expanded="false" class="list-container">
           <ul class="list" role="listbox">
-            <li class="list-item activePop" tabindex="10" id="option-1" role="option" aria-label="Cliquer pour Trier par popularité">
+            <li class="list-item activePop" tabindex="10" id="option-1" role="option" aria-label="Trier par popularité">
               Popularité
             </li>
-            <li class="list-item" tabindex="10" id="option-2" role="option" aria-label="Cliquer pour Trier par Date">
+            <li class="list-item" tabindex="10" id="option-2" role="option" aria-label="Trier par Date">
               Date
             </li>
-            <li class="list-item" tabindex="10" id="option-3" role="option" aria-label="Cliquer pour Trier par Titre">
+            <li class="list-item" tabindex="10" id="option-3" role="option" aria-label="Trier par Titre">
               Titre
             </li>
           </ul>
@@ -62,7 +64,7 @@
       </section>
       
       <!-- MODAL CONTACR FORM -->
-      <section id="modal" tabindex="12" aria-hidden="true" role="dialog" aria-modal="true" class="hidden" aria-labelledby="titre_modal" aria-live="Assertive">
+      <section id="modal" tabindex="12" aria-hidden="true" role="dialog" aria-modal="true" class="hidden" aria-labelledby="titre_modal">
         <form id="formcontact" tabindex="12">
           <fieldset>
             <h2 tabindex="12" id="titre_modal">Contactez-moi<br/>Mimi Keel<span class="sr-only">Formulaire de contact Ouvert</span></h2>
@@ -88,7 +90,7 @@
             </p>
             <p>
               <input id="submitButton" type="submit" value="Envoyer" tabindex="12" aria-label="Envoyer le formulaire">
-              <span class="messageSubmit sr-only"></span>
+              <span class="messageSubmit"></span>
             </p>
             <button class="close-modal" tabindex="12" aria-label="Fermer la modal" type="button"></button>
           </fieldset>

@@ -24,6 +24,7 @@ class Image {
     }
   }
 
+  // Template HTML for photographer.html
   creatHtmlGallery () {
     return `
     <figure>
@@ -70,6 +71,7 @@ class Video {
     }
   }
 
+  // Template HTML for photographer.html
   creatHtmlGallery () {
     return `
     <figure id="video">

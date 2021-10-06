@@ -12,33 +12,30 @@ export class Photographer {
     this.classTag = data.tags.join(' ')
   }
 
-  // Template HTML pour la page index.html
+  // Template HTML for index.html
   creatHtmlIndex () {
     return `
     <section class="index ${this.classTag}">
+    <a href="photographer.html?id=${this.id}" aria-label="Acceder fiche de ${this.name}" tabindex="5">
       <figure>
-        <a href="photographer.html?id=${this.id}" alt="${this.name}" tabindex="5">
-          <img src="public/images/photographers_id_photos/${this.portrait}" alt="" />
-          <figcaption class="index_name" aria-label="${this.name} cliquer pour voir sa fiche">${this.name}</figcaption>
-        </a>
+        <img src="public/images/photographers_id_photos/${this.portrait}" alt="" />
       </figure>
-      <p>
-        <a href="photographer.html?id=${this.id}" alt="${this.name}" tabindex="5">
-          <span class="index_country">${this.city}, ${this.country}</span>
-          <span class="index_tagline">${this.tagline}</span>
-          <span class="index_price">${this.price} €/jour</span></a>
-      </p>
-      <ul>${this.liTags}</ul>
+      <h2>${this.name}</h2>
+    </a>
+    <p class="index_country" tabindex="5">${this.city}, ${this.country}</p>
+    <p class="index_tagline" tabindex="5">${this.tagline}</p>
+    <p class="index_price" tabindex="5">${this.price} €/jour</p>
+    <ul>${this.liTags}</ul>
     </section>
     `
   }
 
-  // Template HTML pour la page photographer.html
+  // Template HTML for photographer.html
   creatHtmlPhotographerFiche () {
     return `
     <h2 class="name" id="thename" tabindex="3">${this.name}</h2>
     <p class="contact">
-      <button class="btn" tabindex="6" id="contact">Contactez-moi</button>
+      <button class="btn" tabindex="6" id="contact" aria-label="Ouvrir formulaire de contact">Contactez-moi</button>
     </p>
     <p class="country" tabindex="4">${this.city}, ${this.country}</p>
     <p class="tagline" tabindex="4">${this.tagline}</p>

@@ -5,8 +5,13 @@ const listItemsSelect = document.querySelectorAll('.list-item')
 const urlPage = window.location.search
 const idUrlPage = urlPage.replace('?id=', '')
 
+// STATE BY DEFAULT = POPULARITY
 let state = 'popState'
 
+/**
+ * SORT ARRAYTRI BY POPULARITY, DATE OR TITLE
+ * @returns arrayTri
+ */
 export function sortGallery (media) {
   const dataMedia = media
   const arrayTri = []
@@ -39,6 +44,10 @@ export function sortGallery (media) {
   return arrayTri
 }
 
+/**
+ * SELECTION OF STATE BEFORE SORT
+ * @returns state
+ */
 function stateSort (media, event) {
   if (event.target.id === 'option-1') {
     state = 'popState'
@@ -53,6 +62,9 @@ function stateSort (media, event) {
   return state
 }
 
+/**
+ * ACTION ON DROPDOWN MENU
+ */
 function selectAction (media) {
   listItemsSelect.forEach(item => {
     item.addEventListener('click', event => {

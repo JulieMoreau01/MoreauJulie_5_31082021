@@ -238,32 +238,26 @@ main#index.index section a {
   align-items: center;
   text-decoration: none;
 }
-main#index.index section a figcaption.index_name {
+main#index.index section a h2 {
   font-size: 2.25rem;
   color: #D3573C;
   font-weight: 400;
   margin: 0px 0px 10px 0px;
   text-align: center;
 }
-main#index.index section p {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0px;
-}
-main#index.index section p span.index_country {
+main#index.index section p.index_country {
   display: block;
   font-size: 0.8125rem;
   color: #901C1C;
   margin: 0px 0px 5px 0px;
 }
-main#index.index section p span.index_tagline {
+main#index.index section p.index_tagline {
   display: block;
   font-size: 0.625rem;
   margin: 0px 0px 5px 0px;
   color: black;
 }
-main#index.index section p span.index_price {
+main#index.index section p.index_price {
   display: block;
   color: #757575;
   font-size: 0.5625rem;
@@ -766,14 +760,25 @@ section#modal form fieldset p textarea {
   margin-bottom: 26px;
 }
 section#modal form fieldset p input[type=submit] {
-  width: min-content;
+  width: 170px;
   background-color: #901C1C;
   color: white;
   font-size: 1.125rem;
   border-radius: 5px;
-  padding: 20px;
   border: none;
   cursor: pointer;
+}
+@media screen and (min-width: 0px) {
+  section#modal form fieldset p input[type=submit] {
+    margin: 10px auto 0px auto;
+    padding: 10px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  section#modal form fieldset p input[type=submit] {
+    margin: 10px 0px 0px 0px;
+    padding: 20px;
+  }
 }
 section#modal form fieldset span.error {
   font-size: 0.875rem;
@@ -787,6 +792,33 @@ section#modal form fieldset span.error {
   transition: 0.3s;
   width: 100%;
   height: max-content;
+}
+section#modal form fieldset span.messageSubmit {
+  font-size: 0.875rem;
+}
+@media screen and (min-width: 0px) {
+  section#modal form fieldset span.messageSubmit {
+    margin: 10px auto 0px auto;
+  }
+}
+@media screen and (min-width: 1024px) {
+  section#modal form fieldset span.messageSubmit {
+    position: absolute;
+    right: 0px;
+    top: 21px;
+  }
+}
+section#modal form fieldset span.messageSubmit .red, section#modal form fieldset span.messageSubmit .green {
+  background-color: white;
+  border-radius: 5px;
+  padding: 3px 7px;
+  box-shadow: 1px 2px 8px 1px rgba(0, 0, 0, 0.5);
+}
+section#modal form fieldset span.messageSubmit .red {
+  color: #901C1C;
+}
+section#modal form fieldset span.messageSubmit .green {
+  color: green;
 }
 
 p#price {

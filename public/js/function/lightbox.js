@@ -42,6 +42,8 @@ function lightboxAction () {
   const btnRight = document.querySelector('button.btnright-lightbox')
   const btnLeft = document.querySelector('button.btnleft-lightbox')
   const btnClose = document.querySelector('button.close-lightbox')
+
+  // Keyboard Action
   window.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
       containerLightbox.classList.add('hidden')
@@ -52,12 +54,9 @@ function lightboxAction () {
     }
   })
 
-  btnLeft.addEventListener('click', function () {
-    goLeft()
-  })
-  btnRight.addEventListener('click', function () {
-    goRight()
-  })
+  // Mouse Action
+  btnLeft.addEventListener('click', function () { goLeft() })
+  btnRight.addEventListener('click', function () { goRight() })
   btnClose.addEventListener('click', function () {
     containerLightbox.classList.add('hidden')
     containerLightbox.setAttribute('aria-hidden', 'true')
