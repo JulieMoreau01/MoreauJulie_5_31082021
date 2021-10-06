@@ -64,6 +64,7 @@ function validateForm () {
 function actionOnForm () {
   const btnContact = document.getElementById('contact')
   const btnCloseModal = document.querySelector('button.close-modal')
+  const imgFiche = document.querySelector('section figure img')
 
   window.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
@@ -86,11 +87,13 @@ function actionOnForm () {
   btnCloseModal.addEventListener('click', function () {
     containerModal.setAttribute('aria-hidden', 'true')
     containerModal.classList.add('hidden')
+    imgFiche.focus()
   })
   btnCloseModal.addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
       containerModal.setAttribute('aria-hidden', 'true')
       containerModal.classList.add('hidden')
+      imgFiche.focus()
     }
   })
   inputPrenom.addEventListener('change', () => {

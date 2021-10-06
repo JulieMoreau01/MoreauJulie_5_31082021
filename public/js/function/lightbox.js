@@ -60,6 +60,9 @@ function lightboxAction () {
   btnClose.addEventListener('click', function () {
     containerLightbox.classList.add('hidden')
     containerLightbox.setAttribute('aria-hidden', 'true')
+    const figureGalleryFirst = document.querySelector('section#gallery figure img')
+    console.log(figureGalleryFirst)
+    figureGalleryFirst.focus()
     const figureGallery = document.querySelectorAll('section#lightbox figure')
     figureGallery.forEach(figure => {
       containerLightbox.removeChild(figure)
