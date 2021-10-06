@@ -16,7 +16,7 @@ export class Photographer {
   creatHtmlIndex () {
     return `
     <section class="index ${this.classTag}">
-    <a href="photographer.html?id=${this.id}" aria-label="Acceder fiche de ${this.name}" tabindex="5">
+    <a href="photographer.html?id=${this.id}" aria-label="Galerie des travaux de ${this.name}" tabindex="5">
       <figure>
         <img src="public/images/photographers_id_photos/${this.portrait}" alt="" />
       </figure>

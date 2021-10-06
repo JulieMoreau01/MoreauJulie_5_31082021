@@ -10,7 +10,7 @@ main#index.index {
     right: 0px;
     @include media(phone) {
       @include font-size(14);
-        top: 17px;
+        top: 37px;
         right: 20px;
     }
     @include media(desktop) {
